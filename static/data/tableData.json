@@ -1,0 +1,15 @@
+{
+    "home": {
+      "columns": ["PayTo: Link generator", "Payment Pass", "ORIC Register"],
+      "data": [
+        {
+       "content": ["Generate payment requests to use in a growing spectrum of applications.", "Generate payment request wallets for Android and iOS or Web interface.", "Create verified payment identifiers for VASP providers and build trust and use technology to grow."],
+       "links": [
+        { "url": "https://example.com/1", "text": "Open website" },
+        { "url": "https://example.com/2", "text": "Open website" },
+        { "url": "https://example.com/3", "text": "Read about ORIC" }
+      ]
+        }
+    ]
+    }
+  }

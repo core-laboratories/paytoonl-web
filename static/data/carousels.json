@@ -1,0 +1,7 @@
+{
+  "homeCarousel": [
+    { "url": "/static/logo/header_logo_dark.png", "link": "https://example.com/1" },
+    { "url": "/static/logo/header_logo_dark.png", "link": "https://example.com/2" },
+    { "url": "/static/logo/header_logo_dark.png", "link": "https://example.com/3" }
+  ]
+  }
