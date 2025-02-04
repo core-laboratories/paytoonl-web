@@ -5,7 +5,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NextArrow, PrevArrow } from "./Arrows";
 import carouselsData from "../../../static/data/carousels.json";
+import headerLogoDark from "../../../public/static/logo/header_logo_dark.png";
 import "./Carousel.css"; // Import the custom CSS
+
+// Map the keys to the imported images
+const imageMap = {
+  header_logo_dark: headerLogoDark,
+};
 
 const Carousel = ({ carouselKey }) => {
   const logos = carouselsData[carouselKey];
@@ -37,13 +43,11 @@ const Carousel = ({ carouselKey }) => {
               rel="noopener noreferrer"
               className="focus:outline-2 focus:outline-offset-2 focus:outline-blue-500 focus:z-10"
             >
-              <div className="transition-transform duration-300 transform hover:scale-110 hover:shadow-lg hover:z-20">
-                <img
-                  src={logo.url}
-                  alt={`Logo ${index + 1}`}
-                  className="w-full h-auto"
-                />
-              </div>
+              <img
+                src={imageMap[logo.key]}
+                alt={`Logo ${index + 1}`}
+                className="w-full h-auto transition-transform duration-300 transform hover:scale-110  hover:z-20"
+              />
             </a>
           </div>
         ))}

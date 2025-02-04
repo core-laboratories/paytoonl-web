@@ -1,0 +1,20 @@
+{
+    "faqs": [
+      {
+        "header": "What is PayTo: protocol?",
+        "text": "Answer 1"
+      },
+      {
+        "header": "Can I integrate it in my payment infrastructure?",
+        "text": "Answer 2"
+      },
+      {
+        "header": "Where are the solutions supported?",
+        "text": "Answer 3"
+      },
+      {
+        "header": "How to start applying the solutions?",
+        "text": "Answer 4"
+      }
+    ]
+  }

@@ -1,11 +1,57 @@
-import React, { useState } from "react";
-import logo from "../../../static/logo/header_logo.png";
+// filepath: /home/ingrid/work/paytoonl-web/src/Components/Navbar/Navbar.js
+import React, { useState, useEffect } from "react";
+import logo from "../../../public/static/logo/header_logo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollingUp, setScrollingUp] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down
+        setScrollingUp(false);
+      } else if (currentScrollY < lastScrollY && currentScrollY > 100) {
+        // Scrolling up
+        setScrollingUp(true);
+      } else {
+        setScrollingUp(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="w-full bg-[rgba(9,14,52,0.85)] shadow-md backdrop-blur-sm backdrop-brightness-75 font-display">
+    <header
+      className={`w-full bg-transparent bg-opacity-70 shadow-md backdrop-blur-sm backdrop-brightness-75 font-display ${
+        isSticky && scrollingUp ? "fixed top-0 z-50" : ""
+      }`}
+    >
       <div className="w-full h-[105px]">
         <div className="container mx-auto h-full relative flex items-center justify-between">
           <div className="w-60 max-w-full">

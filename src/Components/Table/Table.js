@@ -1,11 +1,11 @@
-// filepath: /home/ingrid/work/paytoonl-web/src/Components/Table/Table.js
 import React from "react";
+import GradientLink from "../GradientLink/GradientLink";
 
 const Table = ({ columns, data }) => {
   return (
     <div className="container mx-auto py-8 font-display">
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white">
+        <table className="min-w-full bg-transparent">
           <thead>
             <tr>
               {columns.map((column, index) => (
@@ -26,15 +26,10 @@ const Table = ({ columns, data }) => {
                     <div className="bg-gray-100 h-48 w-95 flex flex-col justify-around p-4 rounded-lg">
                       <p className="text-gray-700 text-lg">{cell}</p>
                       {row.links && row.links[cellIndex] && (
-                        <a
-                          href={row.links[cellIndex].url}
-                          className="bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-transparent no-underline relative group w-fit"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {row.links[cellIndex].text}
-                          <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-green-500 to-green-800 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
+                        <GradientLink
+                          url={row.links[cellIndex].url}
+                          text={row.links[cellIndex].text}
+                        />
                       )}
                     </div>
                   </td>

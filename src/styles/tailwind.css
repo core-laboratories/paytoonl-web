@@ -6,4 +6,6 @@
 
 @theme{
     --font-display: "Arimo", "sans-serif";
+    --shadow-sides: 10px 0 15px -3px rgba(0, 0, 0, 0.1), -10px 0 15px -3px rgba(0, 0, 0, 0.1);
 }
+

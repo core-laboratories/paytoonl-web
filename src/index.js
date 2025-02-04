@@ -8,7 +8,7 @@ import "./styles/tailwind.css";
 const App = () => {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
