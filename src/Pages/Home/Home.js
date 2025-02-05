@@ -5,7 +5,10 @@ import Carousel from "../../Components/Carousel/Carousel";
 import Button from "../../Components/Button/Button";
 import Navbar from "../../Components/Navbar/Navbar";
 import GradientLink from "../../Components/GradientLink/GradientLink";
-import bgIntro from "../../../public/static/img/bg-intro.jpg"; // Import the image
+import bgIntro from "../../../public/static/img/bg-intro.jpg";
+import shinyOverlay from "../../../public/static/img/shiny-overlay.svg";
+import shinyOverlayRev from "../../../public/static/img/shiny-overlay-rev.svg";
+
 import Accordion from "../../Components/FAQ/FAQ";
 
 import tableData from "../../../static/data/tableData.json";
@@ -22,10 +25,16 @@ const Home = () => {
         <Navbar />
         <Hero />
       </div>
-      <div className="py-[120px]">
+      <div
+        className="relative py-[120px] bg-cover bg-center"
+        style={{ backgroundImage: `url(${shinyOverlay})` }}
+      >
         <Table columns={columns} data={data} />
       </div>
-      <div className="bg-gray-100 py-[150px]">
+      <div
+        className="relative py-[150px] bg-cover bg-center"
+        style={{ backgroundImage: `url(${shinyOverlayRev})` }}
+      >
         <div className="container mx-auto px-13">
           <h1 className="text-black-500 font-bold text-2xl text-left">
             PayTo: Consortium

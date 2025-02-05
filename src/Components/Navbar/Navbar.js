@@ -1,6 +1,7 @@
 // filepath: /home/ingrid/work/paytoonl-web/src/Components/Navbar/Navbar.js
 import React, { useState, useEffect } from "react";
 import logo from "../../../public/static/logo/header_logo.png";
+import menuData from "../../../static/data/menu.json";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -79,11 +80,16 @@ const Navbar = () => {
                 } `}
               >
                 <ul className="block lg:flex">
-                  <ListItem NavLink="/#" hasSubmenu={true}>
-                    Solutions
-                  </ListItem>
-                  <ListItem NavLink="/#">Partners</ListItem>
-                  <ListItem NavLink="/#">Developers</ListItem>
+                  {menuData.menu.map((item, index) => (
+                    <ListItem
+                      key={index}
+                      NavLink={item.link}
+                      hasSubmenu={item.hasSubmenu}
+                      submenu={item.submenu}
+                    >
+                      {item.title}
+                    </ListItem>
+                  ))}
                 </ul>
               </nav>
             </div>
@@ -103,7 +109,7 @@ const Navbar = () => {
 
 export default Navbar;
 
-const ListItem = ({ children, NavLink, hasSubmenu }) => {
+const ListItem = ({ children, NavLink, hasSubmenu, submenu }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
 
   return (
@@ -141,38 +147,16 @@ const ListItem = ({ children, NavLink, hasSubmenu }) => {
       </a>
       {hasSubmenu && submenuOpen && (
         <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md">
-          <li>
-            <a
-              href="/#"
-              className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-            >
-              PayTo
-            </a>
-          </li>
-          <li>
-            <a
-              href="/#"
-              className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-            >
-              FinTag
-            </a>
-          </li>
-          <li>
-            <a
-              href="/#"
-              className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-            >
-              ORIC
-            </a>
-          </li>
-          <li>
-            <a
-              href="/#"
-              className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
-            >
-              ICAN
-            </a>
-          </li>
+          {submenu.map((subItem, subIndex) => (
+            <li key={subIndex}>
+              <a
+                href={subItem.link}
+                className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+              >
+                {subItem.title}
+              </a>
+            </li>
+          ))}
         </ul>
       )}
     </li>
