@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../../public/static/logo/header_logo.png";
 import menuData from "../../../static/data/menu.json";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -111,12 +112,18 @@ export default Navbar;
 
 const ListItem = ({ children, NavLink, hasSubmenu, submenu }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
+  const location = useLocation();
+  const isActive = location.pathname === NavLink;
 
   return (
     <li className="relative group">
       <a
         href={NavLink}
-        className="flex items-center py-2 text-lg font-medium text-white hover:text-gray-300 lg:ml-12 lg:inline-flex relative group"
+        className={`flex items-center py-2 text-lg font-medium lg:ml-12 lg:inline-flex relative group ${
+          submenuOpen
+            ? "text-transparent bg-gradient-to-r from-green-500 to-green-700 bg-clip-text"
+            : "text-white hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700 hover:bg-clip-text"
+        }`}
         onClick={(e) => {
           if (hasSubmenu) {
             e.preventDefault();
@@ -129,9 +136,9 @@ const ListItem = ({ children, NavLink, hasSubmenu, submenu }) => {
           <svg
             className={`w-4 h-4 ml-2 transform transition-transform duration-300 ${
               submenuOpen ? "rotate-180" : ""
-            }`}
+            } group-hover:stroke-green-500`}
             fill="none"
-            stroke="currentColor"
+            stroke={submenuOpen ? "green" : "white"}
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -143,7 +150,11 @@ const ListItem = ({ children, NavLink, hasSubmenu, submenu }) => {
             ></path>
           </svg>
         )}
-        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
+        <span
+          className={`absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-green-400 to-green-700 transition-all duration-300 ${
+            submenuOpen || isActive ? "w-full" : "w-0 group-hover:w-full"
+          }`}
+        ></span>
       </a>
       {hasSubmenu && submenuOpen && (
         <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md">
