@@ -7,7 +7,7 @@
        "links": [
         { "url": "https://example.com/1", "text": "Open website" },
         { "url": "https://example.com/2", "text": "Open website" },
-        { "url": "https://example.com/3", "text": "Read about ORIC" }
+        { "url": "/solutions/oric", "text": "Read about ORIC" }
       ]
         }
     ]

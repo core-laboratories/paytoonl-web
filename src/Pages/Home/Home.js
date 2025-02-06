@@ -59,7 +59,7 @@ const Home = () => {
           </p>
           <div className="flex flex-col items-center m-15 gap-8">
             <GradientLink
-              url="github.com/core-laboratories"
+              url="https://github.com/core-laboratories"
               text="Open GitHub"
               className="text-xl uppercase font-bold"
             />

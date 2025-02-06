@@ -66,32 +66,46 @@ const Navbar = () => {
               <button
                 onClick={() => setOpen(!open)}
                 id="navbarToggler"
-                className={` ${
-                  open && "navbarTogglerActive"
+                className={`${
+                  open ? "navbarTogglerActive" : ""
                 } absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden`}
               >
-                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
-                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
-                <span className="relative my-[6px] block h-[2px] w-[30px] bg-body-color dark:bg-white"></span>
+                <span
+                  className={`relative my-[6px] block h-[2px] w-[30px] bg-white dark:bg-white transition-transform duration-300 ${
+                    open ? "rotate-45 translate-y-[5px]" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`relative my-[6px] block h-[2px] w-[30px] bg-white dark:bg-white transition-opacity duration-300 ${
+                    open ? "opacity-0" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`relative my-[6px] block h-[2px] w-[30px] bg-white dark:bg-white transition-transform duration-300 ${
+                    open ? "-rotate-45 -translate-y-[11px]" : ""
+                  }`}
+                ></span>
               </button>
               <nav
                 id="navbarCollapse"
-                className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg  px-6 py-5 shadow dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent ${
+                className={`fixed top-20 left-0 w-full min-h-screen z-50 flex items-center justify-center bg-gray-200 bg-opacity-10 backdrop-blur-sm ${
                   !open && "hidden"
-                } `}
+                }`}
               >
-                <ul className="block lg:flex">
-                  {menuData.menu.map((item, index) => (
-                    <ListItem
-                      key={index}
-                      NavLink={item.link}
-                      hasSubmenu={item.hasSubmenu}
-                      submenu={item.submenu}
-                    >
-                      {item.title}
-                    </ListItem>
-                  ))}
-                </ul>
+                <div className="w-full h-full  px-6 py-5  dark:bg-gray-800">
+                  <ul className="block lg:flex">
+                    {menuData.menu.map((item, index) => (
+                      <ListItem
+                        key={index}
+                        NavLink={item.link}
+                        hasSubmenu={item.hasSubmenu}
+                        submenu={item.submenu}
+                      >
+                        {item.title}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </div>
               </nav>
             </div>
             <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
@@ -157,12 +171,12 @@ const ListItem = ({ children, NavLink, hasSubmenu, submenu }) => {
         ></span>
       </a>
       {hasSubmenu && submenuOpen && (
-        <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md">
+        <ul className="absolute left-0 mt-2 py-[20px] px-[10px] flex flex-col w-48 bg-white shadow-lg rounded-md">
           {submenu.map((subItem, subIndex) => (
-            <li key={subIndex}>
+            <li key={subIndex} className="-mx-2 hover:bg-gray-200">
               <a
                 href={subItem.link}
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-200"
+                className="block -mx-2 px-4 py-2 text-gray-800 hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-green-800 hover:bg-clip-text"
               >
                 {subItem.title}
               </a>
