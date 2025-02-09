@@ -23,7 +23,7 @@ const Table = ({ columns, data }) => {
               <tr key={rowIndex}>
                 {row.content.map((cell, cellIndex) => (
                   <td key={cellIndex} className="py-8 px-4 ">
-                    <div className="bg-gray-100 h-48 w-95 flex flex-col justify-around p-4 rounded-lg">
+                    <div className="bg-gray-100 h-48  flex flex-col justify-around p-4 rounded-lg ">
                       <p className="text-gray-700 text-lg">{cell}</p>
                       {row.links && row.links[cellIndex] && (
                         <GradientLink
@@ -43,7 +43,7 @@ const Table = ({ columns, data }) => {
           {data.map((row, rowIndex) => (
             <div
               key={rowIndex}
-              className="bg-transparent h-auto w-full flex flex-col justify-around lg:bg-gray-100 p-4 rounded-lg mb-4 mt-14"
+              className="bg-transparent h-auto w-full flex flex-col justify-around px-13 lg:px-4 lg:bg-gray-100 p-4 rounded-lg mb-4 mt-14"
             >
               {row.content.map((cell, cellIndex) => (
                 <div key={cellIndex} className="mb-10">

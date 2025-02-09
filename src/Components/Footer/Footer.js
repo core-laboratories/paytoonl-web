@@ -8,13 +8,14 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="relative z-10 bg-cover bg-center w-full pb-1 pt-20 dark:bg-dark lg:pb-10 lg:pt-[120px]"
+        className="relative z-10 bg-cover bg-center lg:h-[15vw] w-full pb-1 pt-20 dark:bg-dark lg:pb-10 lg:pt-[120px]"
         style={{ backgroundImage: `url(${bgIntro})` }}
       >
-        <div className="container  mx-auto">
-          <div className="-mx-4 flex flex-wrap items-center justify-between">
+        <div className="container mx-auto">
+          <div className="flex flex-col lg:flex-row flex-wrap items-center justify-between lg:-mx-4">
+            {" "}
             <div className="inline-block sm:w-auto lg:w-auto">
-              <div className=" w-full">
+              <div className="w-full">
                 <a href="/#" className="mb-6 inline-block max-w-[202px]">
                   <img
                     src={logo}
@@ -24,7 +25,6 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-
             {menuData.menu.map((group, index) => (
               <LinkGroup
                 key={index}
@@ -32,9 +32,8 @@ const Footer = () => {
                 link={group.link}
               ></LinkGroup>
             ))}
-
             <div className="inline-block px-4 sm:w-auto lg:w-auto">
-              <div className="mb-10 w-full">
+              <div className="mb-10 w-full flex flex-col items-center lg:block">
                 <h4 className="mb-9 text-lg font-semibold text-white dark:text-white">
                   Follow Us On
                 </h4>
@@ -111,7 +110,7 @@ export default Footer;
 
 const LinkGroup = ({ children, header, link }) => {
   const location = useLocation();
-  const isActive = location.pathname === NavLink;
+  const isActive = location.pathname === link;
   return (
     <>
       <div className="inline-block px-4 sm:w-auto lg:w-auto">
