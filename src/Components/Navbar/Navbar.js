@@ -27,9 +27,20 @@ const Navbar = () => {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        window.addEventListener("scroll", handleScroll);
+      } else {
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, [lastScrollY]);
 
@@ -42,9 +53,20 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        window.addEventListener("scroll", handleScroll);
+      } else {
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -88,24 +110,22 @@ const Navbar = () => {
               </button>
               <nav
                 id="navbarCollapse"
-                className={`fixed top-20 left-0 w-full min-h-screen z-50 flex items-center justify-center bg-gray-200 bg-opacity-10 backdrop-blur-sm ${
+                className={`absolute right-0 top-full w-full h-100 rounded-lg px-6 py-5 shadow bg-black bg-opacity-90 dark:bg-dark-2 sm:right-4 sm:top-full sm:h-auto lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:bg-transparent lg:bg-opacity-100 lg:dark:bg-transparent ${
                   !open && "hidden"
                 }`}
               >
-                <div className="w-full h-full  px-6 py-5  dark:bg-gray-800">
-                  <ul className="block lg:flex">
-                    {menuData.menu.map((item, index) => (
-                      <ListItem
-                        key={index}
-                        NavLink={item.link}
-                        hasSubmenu={item.hasSubmenu}
-                        submenu={item.submenu}
-                      >
-                        {item.title}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="flex flex-col items-center justify-center h-full lg:flex lg:flex-row lg:items-start lg:justify-start">
+                  {menuData.menu.map((item, index) => (
+                    <ListItem
+                      key={index}
+                      NavLink={item.link}
+                      hasSubmenu={item.hasSubmenu}
+                      submenu={item.submenu}
+                    >
+                      {item.title}
+                    </ListItem>
+                  ))}
+                </ul>
               </nav>
             </div>
             <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
@@ -133,7 +153,7 @@ const ListItem = ({ children, NavLink, hasSubmenu, submenu }) => {
     <li className="relative group">
       <a
         href={NavLink}
-        className={`flex items-center py-2 text-lg font-medium lg:ml-12 lg:inline-flex relative group ${
+        className={`flex items-center my-5 text-2xl sm:text-lg font-medium lg:ml-12 lg:inline-flex relative group ${
           submenuOpen
             ? "text-transparent bg-gradient-to-r from-green-500 to-green-700 bg-clip-text"
             : "text-white hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700 hover:bg-clip-text"
@@ -171,7 +191,7 @@ const ListItem = ({ children, NavLink, hasSubmenu, submenu }) => {
         ></span>
       </a>
       {hasSubmenu && submenuOpen && (
-        <ul className="absolute left-0 mt-2 py-[20px] px-[10px] flex flex-col w-48 bg-white shadow-lg rounded-md">
+        <ul className="absolute z-50 left-0 mt-2 py-[20px] px-[10px] flex flex-col w-48 bg-white shadow-lg rounded-md">
           {submenu.map((subItem, subIndex) => (
             <li key={subIndex} className="-mx-2 hover:bg-gray-200">
               <a

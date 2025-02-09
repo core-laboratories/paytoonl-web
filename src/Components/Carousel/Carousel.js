@@ -1,4 +1,3 @@
-// filepath: /home/ingrid/work/paytoonl-web/src/Components/Carousel/Carousel.js
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -27,6 +26,16 @@ const Carousel = ({ carouselKey }) => {
     pauseOnHover: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        },
+      },
+    ],
   };
 
   return (
@@ -46,7 +55,7 @@ const Carousel = ({ carouselKey }) => {
               <img
                 src={imageMap[logo.key]}
                 alt={`Logo ${index + 1}`}
-                className="w-full h-auto transition-transform duration-300 transform hover:scale-110  hover:z-20"
+                className="w-full h-auto transition-transform duration-300 transform hover:scale-110 hover:z-20"
               />
             </a>
           </div>

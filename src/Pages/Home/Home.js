@@ -57,16 +57,16 @@ const Home = () => {
           <p className="text-white text-xl text-center mt-4 italic">
             We develop Open-Source platforms.
           </p>
-          <div className="flex flex-col items-center m-15 gap-8">
+          <div className="flex flex-col items-center m-15 gap-8 w-full mx-auto lg:w-auto">
             <GradientLink
               url="https://github.com/core-laboratories"
               text="Open GitHub"
-              className="text-xl uppercase font-bold"
+              className="text-xl uppercase font-bold w-full text-center lg:w-auto"
             />
             <GradientLink
               url="/solutions"
               text="Read more about Products"
-              className="text-xl uppercase font-bold"
+              className="text-xl uppercase font-bold w-full text-center lg:w-auto"
             />
           </div>
         </div>
