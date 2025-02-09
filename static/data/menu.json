@@ -1,0 +1,17 @@
+{
+    "menu": [
+      {
+        "title": "Solutions",
+        "link": "/#",
+        "hasSubmenu": true,
+        "submenu": [
+          { "title": "PayTo", "link": "/#" },
+          { "title": "FinTag", "link": "/#" },
+          { "title": "ORIC", "link": "/#" },
+          { "title": "ICAN", "link": "/#" }
+        ]
+      },
+      { "title": "Partners", "link": "/#", "hasSubmenu": false },
+      { "title": "Developers", "link": "/#", "hasSubmenu": false }
+    ]
+  }
