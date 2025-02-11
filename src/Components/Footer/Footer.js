@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="relative z-10 bg-cover bg-center lg:h-[15vw] w-full pb-1 pt-20 dark:bg-dark lg:pb-10 lg:pt-[120px]"
+        className="relative z-10 bg-cover bg-center w-full pb-1 pt-20 dark:bg-dark lg:pb-10 lg:pt-[120px] flex-shrink-0"
         style={{ backgroundImage: `url(${bgIntro})` }}
       >
         <div className="container mx-auto">

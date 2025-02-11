@@ -1,11 +1,10 @@
-// filepath: /home/ingrid/work/paytoonl-web/src/Components/Carousel/CustomArrows.js
 import React from "react";
 
 export const NextArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className}`}
+      className={`${className} custom-arrow`}
       style={{ ...style, display: "block", right: "10px" }}
       onClick={onClick}
     >
@@ -14,7 +13,7 @@ export const NextArrow = (props) => {
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        className="w-6 h-6 text-black"
+        className="w-6 h-6 text-black dark:text-white"
       >
         <path
           strokeLinecap="round"
@@ -31,7 +30,7 @@ export const PrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className}`}
+      className={`${className} custom-arrow`}
       style={{ ...style, display: "block", left: "10px" }}
       onClick={onClick}
     >
@@ -40,7 +39,7 @@ export const PrevArrow = (props) => {
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        className="w-6 h-6 text-black"
+        className="w-6 h-6 text-black dark:text-white"
       >
         <path
           strokeLinecap="round"

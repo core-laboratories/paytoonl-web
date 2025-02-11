@@ -9,3 +9,11 @@
 }
 
 
+.dark .slick-prev,
+.dark .slick-next {
+  color: white;
+}
+
+.dark .slick-dots li button:before {
+  color: white;
+}
