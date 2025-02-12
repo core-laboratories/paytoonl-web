@@ -11,7 +11,7 @@ const Table = ({ columns, data }) => {
               {columns.map((column, index) => (
                 <th
                   key={index}
-                  className="py-2 px-8 bg-gray-200 text-gray-600 font-bold uppercase text-lg text-left"
+                  className="py-2 px-8 bg-gray-200 dark:bg-[rgb(31,42,55)] text-gray-600 dark:text-white font-bold uppercase text-lg text-left"
                 >
                   {column}
                 </th>
@@ -23,8 +23,10 @@ const Table = ({ columns, data }) => {
               <tr key={rowIndex}>
                 {row.content.map((cell, cellIndex) => (
                   <td key={cellIndex} className="py-8 px-4 ">
-                    <div className="bg-gray-100 h-48  flex flex-col justify-around p-4 rounded-lg ">
-                      <p className="text-gray-700 text-lg">{cell}</p>
+                    <div className="bg-gray-100 h-48 dark:bg-[rgb(31,42,55)] flex flex-col justify-around p-4 rounded-lg">
+                      <p className="text-gray-700 dark:text-gray-400 text-lg">
+                        {cell}
+                      </p>
                       {row.links && row.links[cellIndex] && (
                         <GradientLink
                           url={row.links[cellIndex].url}
@@ -38,7 +40,7 @@ const Table = ({ columns, data }) => {
             ))}
           </tbody>
         </table>
-        <div className="py-2 px-8 h-11 bg-gray-200 flex items-center justify-center lg:bg-transparent lg:hidden"></div>
+        <div className="py-2 px-8 h-11 bg-gray-200 dark:bg-[rgb(31,42,55)] flex items-center justify-center lg:bg-transparent lg:hidden"></div>
         <div className="flex flex-col lg:hidden h-auto">
           {data.map((row, rowIndex) => (
             <div
@@ -46,8 +48,11 @@ const Table = ({ columns, data }) => {
               className="bg-transparent h-auto w-full flex flex-col justify-around px-13 lg:px-4 lg:bg-gray-100 p-4 rounded-lg mb-4 mt-14"
             >
               {row.content.map((cell, cellIndex) => (
-                <div key={cellIndex} className="mb-10">
-                  <p className="text-gray-700 text-lg mb-4 lg:mb-0">
+                <div
+                  key={cellIndex}
+                  className="mb-10 dark:bg-[rgb(31,42,55)] p-8 rounded-lg"
+                >
+                  <p className="text-gray-700 dark:text-gray-400 text-lg mb-4 lg:mb-0">
                     <span className="font-bold">{columns[cellIndex]}: </span>
                     {cell}
                   </p>
@@ -63,7 +68,7 @@ const Table = ({ columns, data }) => {
           ))}
         </div>
       </div>
-      <div className="py-2 px-8 h-11 bg-gray-200 flex items-center justify-center"></div>
+      <div className="py-2 px-8 h-11 bg-gray-200 dark:bg-[rgb(31,42,55)]  flex items-center justify-center"></div>
     </div>
   );
 };

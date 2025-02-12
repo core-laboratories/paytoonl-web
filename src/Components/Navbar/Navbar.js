@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../../public/static/logo/header_logo.png";
 import menuData from "../../../static/data/menu.json";
+import Switcher from "../Switcher/Switcher";
 import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -9,6 +10,19 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollingUp, setScrollingUp] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,7 +94,7 @@ const Navbar = () => {
         <div className="container mx-auto h-full relative flex items-center justify-between">
           <div className="w-60 max-w-full">
             <a href="/#" className="block w-full py-5">
-              <img src={logo} alt="logo" className="dark:hidden mt-[13px]" />
+              <img src={logo} alt="logo" className=" mt-[13px]" />
             </a>
           </div>
           <div className="flex w-full items-center justify-between">
@@ -110,7 +124,7 @@ const Navbar = () => {
               </button>
               <nav
                 id="navbarCollapse"
-                className={`absolute right-0 top-full w-full h-100 rounded-lg px-6 py-5 shadow bg-black bg-opacity-90 dark:bg-dark-2 sm:right-4 sm:top-full sm:h-auto lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:bg-transparent lg:bg-opacity-100 lg:dark:bg-transparent ${
+                className={`absolute sm:hidden md:hidden right-0 left-0 top-full w-screen h-100 rounded-lg px-6 py-5 shadow bg-black bg-opacity-90 dark:bg-dark-2 sm:right-0 sm:top-full sm:h-auto lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:bg-transparent lg:bg-opacity-100 lg:dark:bg-transparent ${
                   !open && "hidden"
                 }`}
               >
@@ -128,8 +142,11 @@ const Navbar = () => {
                 </ul>
               </nav>
             </div>
-            <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
-              <button className="relative bg-white  text-md  font-large cursor-pointer rounded-md inline-flex items-center justify-center py-4 px-12 text-center text-lg font-large hover:bg-gray-200 disabled:bg-gray-300 disabled:text-gray-500">
+
+            <div className="justify-end pr-16 sm:flex lg:pr-0">
+              <Switcher darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+
+              <button className="hidden lg:inline-flex relative bg-white text-md font-large cursor-pointer rounded-md items-center justify-center py-4 px-12 text-center text-lg font-large hover:bg-gray-200 disabled:bg-gray-300 disabled:text-gray-500">
                 <span className="relative z-10 uppercase font-bold bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-transparent">
                   Join Us
                 </span>
@@ -138,6 +155,31 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      {/* Mobile and Laptop Nav */}
+      <nav
+        id="navbarCollapseMobile"
+        className={`lg:hidden absolute right-0 left-0 top-full w-screen h-100 rounded-lg px-6 py-5 pb-10 shadow bg-black bg-opacity-90 dark:bg-dark-2 sm:right-0 sm:top-full sm:h-auto ${
+          !open && "hidden"
+        }`}
+      >
+        <ul className="flex flex-col items-center justify-center h-full lg:flex lg:flex-row lg:items-start lg:justify-start">
+          {menuData.menu.map((item, index) => (
+            <ListItem
+              key={index}
+              NavLink={item.link}
+              hasSubmenu={item.hasSubmenu}
+              submenu={item.submenu}
+            >
+              {item.title}
+            </ListItem>
+          ))}
+          <button className="mt-6 lg:hidden relative bg-white text-md font-large cursor-pointer rounded-md items-center justify-center py-4 px-12 text-center text-lg font-large hover:bg-gray-200 disabled:bg-gray-300 disabled:text-gray-500">
+            <span className="relative z-10 uppercase font-bold bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-transparent">
+              Join Us
+            </span>
+          </button>
+        </ul>
+      </nav>
     </header>
   );
 };
@@ -191,15 +233,18 @@ const ListItem = ({ children, NavLink, hasSubmenu, submenu }) => {
         ></span>
       </a>
       {hasSubmenu && submenuOpen && (
-        <ul className="absolute z-50 left-0 mt-2 py-[20px] px-[10px] flex flex-col w-48 bg-white shadow-lg rounded-md">
+        <ul className="absolute z-50 left-0 mt-2 py-[20px] px-[10px]  flex flex-col w-48  bg-white/80 backdrop-blur-md backdrop-brightness-75 shadow-lg rounded-md">
           {submenu.map((subItem, subIndex) => (
             <li key={subIndex} className="-mx-2 hover:bg-gray-200">
               <a
                 href={subItem.link}
-                className="block -mx-2 px-4 py-2 text-gray-800 hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-green-800 hover:bg-clip-text"
+                className="block -mx-2 px-4 py-2 text-black hover:text-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-green-800 hover:bg-clip-text"
               >
                 {subItem.title}
               </a>
+              {subIndex < submenu.length - 1 && (
+                <div className="w-full h-[1px] bg-gradient-to-r from-gray-400 to-gray-200"></div>
+              )}
             </li>
           ))}
         </ul>

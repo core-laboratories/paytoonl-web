@@ -11,7 +11,7 @@ const Hero = () => {
     "PIX",
     "BIC",
     "CASH",
-    "$€¥₽",
+    "$€¥₹₽",
   ];
   const currentText = useTypedText(animatedTexts);
 

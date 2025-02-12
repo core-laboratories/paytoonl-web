@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="relative z-10 bg-cover bg-center lg:h-[15vw] w-full pb-1 pt-20 dark:bg-dark lg:pb-10 lg:pt-[120px]"
+        className="relative z-10 bg-cover bg-center w-full pb-1 pt-20 dark:bg-dark lg:pb-10 lg:pt-[120px] flex-shrink-0"
         style={{ backgroundImage: `url(${bgIntro})` }}
       >
         <div className="container mx-auto">
@@ -17,11 +17,7 @@ const Footer = () => {
             <div className="inline-block sm:w-auto lg:w-auto">
               <div className="w-full">
                 <a href="/#" className="mb-6 inline-block max-w-[202px]">
-                  <img
-                    src={logo}
-                    alt="logo"
-                    className="max-w-full dark:hidden"
-                  />
+                  <img src={logo} alt="logo" className="max-w-full " />
                 </a>
               </div>
             </div>

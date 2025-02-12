@@ -10,8 +10,11 @@ const AccordionItem = ({ header, text }) => {
   };
 
   return (
-    <div className="mb-8 w-full rounded-lg bg-white p-4 px-[40px] lg:p-4 shadow-[0px_20px_95px_0px_rgba(201,203,204,0.30)] dark:bg-dark-2 dark:shadow-[0px_20px_95px_0px_rgba(0,0,0,0.30)] sm:p-8 lg:px-6 xl:px-8">
-      <button className="faq-btn flex w-full text-left" onClick={handleToggle}>
+    <div className="mb-8 w-full rounded-lg bg-white  dark:bg-[rgb(31,42,55)] p-4 px-[40px] lg:p-4 shadow-[0px_20px_95px_0px_rgba(201,203,204,0.30)] dark:bg-dark-2 dark:shadow-[0px_20px_95px_0px_rgba(0,0,0,0.30)] sm:p-8 lg:px-6 xl:px-8">
+      <button
+        className="faq-btn flex w-full text-left cursor-pointer"
+        onClick={handleToggle}
+      >
         <div className="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-primary/5 text-primary dark:bg-white/5">
           <svg
             className={`fill-primary stroke-primary duration-200 ease-in-out ${
@@ -40,7 +43,7 @@ const AccordionItem = ({ header, text }) => {
           active ? "block" : "hidden"
         }`}
       >
-        <p className="py-3 text-base leading-relaxed text-body-color dark:text-dark-6">
+        <p className="py-3 text-base leading-relaxed text-body-color dark:text-white">
           {text}
         </p>
       </div>
@@ -52,7 +55,7 @@ const FAQ = () => {
   const { faqs } = faqData;
 
   return (
-    <section className="relative z-20 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]">
+    <section className="relative z-20 overflow-hidden  bg-white pb-12 pt-20 dark:bg-[rgb(17,25,40)] lg:pb-[90px] lg:pt-[120px]">
       <div className="container mx-auto">
         <div className="mx-13 lg:-mx-4 flex flex-wrap">
           <div className="w-full px-4">
