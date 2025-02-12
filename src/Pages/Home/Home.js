@@ -10,6 +10,7 @@ import shinyOverlay from "../../../public/static/img/shiny-overlay.svg";
 import shinyOverlayDark from "../../../public/static/img/shiny-overlay-dark.svg";
 import shinyOverlayRev from "../../../public/static/img/shiny-overlay-rev.svg";
 import shinyOverlayDarkRev from "../../../public/static/img/shiny-overlay-dark-rev.svg";
+import { Helmet } from "react-helmet";
 
 import Accordion from "../../Components/FAQ/FAQ";
 
@@ -20,6 +21,9 @@ const Home = () => {
 
   return (
     <div className="font-display min-h-screen flex flex-col">
+      <Helmet>
+        <title>PayTo.onl - Direct Assets Transfer</title>
+      </Helmet>
       <div
         className="bg-cover bg-center w-full"
         style={{ backgroundImage: `url(${bgIntro})` }}
