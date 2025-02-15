@@ -3,7 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
-// Get __dirname equivalent in ES modules
+// Get __filename and __dirname equivalents in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -13,7 +13,6 @@ export default {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
-
   module: {
     rules: [
       {
@@ -30,7 +29,7 @@ export default {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,

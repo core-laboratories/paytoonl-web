@@ -1,0 +1,33 @@
+.carousel .control-prev.control-arrow,
+.carousel .control-next.control-arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%; 
+  width: 40px; 
+  height: 40px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  z-index: 1;
+}
+
+.carousel .control-prev.control-arrow {
+    left: 10px; 
+  }
+  
+  .carousel .control-next.control-arrow {
+    right: 10px; 
+  }
+
+.carousel .control-prev.control-arrow:hover,
+.carousel .control-next.control-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.carousel .control-prev.control-arrow:before,
+.carousel .control-next.control-arrow:before {
+  color: white; 
+  font-size: 20px; 
+}

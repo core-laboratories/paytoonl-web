@@ -1,12 +1,11 @@
-@import "tailwindcss";
+
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 @import 'flowbite/dist/flowbite.css';
-@import "flowbite/src/themes/default";
-@plugin "flowbite/plugin";
-@source "../node_modules/flowbite";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@config "../tailwind.config.js";
-@custom-variant dark (&:where(.dark, .dark *));
+
 
 @theme {
     --font-display: "Arimo", "sans-serif";
