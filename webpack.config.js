@@ -1,9 +1,8 @@
-// @ts-check
-import path from 'path';
-import { fileURLToPath } from 'url';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from "path";
+import { fileURLToPath } from "url";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
-// Get __dirname equivalent in ES modules
+// Get __filename and __dirname equivalents in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -13,27 +12,21 @@ export default {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
-
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader'
-      },
-      {
-        test: /\.js$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
         },
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
@@ -53,15 +46,14 @@ export default {
       template: "./public/index.html",
     }),
   ],
+  resolve: {
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, "dist"),
-      serveIndex: false
     },
     compress: true,
     port: 9000,
-  },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
 };
