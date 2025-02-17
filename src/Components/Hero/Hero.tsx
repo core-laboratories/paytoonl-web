@@ -33,7 +33,7 @@ const Hero = () => {
             Direct Assets Transfer
           </h1>
         </div>
-        <div className="flex flex-col gap-2 pt-10 pb-28 sm:flex-row sm:items-center sm:justify-center">
+        <div className="flex flex-col gap-2 pt-10 pb-20 sm:flex-row sm:items-center sm:justify-center">
           {/* <a
             href="#"
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-700 bg-emerald-700 px-7 py-3.5 leading-6 font-semibold text-white hover:border-emerald-600 hover:bg-emerald-600 hover:text-white focus:ring-3 focus:ring-emerald-400/50 active:border-emerald-700 active:bg-emerald-700 dark:focus:ring-emerald-400/90"

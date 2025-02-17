@@ -1,5 +1,5 @@
 import React from "react";
-import tableData from "../data/tableData.json";
+import tableData from "../../data/tableData.json";
 
 export default function TableSimple() {
   const { columns, data } = tableData.home;
@@ -18,7 +18,7 @@ export default function TableSimple() {
                   <th
                     key={colIndex}
                     scope="col"
-                    className="h-12 px-6 text-sm font-medium border-l first:border-l-0 border-slate-300 text-gray-600 dark:text-gray-100 bg-slate-100 dark:bg-slate-400"
+                    className="h-12 px-6 text-md lg:text-lg font-medium border-l first:border-l-0 border-slate-300 text-gray-600 dark:text-gray-100 bg-slate-100 dark:bg-slate-400"
                   >
                     {column}
                   </th>
