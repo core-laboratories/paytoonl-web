@@ -7,7 +7,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="font-display min-h-screen overflow-hidden">
+    <div className="font-display min-h-screen overflow-hidden ">
       <Hero />
       <section className="bg-white dark:bg-gray-900 pt-[80px] sm:pt-8 pb-[100px]">
         <Table />

@@ -19,13 +19,13 @@ export default function FAQSimple() {
 
           {/* FAQ */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 text-lg md:gap-12 lg:px-24">
-            <div>
+            <div className="text-center sm:text-left">
               <h4 className="mb-2 font-semibold">What is PayTo: protocol?</h4>
               <p className="leading-relaxed text-gray-600 dark:text-gray-400">
                 Answer 1
               </p>
             </div>
-            <div>
+            <div className="text-center sm:text-left">
               <h4 className="mb-2 font-semibold">
                 Can I integrate it in my payment infrastructure?
               </h4>
@@ -33,7 +33,7 @@ export default function FAQSimple() {
                 Answer 2
               </p>
             </div>
-            <div>
+            <div className="text-center sm:text-left">
               <h4 className="mb-2 font-semibold">
                 Where are the solutions supported?
               </h4>
@@ -41,7 +41,7 @@ export default function FAQSimple() {
                 Answer 3
               </p>
             </div>
-            <div>
+            <div className="text-center sm:text-left">
               <h4 className="mb-2 font-semibold">
                 How to start applying the solutions?
               </h4>

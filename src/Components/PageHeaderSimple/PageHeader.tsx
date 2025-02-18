@@ -16,7 +16,7 @@ export default function PageHeadersSimple() {
             <div className="mx-auto text-xl leading-relaxed font-medium text-gray-700 lg:w-2/3 dark:text-gray-300 flex flex-col sm:block">
               <a
                 href="https://github.com/core-laboratories"
-                className="mr-4 hover:underline"
+                className="mr-4 hover:underline mb-4 sm:mb-0"
               >
                 Open GitHub
               </a>

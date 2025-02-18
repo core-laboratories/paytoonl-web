@@ -3,7 +3,7 @@ import logo from "../../../public/static/icons/logo.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-white dark:bg-gray-900 pt-[80px] sm:pt-0">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <a
@@ -39,7 +39,7 @@ const Footer = () => {
           </ul>
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400 text-center sm:text-left">
+        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400 text-center ">
           © 2025{" "}
           <a href="https://payto.onl/" className="hover:underline">
             PayTo:Alliance
