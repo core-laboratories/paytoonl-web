@@ -8,7 +8,7 @@ export default function TableSimple() {
     <div className="w-full overflow-x-auto container mx-auto bg-white dark:bg-gray-800">
       <table
         className="w-full text-left border border-collapse rounded sm:border-separate border-slate-200"
-        cellspacing="0"
+        cellSpacing="0"
       >
         <thead className="hidden sm:table-header-group">
           <tr>

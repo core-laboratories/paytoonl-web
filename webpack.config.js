@@ -1,6 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
 // Get __filename and __dirname equivalents in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -44,6 +45,13 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      favicon: "./public/static/icons/favicon.ico",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "public/manifest.json", to: "manifest.json" },
+        { from: "public/static/icons", to: "static/icons" },
+      ],
     }),
   ],
   resolve: {
