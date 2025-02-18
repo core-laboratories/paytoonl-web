@@ -3,10 +3,15 @@ import logo from "../../../public/static/icons/logo.svg";
 import FormElementsToggleLgDayNight from "../Switcher/Switcher";
 
 const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMainDropdownOpen, setIsMainDropdownOpen] = useState(false);
+  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const toggleMainDropdown = () => {
+    setIsMainDropdownOpen(!isMainDropdownOpen);
+  };
+
+  const toggleSolutionsDropdown = () => {
+    setIsSolutionsDropdownOpen(!isSolutionsDropdownOpen);
   };
 
   return (
@@ -19,11 +24,11 @@ const Navbar = () => {
           </span>
         </a>
         <button
-          onClick={toggleDropdown}
+          onClick={toggleMainDropdown}
           type="button"
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-dropdown"
-          aria-expanded="false"
+          aria-expanded={isMainDropdownOpen}
         >
           <span className="sr-only">Open main menu</span>
           <svg
@@ -44,7 +49,7 @@ const Navbar = () => {
         </button>
         <div
           className={`${
-            isDropdownOpen ? "block" : "hidden"
+            isMainDropdownOpen ? "block" : "hidden"
           } w-full md:block md:w-auto`}
           id="navbar-dropdown"
         >
@@ -60,13 +65,13 @@ const Navbar = () => {
             </li>
             <li>
               <button
-                onClick={toggleDropdown}
+                onClick={toggleSolutionsDropdown}
                 className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 Solutions
                 <svg
                   className={`w-2.5 h-2.5 ms-2.5 transition-transform duration-300 ${
-                    isDropdownOpen ? "rotate-180" : ""
+                    isSolutionsDropdownOpen ? "rotate-180" : ""
                   }`}
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -84,8 +89,8 @@ const Navbar = () => {
               </button>
               <div
                 className={`${
-                  isDropdownOpen ? "block absolute" : "hidden"
-                } z-10 mt-2 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600`}
+                  isSolutionsDropdownOpen ? "block absolute" : "hidden"
+                } z-15 mt-2 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600`}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"

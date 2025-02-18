@@ -7,9 +7,9 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="font-display min-h-screen ">
+    <div className="font-display min-h-screen overflow-hidden">
       <Hero />
-      <section className="bg-white dark:bg-gray-900 pt-8 pb-[100px]">
+      <section className="bg-white dark:bg-gray-900 pt-[80px] sm:pt-8 pb-[100px]">
         <Table />
       </section>
       <section className="bg-linear-to-tr from-indigo-100 via-purple-50 to-cyan-100 dark:from-indigo-950 dark:via-purple-950 dark:to-teal-950 dark:text-gray-100 py-[100px]">

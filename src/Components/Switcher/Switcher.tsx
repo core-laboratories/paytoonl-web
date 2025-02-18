@@ -16,7 +16,7 @@ export default function FormElementsToggleLgDayNight() {
   };
 
   return (
-    <div>
+    <div className="px-3 sm:px-0">
       <input
         type="checkbox"
         className="peer absolute -left-[65rem]"

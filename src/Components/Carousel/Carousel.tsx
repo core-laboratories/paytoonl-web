@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import carouselsData from "../../data/carousels.json";
 import headerLogoDark from "../../../public/static/icons/logo.svg";
 
-// Map the keys to the imported images
+import "./Carousel.css";
+
 const imageMap = {
   header_logo_dark: headerLogoDark,
 };
@@ -13,15 +14,16 @@ const imageMap = {
 const Carousel = ({ carouselKey }) => {
   const logos = carouselsData[carouselKey];
 
-  const SliderComponent = !!Slider.default ? Slider.default : Slider;
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 1200,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    variableWidth: true,
     pauseOnHover: true,
     arrows: false,
     responsive: [
@@ -37,29 +39,31 @@ const Carousel = ({ carouselKey }) => {
   };
 
   return (
-    <div className=" pt-15 pb-15 overflow-visible relative">
-      <SliderComponent {...settings}>
+    <div className="pt-15 pb-15 overflow-visible relative">
+      <Slider {...settings}>
         {logos.map((logo, index) => (
           <div
             key={index}
-            className="px-4 overflow-visible relative slick-slide-custom w-fit "
+            className="px-12 overflow-visible relative slick-slide-custom"
           >
             <a
               href={logo.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="focus:outline-2 focus:outline-offset-2 focus:outline-blue-500 focus:z-10 inline-flex items-center gap-2 text-2xl font-semibold text-dark dark:text-white"
+              className="focus:outline-2 focus:outline-offset-2 focus:outline-blue-500 focus:z-10 inline-flex items-center text-2xl font-semibold text-dark dark:text-white"
             >
               <img
                 src={imageMap[logo.key]}
                 alt={`Logo ${index + 1}`}
-                className="w-auto h-auto max-w-full max-h-20   l h-auto transition-transform duration-300 transform hover:scale-110 hover:z-20"
+                className="w-auto h-auto max-w-full max-h-20 transition-transform duration-300 transform hover:scale-110 hover:z-20"
               />
-              <span>PayTo:Alliance</span>
+              <span className="ml-4 transition-transform duration-300 transform hover:scale-110 hover:z-20">
+                PayTo:Alliance
+              </span>
             </a>
           </div>
         ))}
-      </SliderComponent>
+      </Slider>
     </div>
   );
 };

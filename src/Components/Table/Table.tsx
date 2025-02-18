@@ -10,21 +10,40 @@ export default function TableSimple() {
         className="w-full text-left border border-collapse rounded sm:border-separate border-slate-200"
         cellspacing="0"
       >
+        <thead className="hidden sm:table-header-group">
+          <tr>
+            {columns.map((column, colIndex) => (
+              <th
+                key={colIndex}
+                scope="col"
+                className="h-12 px-6 text-md lg:text-lg font-medium border-l first:border-l-0 border-slate-300 text-gray-600 dark:text-gray-100 bg-slate-100 dark:bg-slate-400"
+              >
+                {column}
+              </th>
+            ))}
+          </tr>
+        </thead>
         <tbody>
           {data.map((row, rowIndex) => (
             <React.Fragment key={rowIndex}>
-              <tr>
-                {columns.map((column, colIndex) => (
-                  <th
-                    key={colIndex}
-                    scope="col"
-                    className="h-12 px-6 text-md lg:text-lg font-medium border-l first:border-l-0 border-slate-300 text-gray-600 dark:text-gray-100 bg-slate-100 dark:bg-slate-400"
-                  >
-                    {column}
-                  </th>
-                ))}
+              <tr className="sm:hidden">
+                <td className="h-12 px-6 text-md lg:text-lg font-medium border border-slate-300 text-gray-600 dark:text-gray-100 bg-transparent dark:bg-transparent">
+                  {columns.map((column, colIndex) => (
+                    <div key={colIndex} className="py-6 sm:py-2">
+                      <span className="font-semibold">{column}:</span>{" "}
+                      {row.content[colIndex]}
+                      <br />
+                      <a
+                        href={row.links[colIndex].url}
+                        className="font-semibold text-blue-600 hover:text-blue-400 dark:text-blue-400 pt-4 block dark:hover:text-blue-300"
+                      >
+                        {row.links[colIndex].text}
+                      </a>
+                    </div>
+                  ))}
+                </td>
               </tr>
-              <tr>
+              <tr className="hidden sm:table-row">
                 {row.content.map((content, contentIndex) => (
                   <td
                     key={contentIndex}
