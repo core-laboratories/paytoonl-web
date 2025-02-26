@@ -27,7 +27,11 @@ export default {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          "postcss-loader"
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,

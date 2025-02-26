@@ -1,9 +1,0 @@
-{
-    "homeCarousel": [
-      { "key": "header_logo_dark", "link": "https://example.com/1" },
-      { "key": "header_logo_dark", "link": "https://example.com/2" },
-      { "key": "header_logo_dark", "link": "https://example.com/3" },
-      { "key": "header_logo_dark", "link": "https://example.com/3" }
-
-    ]
-  }
