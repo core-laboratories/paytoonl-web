@@ -1,10 +1,21 @@
 import Hero from "../../Components/Hero/Hero";
+import Products from "../../Components/Products/Products";
+import LogoCloud from "../../Components/LogoCloud/LogoCloud";
+import InfoBlock from "../../Components/InfoBlock/InfoBlock";
+import FAQ from "../../Components/FAQ/FAQ";
+import PassBlock from "../../Components/PassBlock/PassBlock";
+import React from "react";
 
 const Home = () => {
   return (
-    <div className="font-display min-h-screen flex flex-col">
+    <main>
       <Hero />
-    </div>
+      <Products />
+      <LogoCloud />
+      <InfoBlock />
+      <FAQ />
+      <PassBlock />
+    </main>
   );
 };
 

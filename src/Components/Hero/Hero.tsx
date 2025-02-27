@@ -1,35 +1,37 @@
+import React from "react";
+import useTypedText from "../../hooks/useTypedText";
+
 const Hero = () => {
+  const animatedTexts = [
+    "ICAN",
+    "IBAN",
+    "ACH",
+    "UPI",
+    "PIX",
+    "BIC",
+    "CASH",
+    "$€¥₹₽",
+    "Money"
+  ];
+  const currentText = useTypedText(animatedTexts);
   return (
-    <section
-      className="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply"
-      style={{ backgroundImage: "url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')" }}
-    >
-      <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
-          We invest in the world's potential
-        </h1>
-        <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
-          Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.
-        </p>
-        <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-          <a
-            href="#"
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-          >
-            Get started
-            <svg className="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-          </a>
-          <a
-            href="#"
-            className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
-          >
-            Learn more
-          </a>
-        </div>
+  <section className="min-h-96 relative flex flex-1 shrink-0 items-center justify-center overflow-hidden bg-gray-100 py-16 shadow-lg md:py-20 xl:py-48">
+    <img src="https://images.unsplash.com/photo-1618004652321-13a63e576b80?auto=format&q=75&fit=crop&w=1500" loading="lazy" alt="Photo by Fakurian Design" className="absolute inset-0 h-full w-full object-cover object-center" />
+
+    <div className="absolute inset-0 bg-indigo-500 mix-blend-multiply"></div>
+    <div className="absolute inset-0 bg-indigo-500 mix-blend-multiply"></div>
+
+    <div className="relative flex flex-col items-center p-4 sm:max-w-xl">
+      <p className="mb-4 text-center text-lg text-indigo-200 sm:text-xl md:mb-8">Visionaries Beyond Financial Flow</p>
+      <h1 className="mb-8 text-center text-4xl text-white sm:text-5xl md:mb-12 md:text-6xl">PayTo:{currentText}</h1>
+
+      <div className="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
+        <a href="https://payto.money" target="_blank" rel="noopener noreferrer" className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">Start using</a>
+
+        <a href="/alliance" className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Join Alliance</a>
       </div>
-    </section>
+    </div>
+  </section>
   );
 };
 

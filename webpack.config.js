@@ -1,9 +1,9 @@
-// @ts-check
-import path from 'path';
-import { fileURLToPath } from 'url';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from "path";
+import { fileURLToPath } from "url";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
-// Get __dirname equivalent in ES modules
+// Get __filename and __dirname equivalents in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -13,26 +13,24 @@ export default {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
-
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader'
-      },
-      {
-        test: /\.js$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
         },
       },
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader'
+          "style-loader",
+          "css-loader",
+          "postcss-loader"
         ]
       },
       {
@@ -51,17 +49,23 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      favicon: "./public/static/icons/favicon.ico",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "public/manifest.json", to: "manifest.json" },
+        { from: "public/static/icons", to: "static/icons" },
+      ],
     }),
   ],
+  resolve: {
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, "dist"),
-      serveIndex: false
     },
     compress: true,
     port: 9000,
-  },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
 };
