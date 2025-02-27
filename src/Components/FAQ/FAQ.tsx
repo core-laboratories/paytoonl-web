@@ -78,11 +78,15 @@ export default function FAQSimple() {
                 </div>
 
                 <p
-                  className={`mb-4 text-gray-500 transition-all duration-200 ${
-                    activeIndex === index ? "block" : "hidden"
+                  className={`grid overflow-hidden transition-all duration-300 ease-in-out ${
+                    activeIndex === index
+                      ? "grid-rows-[1fr] opacity-100 mb-4"
+                      : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
-                  {faq.answer}
+                  <span className="overflow-hidden">
+                    {faq.answer}
+                  </span>
                 </p>
               </div>
             ))}
