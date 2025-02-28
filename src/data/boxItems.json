@@ -1,0 +1,26 @@
+{ 
+  "ORIC": {
+    "content": [
+      {
+        "title": "Unique VASP identification",
+        "text": "Every digital wallet provider gets a globally recognized ORIC code.",
+        "icon": "hi-rectangle-stack"
+      },
+      {
+        "title": "Enhanced security",
+        "text": "ORIC prevents fraud by ensuring wallet authenticity before transactions",
+        "icon": "hi-cube"
+      },
+      {
+        "title": "Seamless interoperability",
+        "text": "ORIC makes it easier for VASPs, financial institutions, and regulators to track and verify digital asset transactions.",
+        "icon": "hi-cog"
+      },
+      {
+        "title": "Flexible and multi-asset",
+        "text": "ORIC supports crypto and fiat payments, making it future-proof.",
+        "icon": "hi-switch-horizontal"
+      }
+    ]
+  }
+}
