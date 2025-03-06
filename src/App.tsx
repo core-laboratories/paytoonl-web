@@ -4,6 +4,8 @@ import Footer from "./Components/Footer/Footer.tsx";
 import Home from "./Pages/Home/Home.tsx";
 import Solutions from "./Pages/Solutions/Solutions.tsx";
 import PayTo from "./Components/Solutions/PayTo/PayTo.tsx";
+import FinTag from "./Components/Solutions/FinTag/FinTag.tsx";
+import Developers from "./Pages/Developers/Developers.tsx";
 import React from "react";
 
 const App = () => {
@@ -14,6 +16,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/solutions/payto" element={<PayTo />} />
+        <Route path="/solutions/fintag" element={<FinTag />} />
+        <Route path="/developers" element={<Developers />} />
       </Routes>
       <Footer />
     </Router>

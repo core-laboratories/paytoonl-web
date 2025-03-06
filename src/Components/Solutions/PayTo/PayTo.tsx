@@ -88,6 +88,23 @@ const PayTo = () => {
           </div>
         </div>
       </div>
+      <p className=" px-8 leading-relaxed text-gray-500 md:mb-2  xl:text-lg">
+        Adopted by Google Chromium, the <b>PayTo:</b> protocol is now natively
+        supported across all mobile devices and tablets, making it widely
+        accessible for everyday use. This allows users to initiate payments
+        directly from web browsers and apps without relying on proprietary
+        payment solutions. As an open standard, it ensures compatibility across
+        different platforms and financial institutions, driving innovation and
+        accessibility in digital payments.
+      </p>
+      <div className="w-full mb-10 md:mb-16 flex justify-center">
+        <a
+          href="#"
+          className="inline-block w-1/5 px-8 rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
+        >
+          Generate PayTo:
+        </a>
+      </div>
     </section>
   );
 };
