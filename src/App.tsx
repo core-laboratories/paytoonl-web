@@ -5,6 +5,7 @@ import Home from "./Pages/Home/Home.tsx";
 import Solutions from "./Pages/Solutions/Solutions.tsx";
 import PayTo from "./Components/Solutions/PayTo/PayTo.tsx";
 import React from "react";
+import Alliance from "./Pages/Alliance/Alliance.tsx";
 
 const App = () => {
   return (
@@ -14,6 +15,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/solutions/payto" element={<PayTo />} />
+
+        <Route path="/alliance" element={<Alliance />} />
       </Routes>
       <Footer />
     </Router>
