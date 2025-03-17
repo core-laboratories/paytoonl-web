@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" container mx-auto bg-white pb-6 sm:pb-8 lg:pb-12">
+    <div className=" container mx-auto bg-white pb-6 sm:pb-8 lg:pb-12 px-4 sm:px-6 lg:px-0">
       <div className=" max-w-screen-2xl ">
         <header className="mb-4 flex items-center justify-between py-4 md:py-8">
           <a
