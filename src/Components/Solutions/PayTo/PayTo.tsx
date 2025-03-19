@@ -1,9 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import data from "../../../data/paytoStandarts.json";
 
 const PayTo = () => {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate("/solutions");
+  };
   return (
-    <section className="container mx-auto flex flex-col gap-6 sm:gap-10 md:gap-16">
+    <section className="container mx-auto flex flex-col px-4 gap-6 sm:gap-10 md:gap-16 lg:px-0">
       <div className="container mx-auto flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
         <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
           <p className="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-lg xl:text-xl">
@@ -87,6 +93,48 @@ const PayTo = () => {
             ))}
           </div>
         </div>
+      </div>
+      <div className="flex flex-col pb-12 lg-pb-0 items-center justify-center text-center">
+        <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
+          Adopted by Google Chromium, the <b>PayTo:</b> protocol is now natively
+          supported across all mobile devices and tablets, making it widely
+          accessible for everyday use. This allows users to initiate payments
+          directly from web browsers and apps without relying on proprietary
+          payment solutions. As an open standard, it ensures compatibility
+          across different platforms and financial institutions, driving
+          innovation and accessibility in digital payments.
+        </p>
+
+        <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-center">
+          <a
+            href="#"
+            className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
+          >
+            Generate PayTo:
+          </a>
+        </div>
+      </div>
+      <div className="flex justify-center mt-8">
+        <button
+          onClick={handleBackClick}
+          className="inline-flex items-center rounded-lg bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700"
+        >
+          <svg
+            className="w-4 h-4 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 19l-7-7 7-7"
+            ></path>
+          </svg>
+          Back to Solutions
+        </button>
       </div>
     </section>
   );
