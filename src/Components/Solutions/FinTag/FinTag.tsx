@@ -6,7 +6,6 @@ import Title from "../../Title/Title.tsx";
 import Features from "../Features/Features.tsx";
 import features from "../../../data/features.json";
 
-
 const FinTag = () => {
   const navigate = useNavigate();
 
@@ -15,7 +14,6 @@ const FinTag = () => {
   };
   return (
     <>
-
       <section className="container mx-auto flex flex-col px-4 gap-6 sm:gap-10 md:gap-16 lg:px-0">
         <div className="container mx-auto flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
           <div className="flex flex-col justify-center sm:text-center lg:pb-12 lg:text-left xl:w-5/12 xl:pb-24">
@@ -301,20 +299,6 @@ const FinTag = () => {
           </div>
         </div>
       </section>
-
-      <div className="container mx-auto mb-24">
-        <div className="mb-24">
-          <Title text="Showcase:" />
-          <pre className="bg-gray-100 dark:bg-gray-800 mt-8 p-4 rounded-lg overflow-auto">
-            <code className="language-html text-gray-800 dark:text-gray-100">
-              {`<meta property="iban" content="BE68539007547034" />\n`}
-              {`<meta property="upi" content="example@upi" />\n`}
-              {`<meta property="bic" content="DEUTDEFF" />`}
-            </code>
-          </pre>
-        </div>
-      </div>
-
     </>
   );
 };

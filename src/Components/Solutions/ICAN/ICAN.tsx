@@ -343,6 +343,6 @@ const ICAN = () => {
       </section>
     </div>
   );
-
+};
 
 export default ICAN;

@@ -7,11 +7,11 @@ const Developers = () => {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-0">
       <section className="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
-        <div className="flex flex-col items-center justify-center sm:text-center lg:items-start lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
+        <div className="flex flex-col items-start justify-center sm:text-left lg:items-start lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
           <p className="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-md xl:text-md">
             For Developers – Build the Future of Finance with PayTo: Standards
           </p>
-          <h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">
+          <h1 className="mb-8 text-4xl font-bold text-left text-black sm:text-5xl md:mb-12 md:text-6xl">
             Developers
           </h1>
           <p className="mb-8 leading-relaxed font-bold text-gray-500 md:mb-12 lg:w-4/5 xl:text-xl">

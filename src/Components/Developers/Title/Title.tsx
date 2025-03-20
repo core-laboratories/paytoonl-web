@@ -3,7 +3,7 @@ import React from "react";
 const Title = () => {
   return (
     <section className="flex flex-col items-center">
-      <div className="flex max-w-xl flex-col items-center pb-0 pt-8 text-center sm:pb-16 lg:pb-32 lg:pt-32">
+      <div className="flex max-w-xl flex-col items-center pb-24 pt-8 text-center sm:pb-16 lg:pb-32 lg:pt-32">
         <h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">
           Get Involved – Start Building Today!
         </h1>

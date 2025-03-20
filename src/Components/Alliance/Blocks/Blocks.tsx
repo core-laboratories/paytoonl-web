@@ -9,7 +9,7 @@ const Blocks = () => {
       <div className="w-full container mx-auto overflow-hidden rounded-lg border border-gray-300 bg-gray-50 shadow-sm lg:block">
         <div className="flex flex-col lg:flex-row max-w-screen-xl items-center gap-8 p-4 sm:p-8">
           <div className="grid w-full lg:w-2/3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-            <a href="#" className="group flex gap-4">
+            <div className="group flex gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 group-hover:bg-indigo-600 group-active:bg-indigo-700 md:h-14 md:w-14">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -32,9 +32,9 @@ const Blocks = () => {
                   Banks & Financial Institutions
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a href="#" className="group flex gap-4">
+            <div className="group flex gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 group-hover:bg-indigo-600 group-active:bg-indigo-700 md:h-14 md:w-14">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -57,9 +57,9 @@ const Blocks = () => {
                   Crypto Wallets & Exchanges
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a href="#" className="group flex gap-4">
+            <div className="group flex gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 group-hover:bg-indigo-600 group-active:bg-indigo-700 md:h-14 md:w-14">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -82,9 +82,9 @@ const Blocks = () => {
                   VASPs (Virtual Asset Service Providers)
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a href="#" className="group flex gap-4">
+            <div className="group flex gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 group-hover:bg-indigo-600 group-active:bg-indigo-700 md:h-14 md:w-14">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -101,9 +101,9 @@ const Blocks = () => {
                   Fintech & Payment Providers
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a href="#" className="group flex gap-4">
+            <div className="group flex gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 group-hover:bg-indigo-600 group-active:bg-indigo-700 md:h-14 md:w-14">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -126,9 +126,9 @@ const Blocks = () => {
                   Regulatory & Compliance Bodies
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a href="#" className="group flex gap-4">
+            <div className="group flex gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 group-hover:bg-indigo-600 group-active:bg-indigo-700 md:h-14 md:w-14">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +151,7 @@ const Blocks = () => {
                   E-commerce & Digital Platforms
                 </div>
               </div>
-            </a>
+            </div>
           </div>
           <div className="w-full lg:w-1/3 overflow-hidden rounded-lg border border-gray-300">
             <div className="h-64 bg-gray-100">
@@ -164,21 +164,14 @@ const Blocks = () => {
             </div>
           </div>
         </div>
-        <a
-          href="#"
-          className="block bg-gray-50 p-4 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
-        >
+        <div className="block bg-gray-50 p-4 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
           <div className="mb-1 flex items-center gap-1.5">
             <span className="font-semibold leading-none">
-              Enterprise solutions
+              If your company is building financial services, digital assets, or
+              payment solutions, you belong in the PayTo:Consortium.
             </span>
           </div>
-
-          <p className="text-sm text-gray-500">
-            If your company is building financial services, digital assets, or
-            payment solutions, you belong in the PayTo:Consortium.
-          </p>
-        </a>
+        </div>
       </div>
     </>
   );
