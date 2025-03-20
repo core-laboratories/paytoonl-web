@@ -39,7 +39,7 @@ const Developers = () => {
 
         <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12">
           <img
-            src="https://images.unsplash.com/photo-1620206343767-7da98185edd4?auto=format&q=75&fit=crop&w=1000"
+            src="https://images.unsplash.com/photo-1579547621113-e4bb2a19bdd6?q=80&w=3039&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             loading="lazy"
             alt="Photo by Fakurian Design"
             className="h-full w-full object-cover object-center"
