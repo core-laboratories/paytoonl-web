@@ -7,6 +7,8 @@ import PayTo from "./Components/Solutions/PayTo/PayTo.tsx";
 import FinTag from "./Components/Solutions/FinTag/FinTag.tsx";
 import ICAN from "./Components/Solutions/ICAN/ICAN.tsx";
 import ORIC from "./Components/Solutions/ORIC/ORIC.tsx";
+import Pass from "./Components/Solutions/Pass/Pass.tsx";
+import TxMS from "./Components/Solutions/TxMS/TxMS.tsx";
 import React from "react";
 
 const App = () => {
@@ -20,6 +22,8 @@ const App = () => {
         <Route path="/solutions/fintag" element={<FinTag />} />
         <Route path="/solutions/ican" element={<ICAN />} />
         <Route path="/solutions/oric" element={<ORIC />} />
+        <Route path="/solutions/pass" element={<Pass />} />
+        <Route path="/solutions/txms" element={<TxMS />} />
       </Routes>
       <Footer />
     </Router>
