@@ -1,4 +1,5 @@
 import React from "react";
+
 import { useNavigate } from "react-router-dom";
 
 const ICAN = () => {
@@ -342,6 +343,6 @@ const ICAN = () => {
       </section>
     </div>
   );
-};
+
 
 export default ICAN;

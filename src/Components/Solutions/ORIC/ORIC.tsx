@@ -287,8 +287,6 @@ const ORIC = () => {
           </div>
         </div>
       </section>
-    </>
-  );
-};
+
 
 export default ORIC;

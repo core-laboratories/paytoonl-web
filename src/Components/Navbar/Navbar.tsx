@@ -10,8 +10,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-white pb-6 sm:pb-8 lg:pb-12">
-      <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <div className=" container mx-auto bg-white pb-6 sm:pb-8 lg:pb-12 px-4 sm:px-6 lg:px-0">
+      <div className=" max-w-screen-2xl ">
         <header className="mb-4 flex items-center justify-between py-4 md:py-8">
           <a
             href="/"
@@ -30,7 +30,7 @@ const Navbar = () => {
               Solutions
             </a>
             <a
-              href="/developer"
+              href="/developers"
               className="text-lg text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
             >
               Developer
@@ -134,7 +134,7 @@ const Navbar = () => {
                 Solutions
               </a>
               <a
-                href="/developer"
+                href="/developers"
                 className="text-lg text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
               >
                 Developer
