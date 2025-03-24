@@ -240,7 +240,7 @@ export default function LogosPlain() {
                 very similar to real text.
               </p>
               <a
-                href="#"
+                href="/solutions/donate-to"
                 className="font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
               >
                 More
