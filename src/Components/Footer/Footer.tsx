@@ -33,7 +33,7 @@ const Footer = () => {
               <nav className="flex flex-col gap-4">
                 <div>
                   <a
-                    href="#"
+                    href="/solutions/payto"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     PayTo:
@@ -42,7 +42,7 @@ const Footer = () => {
 
                 <div>
                   <a
-                    href="#"
+                    href="/solutions/pass"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Pass
@@ -51,7 +51,7 @@ const Footer = () => {
 
                 <div>
                   <a
-                    href="#"
+                    href="/solutions/fintag"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     FinTag
@@ -60,7 +60,7 @@ const Footer = () => {
 
                 <div>
                   <a
-                    href="#"
+                    href="/solutions/txms"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     TxMS
@@ -69,7 +69,7 @@ const Footer = () => {
 
                 <div>
                   <a
-                    href="#"
+                    href="/solutions/ican"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     ICAN
@@ -78,7 +78,7 @@ const Footer = () => {
 
                 <div>
                   <a
-                    href="#"
+                    href="/solutions/donate"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     DonateTo:
@@ -87,7 +87,7 @@ const Footer = () => {
 
                 <div>
                   <a
-                    href="#"
+                    href="/solutions/oric"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     ORIC
