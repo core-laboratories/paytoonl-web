@@ -44,7 +44,9 @@ const Navbar = () => {
           </nav>
 
           <a
-            href="/join"
+            href="/joinus"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden rounded-lg bg-gray-200 px-8 py-3 text-center text-sm text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:inline-block"
           >
             Join Alliance

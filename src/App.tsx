@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar.tsx";
 import Footer from "./Components/Footer/Footer.tsx";
@@ -13,8 +14,7 @@ import TxMS from "./Components/Solutions/TxMS/TxMS.tsx";
 import DonateTo from "./Components/Solutions/DonateTo/DonateTo.tsx";
 
 import Developers from "./Pages/Developers/Developers.tsx";
-
-import React from "react";
+import JoinUs from "./Pages/JoinUs/JoinUs.tsx";
 import Alliance from "./Pages/Alliance/Alliance.tsx";
 
 const App = () => {
@@ -35,6 +35,7 @@ const App = () => {
 
         <Route path="/developers" element={<Developers />} />
         <Route path="/alliance" element={<Alliance />} />
+        <Route path="/joinus" element={<JoinUs />} />
       </Routes>
       <Footer />
     </Router>

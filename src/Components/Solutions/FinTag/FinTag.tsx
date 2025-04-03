@@ -105,8 +105,8 @@ const FinTag = () => {
         </div>
       </section>
 
-      <section className="bg-white py-6 sm:py-8 lg:py-12">
-        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+      <section className="container mx-auto bg-white py-6 sm:py-8 lg:py-12">
+        <div className="mx-auto max-w-screen-2xl md:px-8">
           <div className="mb-10 md:mb-16">
             <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
               Why is FinTag Important?
@@ -282,6 +282,14 @@ const FinTag = () => {
           </div>
 
           <div className="flex flex-col mt-12 lg:mt-24 pb-12 lg-pb-0 items-center justify-center text-center">
+            <p className="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-lg">
+              Introducing
+            </p>
+
+            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+              FinTag - A Meta Tag Standard for Financial Payment Information
+            </h2>
+
             <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
               By adopting <b>FinTag,</b> institutions and businesses can create
               a safer financial environment for their clients, ensuring payment

@@ -117,6 +117,14 @@ const PayTo = () => {
       </div>
 
       <div className="flex flex-col pb-12 lg-pb-0 items-center justify-center text-center">
+        <p className="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-lg">
+          Introducing
+        </p>
+
+        <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+          PayTo: protocol
+        </h2>
+
         <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
           Adopted by Google Chromium, the <b>PayTo:</b> protocol is now natively
           supported across all mobile devices and tablets, making it widely
