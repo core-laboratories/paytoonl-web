@@ -11,6 +11,7 @@ import ICAN from "./Components/Solutions/ICAN/ICAN.tsx";
 import ORIC from "./Components/Solutions/ORIC/ORIC.tsx";
 import Pass from "./Components/Solutions/Pass/Pass.tsx";
 import TxMS from "./Components/Solutions/TxMS/TxMS.tsx";
+import DonateTo from "./Components/Solutions/DonateTo/DonateTo.tsx";
 
 import Developers from "./Pages/Developers/Developers.tsx";
 import JoinUs from "./Pages/JoinUs/JoinUs.tsx";
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/solutions/oric" element={<ORIC />} />
         <Route path="/solutions/pass" element={<Pass />} />
         <Route path="/solutions/txms" element={<TxMS />} />
+        <Route path="/solutions/donate-to" element={<DonateTo />} />
 
         <Route path="/developers" element={<Developers />} />
         <Route path="/alliance" element={<Alliance />} />
