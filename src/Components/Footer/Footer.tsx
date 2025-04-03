@@ -78,7 +78,7 @@ const Footer = () => {
 
                 <div>
                   <a
-                    href="/solutions/donate"
+                    href="/solutions/donate-to"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     DonateTo:
@@ -131,7 +131,7 @@ const Footer = () => {
 
                 <div>
                   <a
-                    href="/join"
+                    href="/joinus"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Join
