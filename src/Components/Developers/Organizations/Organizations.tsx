@@ -16,7 +16,7 @@ const Organizations = () => {
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 xl:grid-cols-3 xl:gap-16">
-          <div className="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
+          <div className="flex flex-col items-start gap-4 md:flex-row lg:gap-6">
             <a
               href="#"
               className="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
@@ -61,7 +61,7 @@ const Organizations = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
+          <div className="flex flex-col items-start gap-4 md:flex-row lg:gap-6">
             <a
               href="#"
               className="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
@@ -105,7 +105,7 @@ const Organizations = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
+          <div className="flex flex-col items-start gap-4 md:flex-row lg:gap-6">
             <a
               href="#"
               className="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
@@ -149,7 +149,7 @@ const Organizations = () => {
             </div>
           </div>
         </div>
-        <p className="mt-16 mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+        <p className="mt-8 mb-12 lg:mt-16 mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
           (If your company is working with PayTo standards, reach out to get
           listed here!)
         </p>

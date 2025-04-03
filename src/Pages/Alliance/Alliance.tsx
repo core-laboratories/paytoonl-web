@@ -11,7 +11,7 @@ const Alliance = () => {
       <Organizations />
       <Features />
       <Blocks />
-      <div className="container mt-12 mx-auto bg-white py-8 sm:py-12 lg:py-24 px-4 lg:px-0 ">
+      <div className="container mt-6 mx-auto bg-white py-24 sm:py-24 lg:py-24 px-4 lg:px-0 lg:mt-12">
         <div className="mx-auto max-w-screen-2xl">
           <p className="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-lg">
             Join Us
