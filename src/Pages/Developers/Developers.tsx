@@ -9,7 +9,7 @@ const Developers = () => {
       <section className="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
         <div className="flex flex-col items-start justify-center sm:text-left lg:items-start lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
           <p className="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-md xl:text-md">
-            For Developers – Build the Future of Finance with PayTo: Standards
+            For Developers – Build the Future of Finance with PayTo Standards
           </p>
           <h1 className="mb-8 text-4xl font-bold text-left text-black sm:text-5xl md:mb-12 md:text-6xl">
             Developers
@@ -19,7 +19,7 @@ const Developers = () => {
             Join the Leading Developers Shaping Next-Gen Payments{" "}
           </p>
           <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-            <b>The PayTo: ecosystem</b> is powered by{" "}
+            <b>The PayTo ecosystem</b> is powered by{" "}
             <b>top development organizations and fintech innovators</b> who are
             actively building, integrating, and expanding{" "}
             <b>global financial standards</b> such as{" "}

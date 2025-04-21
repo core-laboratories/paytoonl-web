@@ -43,14 +43,14 @@ const Pass = () => {
             </h1>
 
             <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              <i>PayTo:Pass - Secure Payment Requests with PayTo: Protocol</i>
+              <i>PayTo PayPass - Secure Payment Requests with PayTo Protocol</i>
             </p>
             <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
               A <b>.pkpass</b> file is a digital pass format primarily used by
               <b>Apple Wallet</b> and <b>Google Wallet</b> to store tickets,
               boarding passes, coupons, and payment cards. In the context of{" "}
               <b>
-                PayTo: protocol, PKPASS files serve as a secure and flexible
+                PayTo protocol, PKPASS files serve as a secure and flexible
                 method to request payments
               </b>{" "}
               while <b>protecting sensitive financial information.</b>{" "}
@@ -58,7 +58,7 @@ const Pass = () => {
             <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
               Instead of manually sharing bank details, businesses and
               individuals can generate a <b>.pkpass file</b> that contains the{" "}
-              <b>PayTo: payment request.</b>
+              <b>PayTo payment request.</b>
               This file can then be shared securely with the recipient, who can
               import it into <b>Apple Wallet or Google Wallet</b> to process the
               transaction without exposing personal banking details.
@@ -278,7 +278,7 @@ const Pass = () => {
                     pass can contain:
                   </p>
                   <ul className="list-disc text-gray-500 pl-5">
-                    <li>Payment instructions (PayTo: details)</li>
+                    <li>Payment instructions (PayTo details)</li>
                     <li>Expiration dates</li>
                     <li>Dynamic QR codes or barcodes for quick scanning</li>
                     <li>Company branding and customization</li>
@@ -305,11 +305,11 @@ const Pass = () => {
             </p>
 
             <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-              The Future of Digital Payments with PayTo:Pass
+              The Future of Digital Payments with PayTo PayPass
             </h2>
 
             <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-              By integrating <b>PKPASS with the PayTo: protocol,</b> businesses
+              By integrating <b>PKPASS with the PayTo protocol,</b> businesses
               and individuals can{" "}
               <b>send, receive, and manage payment requests effortlessly.</b>{" "}
               This method ensures{" "}

@@ -9,10 +9,10 @@ const Hero = () => {
         </p>
 
         <h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">
-          Join the PayTo:Consortium – Shaping the Future of Digital Finance
+          Join the PayTo Alliance – Shaping the Future of Digital Finance
         </h1>
         <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-          The PayTo:Consortium is an open initiative bringing together
+          The PayTo Alliance is an open initiative bringing together
           innovative companies, financial institutions, VASP providers, and
           blockchain pioneers to create global financial standards that make
           digital transactions faster, safer, and more interoperable.

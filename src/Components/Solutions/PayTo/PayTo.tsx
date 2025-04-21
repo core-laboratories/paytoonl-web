@@ -38,11 +38,11 @@ const PayTo = () => {
           </p>
 
           <h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">
-            PayTo:
+            PayTo
           </h1>
 
           <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-            The PayTo: protocol is a universal payment initiation standard
+            The PayTo protocol is a universal payment initiation standard
             designed to streamline digital transactions by providing a
             consistent and interoperable way to represent payment targets. It
             simplifies how payments are directed between users, businesses, and
@@ -122,11 +122,11 @@ const PayTo = () => {
         </p>
 
         <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-          PayTo: protocol
+          PayTo protocol
         </h2>
 
         <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-          Adopted by Google Chromium, the <b>PayTo:</b> protocol is now natively
+          Adopted by Google Chromium, the <b>PayTo</b> protocol is now natively
           supported across all mobile devices and tablets, making it widely
           accessible for everyday use. This allows users to initiate payments
           directly from web browsers and apps without relying on proprietary
@@ -140,7 +140,7 @@ const PayTo = () => {
             href="#"
             className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
           >
-            Generate PayTo:
+            Generate PayTo
           </a>
         </div>
       </div>

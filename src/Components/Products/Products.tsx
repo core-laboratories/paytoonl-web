@@ -12,7 +12,7 @@ export default function Products() {
 
         <div className="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-3">
           <div className="flex flex-col rounded-lg border border-gray-300 bg-indigo-50 p-4 md:p-6">
-            <h3 className="mb-2 text-lg font-semibold md:text-xl">PayTo: Protocol</h3>
+            <h3 className="mb-2 text-lg font-semibold md:text-xl">PayTo Protocol</h3>
             <p className="mb-4 text-gray-500">A protocol that enables direct payments without intermediaries.</p>
             <a href="#" className="mt-auto font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">More</a>
           </div>

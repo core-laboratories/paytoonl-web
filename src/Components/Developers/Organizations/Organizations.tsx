@@ -11,7 +11,7 @@ const Organizations = () => {
 
           <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
             The following organizations are actively contributing to the
-            development, integration, and adoption of PayTo: protocols:
+            development, integration, and adoption of PayTo protocols:
           </p>
         </div>
 
@@ -41,7 +41,7 @@ const Organizations = () => {
               </h2>
 
               <p className="text-gray-500 flex-1">
-                Blockchain Infrastructure and PayTo: protocol
+                Blockchain Infrastructure and PayTo protocol
               </p>
 
               <div className="flex flex-col">
@@ -86,7 +86,7 @@ const Organizations = () => {
               </h2>
 
               <p className="text-gray-500 flex-1">
-                PayTo: protocol and DePIN services
+                PayTo protocol and DePIN services
               </p>
               <div className="flex flex-col">
                 <a
