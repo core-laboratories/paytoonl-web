@@ -1,10 +1,10 @@
 {
-	"name": "PayTo:Alliance",
-	"short_name": "PayTo:Alliance",
+	"name": "PayTo Alliance",
+	"short_name": "PayTo Alliance",
 	"display": "standalone",
 	"theme_color": "#77bb65",
 	"background_color": "#111827",
-	"description": "PayTo:Alliance is an Alliance for Financial Services.",
+	"description": "PayTo Alliance is an Alliance for Financial Services.",
 	"icons": [
 	  {
 		"src": "/icons/icon-48x48.png",

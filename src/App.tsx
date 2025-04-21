@@ -20,24 +20,28 @@ import Alliance from "./Pages/Alliance/Alliance.tsx";
 const App = () => {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/solutions" element={<Solutions />} />
-        <Route path="/solutions/payto" element={<PayTo />} />
-        <Route path="/solutions/fintag" element={<FinTag />} />
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/solutions/payto" element={<PayTo />} />
+            <Route path="/solutions/fintag" element={<FinTag />} />
 
-        <Route path="/solutions/ican" element={<ICAN />} />
-        <Route path="/solutions/oric" element={<ORIC />} />
-        <Route path="/solutions/pass" element={<Pass />} />
-        <Route path="/solutions/txms" element={<TxMS />} />
-        <Route path="/solutions/donate-to" element={<DonateTo />} />
+            <Route path="/solutions/ican" element={<ICAN />} />
+            <Route path="/solutions/oric" element={<ORIC />} />
+            <Route path="/solutions/pass" element={<Pass />} />
+            <Route path="/solutions/txms" element={<TxMS />} />
+            <Route path="/solutions/donate-to" element={<DonateTo />} />
 
-        <Route path="/developers" element={<Developers />} />
-        <Route path="/alliance" element={<Alliance />} />
-        <Route path="/joinus" element={<JoinUs />} />
-      </Routes>
-      <Footer />
+            <Route path="/developers" element={<Developers />} />
+            <Route path="/alliance" element={<Alliance />} />
+            <Route path="/joinus" element={<JoinUs />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 };

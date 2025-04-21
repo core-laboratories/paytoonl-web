@@ -19,7 +19,7 @@ const Navbar = () => {
             aria-label="logo"
           >
             <img src={logo} alt="logo" className="w-10 h-10" />
-            PayTo:Alliance
+            PayTo Alliance
           </a>
 
           <nav className="hidden gap-12 lg:flex">

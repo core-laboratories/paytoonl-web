@@ -168,7 +168,7 @@ const Blocks = () => {
           <div className="mb-1 flex items-center gap-1.5">
             <span className="font-semibold leading-none">
               If your company is building financial services, digital assets, or
-              payment solutions, you belong in the PayTo:Consortium.
+              payment solutions, you belong in the PayTo Alliance.
             </span>
           </div>
         </div>
