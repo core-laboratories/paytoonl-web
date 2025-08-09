@@ -1,9 +1,9 @@
-import Hero from "../../Components/Hero/Hero";
-import Products from "../../Components/Products/Products";
-import LogoCloud from "../../Components/LogoCloud/LogoCloud";
-import InfoBlock from "../../Components/InfoBlock/InfoBlock";
-import FAQ from "../../Components/FAQ/FAQ";
-import PassBlock from "../../Components/PassBlock/PassBlock";
+import Hero from "../../Components/Hero/Hero.tsx";
+import Products from "../../Components/Products/Products.tsx";
+import MembersList from "../../Components/MembersList/MembersList.tsx";
+import InfoBlock from "../../Components/InfoBlock/InfoBlock.tsx";
+import FAQ from "../../Components/FAQ/FAQ.tsx";
+import PassBlock from "../../Components/PassBlock/PassBlock.tsx";
 import React from "react";
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
     <main>
       <Hero />
       <Products />
-      <LogoCloud />
+      <MembersList />
       <InfoBlock />
       <FAQ />
       <PassBlock />

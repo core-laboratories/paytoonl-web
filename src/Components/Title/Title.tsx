@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Title({ text }) {
+export default function Title({ text }: { text: string }) {
   return (
     <>
       {/* Divider: With Heading */}

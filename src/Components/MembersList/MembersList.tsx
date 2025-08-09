@@ -1,7 +1,7 @@
 import React from "react";
-import allianceMembers from "../../data/allianceMembers.json";
+import allianceMembers from "../../data/allianceMembers.json" with { type: "json" };
 
-const LogoCloud = () => {
+const MembersList = () => {
   // Get 5 random companies from the array
   const randomCompanies = [...allianceMembers]
     .sort(() => Math.random() - 0.5)
@@ -15,8 +15,7 @@ const LogoCloud = () => {
             Alliance members
           </h2>
           <p className="max-w-md text-center text-gray-400 lg:text-right">
-            Here are some of the companies that have joined the PayTo Alliance
-            to make payments easier for everyone.
+            Visionaries that have joined the PayTo Alliance to make payments easier for everyone.
           </p>
         </div>
 
@@ -98,4 +97,4 @@ const LogoCloud = () => {
   );
 };
 
-export default LogoCloud;
+export default MembersList;

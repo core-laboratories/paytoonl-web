@@ -55,6 +55,7 @@ export default {
       patterns: [
         { from: "public/manifest.json", to: "manifest.json" },
         { from: "public/static/icons", to: "static/icons" },
+        { from: "public/static/images", to: "static/images" },
       ],
     }),
   ],

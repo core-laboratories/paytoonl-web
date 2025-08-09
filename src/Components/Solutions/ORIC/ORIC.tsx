@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowLeft, CheckCircle, FileInput } from "lucide-react";
 
 const ORIC = () => {
   const navigate = useNavigate();
@@ -17,76 +18,44 @@ const ORIC = () => {
               onClick={handleBackClick}
               className="inline-flex items-center rounded-lg bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 lg:w-1/3 mb-16"
             >
-              <svg
-                className="w-4 h-4 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M15 19l-7-7 7-7"
-                ></path>
-              </svg>
+              <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Solutions
             </button>
-
-            <p className="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-lg xl:text-xl">
-              Very proud to introduce
-            </p>
             <h1 className="mb-6 text-4xl font-bold text-black sm:text-5xl md:mb-4 md:text-6xl">
               ORIC
             </h1>
             <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              <i>
-                ORIC (Organization Identifier Code): A Digital Wallet Identifier
-                for VASP Providers
-              </i>
-            </p>
-            <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              The <b>Organization Identifier Code (ORIC)</b> is a{" "}
-              <b>unique identification code</b> designed for{" "}
-              <b>Virtual Asset Service Providers (VASPs)</b> to facilitate
-              digital wallet transactions. Similar to the{" "}
-              <b>BIC (Bank Identifier Code)</b> used in traditional banking,
-              ORIC serves as an
-              <b>international standard</b> for identifying{" "}
-              <b>VASPs and their digital wallet services</b> across different
-              jurisdictions.
+              ORIC (Organization Identifier Code) - A Digital Wallet Identifier for VASP Providers
             </p>
             <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-              Any <b>VASP provider can apply</b> to issue their own{" "}
-              <b>ORIC identifier,</b>
-              provided they meet the following conditions:
-              <br /> ✅ <b>Know Your Business (KYB) verification</b> <br /> ✅
-              <b>Registered as a VASP provider</b>
+              Any <b>VASP provider can apply</b> to issue their own <b>ORIC identifier,</b> provided they meet the following conditions:
+              <br />
+              <span className="inline-flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-indigo-500" aria-hidden="true" />
+                <b>Know Your Business (KYB) verification</b>
+              </span>
+              <br />
+              <span className="inline-flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-indigo-500" aria-hidden="true" />
+                <b>Registered as a VASP provider</b>
+              </span>
             </p>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
               <a
-                href="#"
+                href="mailto:apply@payto.onl?subject=ORIC%20Application"
                 className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
               >
-                Start now
-              </a>
-
-              <a
-                href="#"
-                className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
-              >
-                Take tour
+                Apply as a VASP provider
               </a>
             </div>
           </div>
 
-          <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12">
+          <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12 max-h-96">
             <img
-              src="https://images.unsplash.com/photo-1618172193622-ae2d025f4032?q=80&w=3164&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/static/images/splash-oric.jpg"
               loading="lazy"
-              alt="Photo by Fakurian Design"
+              alt="Photo by Tim Evans"
               className="h-full w-full object-cover object-center"
             />
           </div>
@@ -109,7 +78,7 @@ const ORIC = () => {
                   Identifies the VASP provider and is usually a shortened
                   version of its name.
                 </li>
-                <li>Example: Ping for Ping Exchange.</li>
+                <li>Example: PING for Ping Exchange.</li>
               </ul>
             </li>
             <li>
@@ -174,10 +143,10 @@ const ORIC = () => {
         </div>
         <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-center">
           <a
-            href="#"
+            href="mailto:apply@payto.onl?subject=ORIC%20Application"
             className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
           >
-            Apply as VASP provider
+            Apply as a VASP provider
           </a>
         </div>
         <div className="bg-white py-6 sm:py-8 lg:py-12">
@@ -186,9 +155,9 @@ const ORIC = () => {
               <div>
                 <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
                   <img
-                    src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=3164&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="/static/images/splash-oric-reg.jpg"
                     loading="lazy"
-                    alt="Photo by Martin Sanchez"
+                    alt="Photo by Maksym Kaharlytskyi"
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
@@ -205,21 +174,19 @@ const ORIC = () => {
 
                 <div className="mb-6 text-gray-500 sm:text-lg md:mb-8">
                   <p>
-                    Let’s say a <b>VASP provider named "Ping Exchange",</b>{" "}
-                    based in <b>Switzerland (CH),</b> is issuing a digital
-                    wallet identifier for <b>Ethereum (ETH).</b> Their ORIC code
-                    might look like:
+                    Let’s say a <b>VASP provider named "Ping Exchange"</b>, based in <b>Switzerland (CH)</b>, is issuing a digital wallet identifier for <b>Core (XCB)</b>. Their ORIC code might look like:
                   </p>
                   <br />
-                  <div className="flex justify-center">
-                    <b>PINGCHB2XCB</b> <br />
+                  <div className="flex justify-center items-center gap-2">
+                    <b>PINGCHB2XCB</b>
                     <a
                       href="https://oric-v1.payto.onl/PINGCHB2XCB"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-indigo-500 px-6  transition duration-100 hover:text-indigo-600 active:text-indigo-700"
+                      className="text-indigo-500 px-2 transition duration-100 hover:text-indigo-600 active:text-indigo-700 inline-flex items-center"
                     >
-                      ↗️ Open in new tab
+                      <FileInput className="w-4 h-4 mr-1" aria-hidden="true" />
+                      <span>Open in new tab</span>
                     </a>
                   </div>
                 </div>
@@ -229,34 +196,9 @@ const ORIC = () => {
                     <li>PING → Organization (Ping Exchange)</li>
                     <li>CH → Country (Switzerland)</li>
                     <li>
-                      B2 → Live digital address, fees deducted from receiver
+                      B2 → Live digital address, fees deducted from the receiver
                     </li>
                     <li>XCB → Core wallet</li>
-                  </ul>
-                </div>
-                <h2 className="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">
-                  ORIC: A Global Standard for Digital Asset Providers
-                </h2>
-
-                <div className="mb-6 text-gray-500 sm:text-lg md:mb-8">
-                  <ul>
-                    <li>
-                      ✅ <b>Unique VASP identification</b> – Every digital
-                      wallet provider gets a globally recognized ORIC code.
-                    </li>
-                    <li>
-                      ✅ <b>Enhanced security</b> – ORIC prevents fraud by
-                      ensuring wallet authenticity before transactions.{" "}
-                    </li>
-                    <li>
-                      ✅ <b>Seamless interoperability</b> – ORIC makes it easier
-                      for VASPs, financial institutions, and regulators to track
-                      and verify digital asset transactions.{" "}
-                    </li>
-                    <li>
-                      ✅ <b>Flexible and multi-asset</b> – ORIC supports crypto
-                      and fiat payments, making it future-proof.
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -264,33 +206,20 @@ const ORIC = () => {
           </div>
         </div>
         <div className="flex flex-col pb-12 lg-pb-0 items-center justify-center text-center">
-          <p className="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-lg">
-            Introducing
-          </p>
-
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-            ORIC: A Digital Wallet Identifier for VASP Providers
+            A Digital Wallet Identifier for VASP Providers
           </h2>
 
           <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-            By adopting <b>ORIC, the digital asset industry</b> gains a{" "}
-            <b>standardized, secure, and scalable</b> solution for{" "}
-            <b>wallet identification and verification</b> in the growing world
-            of crypto transactions. 🚀
+            By adopting <b>ORIC, the digital asset industry</b> gains a <b>standardized, secure, and scalable</b> solution for <b>wallet identification and verification</b> in the growing world of crypto transactions.
           </p>
 
           <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-center">
             <a
-              href="#"
+              href="mailto:contact@payto.onl?subject=ORIC%20Application"
               className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
             >
-              Generate ORIC
-            </a>
-            <a
-              href="#"
-              className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
-            >
-              Verify ORIC
+              Apply as a VASP provider
             </a>
           </div>
         </div>
