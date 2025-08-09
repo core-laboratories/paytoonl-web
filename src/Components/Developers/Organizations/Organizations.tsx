@@ -1,157 +1,109 @@
 import React from "react";
+import { Globe, Code, Mail } from "lucide-react";
+import organizationsData from "../../../data/developmentOrg.json" with { type: "json" };
+
+type Organization = {
+  name: string;
+  description: string;
+  logo: string;
+  website: string;
+  code: { org: string; name: string; provider: string };
+  contact: { email: string };
+};
 
 const Organizations = () => {
+  const organizations: Organization[] = [...(organizationsData as Organization[])]
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const displayHost = (url: string): string => url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+
   return (
     <div className="bg-white py-6 sm:py-16 lg:py-32">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
         <div className="mb-10 md:mb-16">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-            Development Organizations Working with PayTo Standards
+            Development Organizations
           </h2>
 
           <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-            The following organizations are actively contributing to the
-            development, integration, and adoption of PayTo protocols:
+            The following organizations are actively contributing and can assist you with applying solutions.
           </p>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 xl:grid-cols-3 xl:gap-16">
-          <div className="flex flex-col items-start gap-4 md:flex-row lg:gap-6">
-            <a
-              href="#"
-              className="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600"
-                loading="lazy"
-                alt="Photo by Minh Pham"
-                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
-            </a>
-            <div className="flex flex-col gap-2 flex-1">
-              <span className="text-sm text-gray-400">Organization</span>
+          {organizations.map((org) => (
+            <div key={org.name} className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="p-8">
+                <div className="flex items-center">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center w-20 h-20 bg-gray-100 rounded-lg border-2 border-gray-200 overflow-hidden">
+                      <img src={org.logo} alt={org.name} className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                  <div className="ml-4">
+                    <h2 className="text-xl font-bold text-gray-800">{org.name}</h2>
+                    <p className="text-gray-500">{org.description}</p>
+                  </div>
+                </div>
 
-              <h2 className="text-xl font-bold text-gray-800">
-                <a
-                  href="#"
-                  className="transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Blockchain Hub
-                </a>
-              </h2>
+                <div className="my-6 border-t border-gray-200"></div>
 
-              <p className="text-gray-500 flex-1">
-                Blockchain Infrastructure and PayTo protocol
-              </p>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <div className="flex items-center justify-center w-10 h-10 bg-indigo-50 rounded-full">
+                      <Globe className="w-5 h-5 text-indigo-500" />
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-gray-500">Website</p>
+                      <a
+                        href={org.website}
+                        target="_blank"
+                        rel="noopener"
+                        className="text-gray-700 hover:text-indigo-600 transition-colors"
+                      >
+                        {displayHost(org.website)}
+                      </a>
+                    </div>
+                  </div>
 
-              <div className="flex flex-col">
-                <a
-                  href="https://github.com/bchainhub"
-                  className="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-                >
-                  bchainhub
-                </a>
-                <a
-                  href="mailto:contact@blockchainhub.com"
-                  className="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-                >
-                  contact@blockchainhub.com
-                </a>
+                  <div className="flex items-center">
+                    <div className="flex items-center justify-center w-10 h-10 bg-indigo-50 rounded-full">
+                      <Code className="w-5 h-5 text-indigo-500" />
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-gray-500">{org.code.provider}</p>
+                      <a
+                        href={org.code.org}
+                        target="_blank"
+                        rel="noopener"
+                        className="text-gray-700 hover:text-indigo-600 transition-colors"
+                      >
+                        {org.code.name}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center">
+                    <div className="flex items-center justify-center w-10 h-10 bg-indigo-50 rounded-full">
+                      <Mail className="w-5 h-5 text-indigo-500" />
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-gray-500">Email</p>
+                      <a
+                        href={`mailto:${org.contact.email}`}
+                        className="text-gray-700 hover:text-indigo-600 transition-colors"
+                      >
+                        {org.contact.email}
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-4 md:flex-row lg:gap-6">
-            <a
-              href="#"
-              className="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600"
-                loading="lazy"
-                alt="Photo by Lorenzo Herrera"
-                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
-            </a>
-            <div className="flex flex-col gap-2 flex-1">
-              <span className="text-sm text-gray-400">Organisation</span>
-
-              <h2 className="text-xl font-bold text-gray-800">
-                <a
-                  href="#"
-                  className="transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  CORE Labs
-                </a>
-              </h2>
-
-              <p className="text-gray-500 flex-1">
-                PayTo protocol and DePIN services
-              </p>
-              <div className="flex flex-col">
-                <a
-                  href="https://github.com/bchainhub"
-                  className="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-                >
-                  bchainhub
-                </a>
-                <a
-                  href="mailto:contact@blockchainhub.com"
-                  className="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-                >
-                  contact@blockchainhub.com
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-start gap-4 md:flex-row lg:gap-6">
-            <a
-              href="#"
-              className="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=600"
-                loading="lazy"
-                alt="Photo by Magicle"
-                className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
-            </a>
-            <div className="flex flex-col gap-2 flex-1">
-              <span className="text-sm text-gray-400">Organisation</span>
-
-              <h2 className="text-xl font-bold text-gray-800">
-                <a
-                  href="#"
-                  className="transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  Data Layer
-                </a>
-              </h2>
-
-              <p className="text-gray-500 flex-1 min-h-[48px]">
-                DePIN services
-              </p>
-              <div className="flex flex-col">
-                <a
-                  href="https://github.com/bchainhub"
-                  className="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-                >
-                  bchainhub
-                </a>
-                <a
-                  href="mailto:contact@blockchainhub.com"
-                  className="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-                >
-                  contact@blockchainhub.com
-                </a>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
         <p className="mt-8 mb-12 lg:mt-16 mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-          (If your company is working with PayTo standards, reach out to get
-          listed here!)
+          If your company is working with PayTo standards, reach out to get listed here.
         </p>
       </div>
     </div>

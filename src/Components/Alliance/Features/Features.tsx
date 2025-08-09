@@ -1,4 +1,5 @@
 import React from "react";
+import { Banknote, Blend, Boxes, Handshake } from "lucide-react";
 
 const Features = () => {
   return (
@@ -6,32 +7,17 @@ const Features = () => {
       <div className="mx-auto max-w-screen-2xl ">
         <div className="mb-10 md:mb-16">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-            Why Join the PayTo Alliance?
+            Opportunities
           </h2>
-
+          <a id="opportunities" />
           <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-            This is a section of some simple filler text, also known as
-            placeholder text. It shares some characteristics of a real written
-            text but is random or otherwise generated.
+            A collaborative ecosystem revolutionizing global payments.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-2">
-          <div className="flex divide-x rounded-lg border bg-gray-50">
+          <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
             <div className="flex items-center p-2 text-indigo-500 md:p-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 md:h-8 md:w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+              <Banknote className="h-6 w-6 md:h-8 md:w-8" />
             </div>
 
             <div className="p-4 md:p-6">
@@ -39,29 +25,14 @@ const Features = () => {
                 Drive Innovation in Payments
               </h3>
               <p className="text-gray-500">
-                Help design and implement next-generation financial
-                infrastructure that enhances the way money moves across
-                blockchain and traditional systems.
+                Design and implement next-generation payment solutions that enhance the way money moves across blockchain and traditional systems.
               </p>
             </div>
           </div>
 
-          <div className="flex divide-x rounded-lg border bg-gray-50">
+          <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
             <div className="flex items-center p-2 text-indigo-500 md:p-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 md:h-8 md:w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+              <Blend className="h-6 w-6 md:h-8 md:w-8" />
             </div>
 
             <div className="p-4 md:p-6">
@@ -69,29 +40,14 @@ const Features = () => {
                 Industry Collaboration & Influence
               </h3>
               <p className="text-gray-500">
-                Work alongside leading banks, fintech firms, and crypto
-                platforms to establish trusted, standardized financial protocols
-                for seamless transactions worldwide.
+                Work alongside leading banks, fintech firms, and crypto platforms to establish trusted, standardized financial protocols for seamless transactions worldwide.
               </p>
             </div>
           </div>
 
-          <div className="flex divide-x rounded-lg border bg-gray-50">
+          <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
             <div className="flex items-center p-2 text-indigo-500 md:p-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 md:h-8 md:w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+              <Boxes className="h-6 w-6 md:h-8 md:w-8" />
             </div>
 
             <div className="p-4 md:p-6">
@@ -99,30 +55,14 @@ const Features = () => {
                 Exclusive Access to New Standards
               </h3>
               <p className="text-gray-500">
-                Be among the first to test, integrate, and benefit from emerging
-                payment technologies such as ICAN (International Crypto Account
-                Number), ORIC (Organization Identifier Code), and FinTag
-                (Financial Metadata Tags).
+                Be among the first to test, integrate, and benefit from emerging payment technologies such as PayTo, ICAN (International Crypto Account Number), ORIC (Organization Identifier Code), and FinTag (Financial Metadata Tags).
               </p>
             </div>
           </div>
 
-          <div className="flex divide-x rounded-lg border bg-gray-50">
+          <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
             <div className="flex items-center p-2 text-indigo-500 md:p-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 md:h-8 md:w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+              <Handshake className="h-6 w-6 md:h-8 md:w-8" />
             </div>
 
             <div className="p-4 md:p-6">
@@ -130,9 +70,7 @@ const Features = () => {
                 Build Trust & Compliance
               </h3>
               <p className="text-gray-500">
-                Ensure your organization meets global regulatory requirements
-                while improving security, fraud prevention, and financial
-                transparency.
+                Build trust through global regulatory compliance while improving security, fraud prevention, and financial transparency.
               </p>
             </div>
           </div>

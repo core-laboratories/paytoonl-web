@@ -1,10 +1,7 @@
 import React from "react";
 
 import { useNavigate } from "react-router-dom";
-
-import Title from "../../Title/Title.tsx";
-import Features from "../Features/Features.tsx";
-import features from "../../../data/features.json";
+import { ArrowLeft, Code, GalleryVerticalEnd, Globe, HandCoins, ShieldCheck } from "lucide-react";
 
 const FinTag = () => {
   const navigate = useNavigate();
@@ -21,69 +18,34 @@ const FinTag = () => {
               onClick={handleBackClick}
               className="inline-flex items-center rounded-lg bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 lg:w-1/3 mb-16"
             >
-              <svg
-                className="w-4 h-4 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M15 19l-7-7 7-7"
-                ></path>
-              </svg>
+              <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Solutions
             </button>
 
-            <p className="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-lg xl:text-xl">
-              Very proud to introduce
-            </p>
             <h1 className="mb-6 text-4xl font-bold text-black sm:text-5xl md:mb-4 md:text-6xl">
               FinTag
             </h1>
             <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              <i>
-                FinTag - A Meta Tag Standard for Financial Payment Information
-              </i>
-            </p>
-            <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-              A <b>meta tag</b> is an HTML element that provides metadata about
-              a webpage, typically used for SEO, social media previews, or site
-              functionality. These tags reside in the &lt;head&gt; section of a
-              webpage and do not display content directly but provide essential
-              information to browsers, search engines, and other automated
-              systems. <br />
-              <b>FinTag</b> is an innovative meta tag concept designed to store
-              and display financial payment details such as{" "}
-              <b>IBAN, ICAN, ACH, PIX, UPI, BIC,</b> and other payment
-              identifiers.
+              FinTag - A Meta Tag Standard for Financial Payment Information. <b>FinTag</b> is an innovative meta tag concept designed to store and display financial payment details such as <b>ICAN, IBAN, ACH, PIX, UPI, BIC,</b> and other payment identifiers.
             </p>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
               <a
-                href="#"
+                href="https://payto.money"
+                target="_blank"
+                rel="noopener"
                 className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
               >
-                Start now
-              </a>
-
-              <a
-                href="#"
-                className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
-              >
-                Take tour
+                Generate FinTag
               </a>
             </div>
           </div>
 
-          <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12">
+          <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12 max-h-96">
             <img
-              src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&q=75&fit=crop&w=1000"
+              src="/static/images/splash-fintag.jpg"
               loading="lazy"
-              alt="Photo by Fakurian Design"
+              alt="Photo by Chris Stein"
               className="h-full w-full object-cover object-center"
             />
           </div>
@@ -96,11 +58,11 @@ const FinTag = () => {
         </h2>
         <div className="bg-gray-100 p-4 rounded-lg shadow-md">
           <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words">
+            {`<meta property="ican:xcb" content="cb00…" />`}
+            <br />
             {`<meta property="iban" content="BE68539007547034" />`}
             <br />
-            {`<meta property="upi" content="example@upi" />`}
-            <br />
-            {`<meta property="bic" content="DEUTDEFF" />`}
+            {`<meta property="void:plus" content="8FWR5XCG+VM" />`}
           </pre>
         </div>
       </section>
@@ -109,33 +71,18 @@ const FinTag = () => {
         <div className="mx-auto max-w-screen-2xl md:px-8">
           <div className="mb-10 md:mb-16">
             <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-              Why is FinTag Important?
+              Key functionalities
             </h2>
 
             <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-              This is a section of some simple filler text, also known as
-              placeholder text. It shares some characteristics of a real written
-              text but is random or otherwise generated.
+              FinTag is a meta tag standard for financial payment information.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-3">
-            <div className="flex divide-x rounded-lg border bg-gray-50 h-auto">
+            <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50 h-auto">
               <div className="flex items-center p-2 text-indigo-500 md:p-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 md:h-8 md:w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                <ShieldCheck className="w-6 h-6 md:h-8 md:w-8" />
               </div>
 
               <div className="p-4 md:p-6">
@@ -143,31 +90,14 @@ const FinTag = () => {
                   Authenticity & Trust
                 </h3>
                 <p className="text-gray-500">
-                  FinTag helps businesses and financial institutions provide
-                  verified payment details directly in their website’s metadata.
-                  This <b>can prevent fraud and scams</b> by ensuring that
-                  visitors and automated services retrieve official payment
-                  details instead of falling prey to phishing attacks.
+                  FinTag is sticked with the website and can be used to verify the authenticity of the payment details.
                 </p>
               </div>
             </div>
 
-            <div className="flex divide-x rounded-lg border bg-gray-50 h-auto">
+            <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50 h-auto">
               <div className="flex items-center p-2 text-indigo-500 md:p-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 md:h-8 md:w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                <GalleryVerticalEnd className="w-6 h-6 md:h-8 md:w-8" />
               </div>
 
               <div className="p-4 md:p-6">
@@ -175,31 +105,14 @@ const FinTag = () => {
                   Automation & Integration
                 </h3>
                 <p className="text-gray-500">
-                  Browser extensions, payment apps, and digital services can
-                  <b>auto-detect FinTags</b> on a webpage, enabling{" "}
-                  <b>seamless transactions</b> without manual input errors. For
-                  instance, a banking extension could automatically recognize
-                  and pre-fill a payment form using the information in FinTags.
+                  Browser extensions, payment apps, and digital services can auto-detect FinTags on a webpage, enabling seamless transactions without manual input errors.
                 </p>
               </div>
             </div>
 
-            <div className="flex divide-x rounded-lg border bg-gray-50 h-auto">
+            <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50 h-auto">
               <div className="flex items-center p-2 text-indigo-500 md:p-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 md:h-8 md:w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                <Globe className="w-6 h-6 md:h-8 md:w-8" />
               </div>
 
               <div className="p-4 md:p-6">
@@ -207,33 +120,16 @@ const FinTag = () => {
                   Decentralized & Open-Source
                 </h3>
                 <p className="text-gray-500">
-                  The FinTag standard is <b>flexible and open-source</b>,
-                  allowing businesses, nonprofits, and individuals to{" "}
-                  <b>integrate it into any website.</b> Each subpage can include
-                  different payment details, making it a robust solution for
-                  large organizations with multiple departments or divisions.
+                  The FinTag standard is flexible and open-source, allowing businesses, nonprofits, and individuals to integrate it into any website. Each subpage can include different payment details, making it a robust solution for large organizations with multiple departments or divisions.
                 </p>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-4 lg:mt-8">
-            <div className="flex divide-x rounded-lg border bg-gray-50 w-full sm:w-1/3 h-auto">
+            <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50 w-full sm:w-1/3 h-auto">
               <div className="flex items-center p-2 text-indigo-500 md:p-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 md:h-8 md:w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                <HandCoins className="w-6 h-6 md:h-8 md:w-8" />
               </div>
 
               <div className="p-4 md:p-6">
@@ -241,30 +137,14 @@ const FinTag = () => {
                   Improved Payment Experience
                 </h3>
                 <p className="text-gray-500">
-                  Clients and customers can instantly{" "}
-                  <b>verify payment details</b> before initiating a transfer,
-                  reducing the chances of incorrect payments or fraudulent
-                  transactions.
+                  Clients and customers can instantly verify payment details before initiating a transfer, reducing the chances of incorrect payments or fraudulent transactions.
                 </p>
               </div>
             </div>
 
-            <div className="flex divide-x rounded-lg border bg-gray-50 w-full sm:w-1/3 h-auto">
+            <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50 w-full sm:w-1/3 h-auto">
               <div className="flex items-center p-2 text-indigo-500 md:p-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 md:h-8 md:w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                <Code className="w-6 h-6 md:h-8 md:w-8" />
               </div>
 
               <div className="p-4 md:p-6">
@@ -272,33 +152,26 @@ const FinTag = () => {
                   Universal Standardization
                 </h3>
                 <p className="text-gray-500">
-                  FinTag can serve as a{" "}
-                  <b>universal financial metadata standard,</b>
-                  making online transactions more{" "}
-                  <b>transparent, efficient, and secure.</b>
+                  FinTag can serve as a universal financial metadata standard, making online transactions more transparent, efficient, and secure.
                 </p>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col mt-12 lg:mt-24 pb-12 lg-pb-0 items-center justify-center text-center">
-            <p className="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-lg">
-              Introducing
-            </p>
-
             <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
               FinTag - A Meta Tag Standard for Financial Payment Information
             </h2>
 
             <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-              By adopting <b>FinTag,</b> institutions and businesses can create
-              a safer financial environment for their clients, ensuring payment
-              authenticity while streamlining digital transactions.
+              By adopting FinTag, institutions and businesses can create a safer financial environment for their clients, ensuring payment authenticity while streamlining digital transactions.
             </p>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-center">
               <a
-                href="#"
+                href="https://payto.money"
+                target="_blank"
+                rel="noopener"
                 className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
               >
                 Generate FinTag

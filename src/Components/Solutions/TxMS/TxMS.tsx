@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowLeft, BotMessageSquare, MessageSquareCode, MessageSquareLock, RadioTower } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const TxMS = () => {
@@ -16,53 +17,19 @@ const TxMS = () => {
               onClick={handleBackClick}
               className="inline-flex items-center rounded-lg bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 lg:w-1/3 mb-16"
             >
-              <svg
-                className="w-4 h-4 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M15 19l-7-7 7-7"
-                ></path>
-              </svg>
+              <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Solutions
             </button>
 
-            <p className="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-lg xl:text-xl">
-              Very proud to introduce
-            </p>
-
             <h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">
-              TxMS
+              Transaction Message Service
             </h1>
 
             <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              <i>TxMS – Transaction Message Service What is TxMS?</i>
-            </p>
-            <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              {" "}
-              <b>TxMS (Transaction Message Service)</b> is a{" "}
-              <b>secure and standardized messaging protocol</b> designed to make{" "}
-              <b>
-                financial transactions and blockchain communications more
-                efficient and reliable.
-              </b>{" "}
-              It ensures that <b>transaction-related messages</b> can be sent,
-              received, and understood{" "}
-              <b>across different platforms without errors.</b>
+              <b>TxMS</b> is a secure and standardized messaging protocol designed to make financial transactions and blockchain communications more efficient and reliable. It ensures that <b>transaction-related messages</b> can be sent, received, and understood <b>across different platforms without errors.</b>
             </p>
             <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-              Whether it’s a{" "}
-              <b>
-                payment request, digital invoice, or blockchain transaction
-                message, TxMS makes sure that the information is formatted
-                correctly and securely delivered.
-              </b>
+              Whether it’s a payment request, digital invoice, or blockchain transaction message, TxMS makes sure that the information is formatted correctly and securely delivered.
             </p>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
@@ -70,23 +37,16 @@ const TxMS = () => {
                 href="https://txms.info/"
                 className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
               >
-                Start now
-              </a>
-
-              <a
-                href="https://txms.info/"
-                className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
-              >
-                Take tour
+                Use TxMS
               </a>
             </div>
           </div>
 
-          <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12">
+          <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12 max-h-96">
             <img
-              src="https://plus.unsplash.com/premium_photo-1668359407785-ac5dca1de611?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/static/images/splash-txms.jpg"
               loading="lazy"
-              alt="Photo by Fakurian Design"
+              alt="Photo by Rastislav Vašička"
               className="h-full w-full object-cover object-center"
             />
           </div>
@@ -95,33 +55,18 @@ const TxMS = () => {
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="mb-10 md:mb-16">
               <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-                Why is TxMS Important?
+                TxMS Features
               </h2>
 
               <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-                This is a section of some simple filler text, also known as
-                placeholder text. It shares some characteristics of a real
-                written text but is random or otherwise generated.
+                TxMS offers offline digital payments and transactions.
               </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-2">
-              <div className="flex divide-x rounded-lg border bg-gray-50">
+              <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
                 <div className="flex items-center p-2 text-indigo-500 md:p-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 md:h-8 md:w-8"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                  <RadioTower className="w-6 h-6" />
                 </div>
 
                 <div className="p-4 md:p-6">
@@ -129,33 +74,14 @@ const TxMS = () => {
                     Reliable Transaction Messaging
                   </h3>
                   <p className="text-gray-500">
-                    TxMS ensures that{" "}
-                    <b>
-                      important transaction details are correctly transmitted,
-                    </b>{" "}
-                    preventing errors and miscommunication. This is especially
-                    useful for{" "}
-                    <b>banks, digital wallets, and blockchain applications.</b>
+                    TxMS ensures that important transaction details are correctly transmitted, preventing errors and miscommunication. This is especially useful for banks, digital wallets, and blockchain applications.
                   </p>
                 </div>
               </div>
 
-              <div className="flex divide-x rounded-lg border bg-gray-50">
+              <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
                 <div className="flex items-center p-2 text-indigo-500 md:p-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 md:h-8 md:w-8"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                  <MessageSquareLock className="w-6 h-6" />
                 </div>
 
                 <div className="p-4 md:p-6">
@@ -163,30 +89,14 @@ const TxMS = () => {
                     Secure and Standardized Format
                   </h3>
                   <p className="text-gray-500">
-                    TxMS follows a <b>universal standard</b> for financial
-                    messaging, ensuring that messages are always{" "}
-                    <b>readable and compatible</b>
-                    across different platforms.
+                    TxMS follows a universal standard for financial messaging, ensuring that messages are always readable and compatible across different platforms.
                   </p>
                 </div>
               </div>
 
-              <div className="flex divide-x rounded-lg border bg-gray-50">
+              <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
                 <div className="flex items-center p-2 text-indigo-500 md:p-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 md:h-8 md:w-8"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                  <MessageSquareCode className="w-6 h-6" />
                 </div>
 
                 <div className="p-4 md:p-6">
@@ -194,33 +104,14 @@ const TxMS = () => {
                     Perfect for Digital Payments
                   </h3>
                   <p className="text-gray-500">
-                    With{" "}
-                    <b>
-                      TxMS, payment instructions, confirmations, and invoices
-                      can be sent in a way that’s easy to process and verify
-                    </b>{" "}
-                    — even over traditional communication channels like{" "}
-                    <b>SMS or MMS.</b>
+                    With TxMS, payment instructions, confirmations, and invoices can be sent in a way that’s easy to process and verify — even over traditional communication channels like SMS or MMS.
                   </p>
                 </div>
               </div>
 
-              <div className="flex divide-x rounded-lg border bg-gray-50">
+              <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
                 <div className="flex items-center p-2 text-indigo-500 md:p-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 md:h-8 md:w-8"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+                  <BotMessageSquare className="w-6 h-6" />
                 </div>
 
                 <div className="p-4 md:p-6">
@@ -228,13 +119,7 @@ const TxMS = () => {
                     Reduces Errors & Fraud
                   </h3>
                   <p className="text-gray-500">
-                    By using <b>TxMS,</b> businesses and users can be{" "}
-                    <b>
-                      confident that the payment details they receive are
-                      accurate,
-                    </b>{" "}
-                    reducing the risk of fraud or sending money to the wrong
-                    account.
+                    By using TxMS, businesses and users can be confident that the payment details they receive are accurate, reducing the risk of fraud or sending money to the wrong account.
                   </p>
                 </div>
               </div>
@@ -245,27 +130,24 @@ const TxMS = () => {
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="mb-10 md:mb-16">
               <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-                How Does TxMS Work?
+                Workflow
               </h2>
             </div>
             <div className="grid gap-4 sm:grid-cols-1 md:gap-8 xl:grid-cols-1">
-              <div className="flex divide-x rounded-lg border bg-gray-50">
+              <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50 max-w-screen-md mx-auto">
                 <div className="p-4 md:p-6">
                   <ol className="list-decimal text-lg text-gray-500 pl-5">
                     <li>
-                      <b>Encodes Transaction Information</b> – TxMS formats
-                      payment requests or transaction details in a secure and
-                      easy-to-read way.
+                      Your wallet composes a message with the transaction details.
                     </li>
                     <li>
-                      <b>Sends Messages Efficiently</b> – The structured format
-                      ensures the message can be understood across different
-                      platforms (banks, crypto wallets, payment providers).
+                      Message is encoded with TxMS library for better efficiency.
                     </li>
                     <li>
-                      <b>Ensures Accuracy</b> – The system prevents errors in
-                      transaction details, making digital payments smoother and
-                      more secure.
+                      Message is sent to TxMS number.
+                    </li>
+                    <li>
+                      Transaction is streamed and confirmed.
                     </li>
                   </ol>
                 </div>
@@ -279,55 +161,47 @@ const TxMS = () => {
               <div>
                 <div className="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-146">
                   <img
-                    src="https://images.unsplash.com/photo-1486175060817-5663aacc6655?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="/static/images/splash-txms-usecases.jpg"
                     loading="lazy"
-                    alt="Photo by Martin Sanchez"
+                    alt="Photo by Rastislav Vašička"
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
               </div>
 
               <div className="md:pt-8">
-                <p className="text-center font-bold text-indigo-500 md:text-left">
-                  Who we are
-                </p>
-
                 <h1 className="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">
-                  Who Can Use TxMS?
+                  Use Cases
                 </h1>
 
                 <ul className="px-6 list-disc mb-6 text-gray-500 sm:text-lg md:mb-8">
                   <li>
-                    <b>Banks & Financial Institutions</b> – To send secure and
-                    structured payment requests.
+                    Banks & Financial Institutions – To send secure and structured payment requests.
                   </li>
                   <li>
-                    <b>Crypto Wallets & Exchanges</b> – To facilitate digital
-                    asset transactions.
+                    Crypto Wallets & Exchanges – To facilitate digital asset transactions.
                   </li>
                   <li>
-                    <b>Businesses & Merchants</b> – To send invoices and payment
-                    confirmations in a standardized way.
+                    Businesses & Merchants – To send invoices and payment confirmations in a standardized way.
                   </li>
                   <li>
-                    <b>Consumers & Individuals</b> – To receive trusted
-                    transaction messages when making payments.
+                    Consumers & Individuals – To receive trusted transaction messages when making payments.
                   </li>
                 </ul>
 
                 <h2 className="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">
-                  Try it now
+                  Numbers
                 </h2>
 
                 <p className="px-6 mb-6 text-gray-500 sm:text-lg md:mb-8">
                   <b>Core Mainnet Number: </b>
                   <a href="tel:+12019715152" className="text-indigo-500">
-                    +12019715152
-                  </a>{" "}
+                    +1 (201) 971-5152
+                  </a>
                   <br />
                   <b>Core Testnet Number: </b>
                   <a href="tel:+12014835939" className="text-indigo-500">
-                    +12014835939
+                    +1 (201) 483-5939
                   </a>
                 </p>
               </div>
@@ -336,30 +210,12 @@ const TxMS = () => {
         </div>
         <div className="bg-white py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <p className="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-lg">
-              Introducing
-            </p>
-
             <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-              The Future of Digital Transactions
+              Offline Digital Payments
             </h2>
 
             <p className="mx-auto max-w-screen-md mb-8 text-center text-gray-500 md:text-lg">
-              <b>
-                TxMS is revolutionizing the way we send and receive financial
-                transaction messages.
-              </b>{" "}
-              By ensuring <b>consistency, security, and ease of use,</b> TxMS is
-              making digital payments{" "}
-              <b>safer, faster, and more reliable for everyone.</b>
-            </p>
-            <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-              Ready to experience the{" "}
-              <b>
-                next generation of financial messaging? TxMS is here to simplify
-                transactions—one message at a time.{" "}
-              </b>
-              🚀
+              TxMS is a secure and standardized messaging protocol designed to make digital and blockchain transactions available offline and without internet connection.
             </p>
           </div>
           <div className="mt-16 flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-center">

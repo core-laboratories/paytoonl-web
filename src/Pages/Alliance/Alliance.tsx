@@ -14,26 +14,23 @@ const Alliance = () => {
       <div className="container mt-6 mx-auto bg-white py-24 sm:py-24 lg:py-24 px-4 lg:px-0 lg:mt-12">
         <div className="mx-auto max-w-screen-2xl">
           <p className="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-lg">
-            Join Us
+            Join Alliance
           </p>
 
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-            Shape the Future of Payments – Join Us Today!
+            Shape the Future of Payments
           </h2>
 
           <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
             Be a part of the movement that is redefining financial transactions
-            for the digital age. Together, we can build a global ecosystem where
-            payments are frictionless, standardized, and secure.
+            for the digital age.
           </p>
           <div className="flex w-full flex-col sm:flex-row mt-12 sm:justify-center">
             <a
               href="/joinus"
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
             >
-              Apply
+              Join Alliance
             </a>
           </div>
         </div>

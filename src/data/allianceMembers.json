@@ -1,54 +1,39 @@
 [
   {
-    "name": "Salt Bank",
-    "link": "https://www.saltbank.com",
-    "logo": "https://logowik.com/content/uploads/images/salt-bank7154.logowik.com.webp"
+    "name": "Ping Exchange",
+    "link": "https://ping.exchange",
+    "logo": "https://corecdn.info/mark/64/ping.png",
+    "joined": "2025"
   },
   {
-    "name": "Griffin Bank",
-    "link": "https://www.griffinbank.com",
-    "logo": "https://logowik.com/content/uploads/images/griffin-bank87273.logowik.com.webp",
-    "logoOnly": true
+    "name": "Data Layer",
+    "link": "https://datalayer.host",
+    "logo": "https://avatars.githubusercontent.com/u/117013950?s=200&v=4",
+    "joined": "2025"
   },
   {
-    "name": "Millennium Bank",
-    "link": "https://www.millenniumbank.com",
-    "logo": "https://logowik.com/content/uploads/images/big-bank-gdanski-millennium7569.logowik.com.webp"
+    "name": "Onion",
+    "link": "https://onion.email",
+    "logo": "https://corecdn.info/mark/64/onion.png",
+    "joined": "2025"
   },
   {
-    "name": "Cadence Bank",
-    "link": "https://www.cadencebank.com",
-    "logo": "https://logowik.com/content/uploads/images/cadence-bank-new359.logowik.com.webp"
+    "name": "Blockchain Hub",
+    "link": "https://blockchainhub.digital",
+    "logo": "https://corecdn.info/mark/64/blockchainhub.png",
+    "joined": "2025"
   },
   {
-    "name": "Hock Hua Bank",
-    "link": "https://www.hockhuabank.com",
-    "logo": "https://logowik.com/content/uploads/images/hock-hua-bank-berhad5607.logowik.com.webp"
+    "name": "CorePass",
+    "link": "https://corepass.net",
+    "logo": "https://corecdn.info/mark/64/corepass.png",
+    "joined": "2025"
   },
   {
-    "name": "Standard Bank",
-    "link": "https://www.standardbank.com",
-    "logo": "https://logowik.com/content/uploads/images/standard-bank6397.logowik.com.webp",
-    "logoOnly": true
-  },
-  {
-    "name": "Bank Now",
-    "link": "https://www.banknow.com",
-    "logo": "https://logowik.com/content/uploads/images/bank-now7414.logowik.com.webp"
-  },
-  {
-    "name": "BNY Mellon",
-    "link": "https://www.bnymellon.com",
-    "logo": "https://logowik.com/content/uploads/images/bank-of-new-york-mellon7335.logowik.com.webp"
-  },
-  {
-    "name": "Cultura Bank",
-    "link": "https://www.culturabank.com",
-    "logo": "https://logowik.com/content/uploads/images/cultura-bank270.logowik.com.webp"
-  },
-  {
-    "name": "Berenberg Bank",
-    "link": "https://www.berenberg.com",
-    "logo": "https://logowik.com/content/uploads/images/berenberg-bank5751.logowik.com.webp"
+    "name": "CoDeTech",
+    "link": "https://codedtech.cc",
+    "logo": "https://codetech.cc/img/company/logo.svg",
+    "logoOnly": true,
+    "joined": "2025"
   }
 ]

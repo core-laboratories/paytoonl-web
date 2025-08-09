@@ -9,13 +9,13 @@ import FinTag from "./Components/Solutions/FinTag/FinTag.tsx";
 
 import ICAN from "./Components/Solutions/ICAN/ICAN.tsx";
 import ORIC from "./Components/Solutions/ORIC/ORIC.tsx";
-import Pass from "./Components/Solutions/Pass/Pass.tsx";
+import PayPass from "./Components/Solutions/PayPass/PayPass.tsx";
 import TxMS from "./Components/Solutions/TxMS/TxMS.tsx";
-import DonateTo from "./Components/Solutions/DonateTo/DonateTo.tsx";
 
 import Developers from "./Pages/Developers/Developers.tsx";
 import JoinUs from "./Pages/JoinUs/JoinUs.tsx";
 import Alliance from "./Pages/Alliance/Alliance.tsx";
+import Members from "./Pages/Members/Members.tsx";
 
 const App = () => {
   return (
@@ -31,13 +31,13 @@ const App = () => {
 
             <Route path="/solutions/ican" element={<ICAN />} />
             <Route path="/solutions/oric" element={<ORIC />} />
-            <Route path="/solutions/pass" element={<Pass />} />
+            <Route path="/solutions/paypass" element={<PayPass />} />
             <Route path="/solutions/txms" element={<TxMS />} />
-            <Route path="/solutions/donate-to" element={<DonateTo />} />
 
             <Route path="/developers" element={<Developers />} />
             <Route path="/alliance" element={<Alliance />} />
             <Route path="/joinus" element={<JoinUs />} />
+            <Route path="/members" element={<Members />} />
           </Routes>
         </main>
         <Footer />
