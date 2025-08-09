@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Blockchain Hub, CA",
+        "description": "Blockchain Infrastructure and PayTo protocol",
+        "logo": "https://avatars.githubusercontent.com/u/42909054?s=200&v=4",
+        "website": "https://blockchainhub.digital",
+        "code": {
+            "org": "https://github.com/bchainhub",
+            "name": "bchainhub",
+            "provider": "GitHub"
+        },
+        "contact": {
+            "email": "contact@blockchainhub.digital"
+        }
+    },
+    {
+        "name": "CORE Labs",
+        "description": "PayTo protocol and DePIN services",
+        "logo": "https://avatars.githubusercontent.com/u/179846077?s=200&v=4",
+        "website": "https://corelabs.onl",
+        "code": {
+            "org": "https://github.com/core-laboratories",
+            "name": "core-laboratories",
+            "provider": "GitHub"
+        },
+        "contact": {
+            "email": "contact@corelabs.onl"
+        }
+    },
+    {
+        "name": "Data Layer",
+        "description": "DePIN services",
+        "logo": "https://avatars.githubusercontent.com/u/117013950?s=200&v=4",
+        "website": "https://datalayer.host",
+        "code": {
+            "org": "https://github.com/DataLayerHost",
+            "name": "DataLayerHost",
+            "provider": "GitHub"
+        },
+        "contact": {
+            "email": "contact@datalayer.host"
+        }
+    }
+]

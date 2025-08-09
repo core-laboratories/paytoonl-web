@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+@variant dark (&:where(.dark, .dark *));
+
+
+
+@layer base {
+	button:not(:disabled),
+	[role="button"]:not(:disabled),
+	label:not(:disabled),
+	input[type="checkbox"]:not(:disabled),
+	input[type="radio"]:not(:disabled),
+	input[type="color"]:not(:disabled) {
+		cursor: pointer;
+	}
+}
+
+@theme {
+	--default-font-family: "Arimo", sans-serif;
+
+	/* Spacing */
+	--spacing-8xl: 90rem;
+	--spacing-9xl: 105rem;
+	--spacing-10xl: 120rem;
+
+	/* Animations */
+	--animate-spin-slow: spin-slow 8s linear infinite;
+
+	@keyframes spin-slow {
+		100% {
+			transform: rotate(-360deg);
+		}
+	}
+}
+

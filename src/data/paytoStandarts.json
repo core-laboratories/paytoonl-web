@@ -1,0 +1,90 @@
+[
+    {
+      "title": "ICAN",
+      "text": "International Crypto Account Number",
+      "link": {
+        "href": "https://payto.money?tab=ican",
+        "text": "Try it now →"
+      }
+    },
+    {
+      "title": "IBAN",
+      "text": "International Bank Account Number",
+      "link": {
+        "href": "https://payto.money?tab=iban",
+        "text": "Try it now →"
+      }
+    },
+    {
+      "title": "ACH",
+      "text": "Automated Clearing House",
+      "link": {
+        "href": "https://payto.money?tab=ach",
+       "text": "Try it now →"
+      }
+    },
+    {
+      "title": "UPI",
+      "text": "Unified Payment Interface",
+      "link": {
+        "href": "https://payto.money?tab=upi",
+        "text": "Try it now →"
+      }
+    },
+    {
+      "title": "PIX",
+      "text": "Brazil - Instant Payment Platform",
+      "link": {
+        "href": "https://payto.money?tab=pix",
+        "text": "Try it now →"
+      }
+    },
+    {
+      "title": "BIC",
+      "text": "Bank Identifier Code",
+      "link": {
+        "href": "https://payto.money?tab=bic",
+          "text": "Try it now →"
+      }
+    },
+    {
+        "title": "ORIC",
+        "text": "Organization (VASP) Identifier Code",
+        "link": {
+          "href": "https://payto.money?tab=bic",
+            "text": "Try it now →"
+        }
+      },
+      {
+        "title": "CASH $",
+        "text": "Cash-based transactions",
+        "link": {
+          "href": "https://payto.money?tab=void",
+            "text": "Try it now →"
+        }
+      },
+      {
+        "title": "GEO",
+        "text": "Geolocation coordinates - decimal degrees",
+        "link": {
+          "href": "https://payto.money?tab=void",
+            "text": "Try it now →"
+        }
+      },
+      {
+        "title": "Plus Code",
+        "text": "Open Location Code location coordinates",
+        "link": {
+          "href": "https://payto.money?tab=void",
+            "text": "Try it now →"
+        }
+      },
+      {
+        "title": "Want more?",
+        "text": "",
+        "link": {
+          "href": "mailto:contact@payto.onl?subject=PayTo%20Standard%20Request",
+            "text": "Contact us by email →"
+        }
+      }
+  ]
