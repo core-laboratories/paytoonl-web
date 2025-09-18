@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { isValid } from "@blockchainhub/ican";
 
 const JoinUs = () => {
   const [form, setForm] = useState({
@@ -8,15 +9,27 @@ const JoinUs = () => {
     industry: "",
     code: "",
     contact: "",
+    core: "",
   });
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const coreIdValid = form.core.trim().length > 0 ? isValid(form.core.trim(), true) : true;
+  const emailValid = form.contact.trim().length > 0 ? emailRegex.test(form.contact.trim()) : true;
+
+  const urlRegex = /^https?:\/\/.+/;
+  const websiteValid = form.website.trim().length > 0 ? urlRegex.test(form.website.trim()) : true;
+  const codeValid = form.code.trim().length > 0 ? urlRegex.test(form.code.trim()) : true;
 
   const requiredValid =
     form.organization.trim().length > 0 &&
     form.type.trim().length > 0 &&
     form.industry.trim().length > 0 &&
-    emailRegex.test(form.contact.trim());
+    emailValid &&
+    form.core.trim().length > 0 &&
+    coreIdValid &&
+    websiteValid &&
+    codeValid;
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -36,6 +49,7 @@ const JoinUs = () => {
       `Industry: ${form.industry}`,
       `Code Repository URL: ${form.code}`,
       `Contact Email: ${form.contact}`,
+      `Core ID: ${form.core}`,
     ];
 
     const subject = encodeURIComponent("Alliance Application");
@@ -53,26 +67,27 @@ const JoinUs = () => {
             Join Alliance
           </h2>
           <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-            We are always looking for new members to join our alliance. If you are interested in joining, please fill out the form below.
+            If you are interested in joining the alliance, please fill out the form below.
           </p>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-1 md:grid-cols-2"
+          className="mx-auto grid max-w-screen-md gap-6 grid-cols-2"
         >
           {[
-            { label: "Organization Name *", name: "organization", type: "text" },
-            { label: "Organization Type *", name: "type", type: "text", placeholder: "LLC, Inc., etc." },
-            { label: "Website URL", name: "website", type: "text" },
-            { label: "Industry *", name: "industry", type: "text" },
-            { label: "Code Repository URL", name: "code", type: "text" },
-            { label: "Contact Email *", name: "contact", type: "email" },
+            { label: "Organization Name *", name: "organization", type: "text", span: "col-span-1" },
+            { label: "Organization Type *", name: "type", type: "text", placeholder: "LLC, Inc., etc.", span: "col-span-1" },
+            { label: "Industry *", name: "industry", type: "text", span: "col-span-1" },
+            { label: "Website URL", name: "website", type: "text", required: false, span: "col-span-1", validation: websiteValid },
+            { label: "Code Repository URL", name: "code", type: "text", required: false, span: "col-span-1", validation: codeValid },
+            { label: "Contact Email *", name: "contact", type: "email", span: "col-span-1", validation: emailValid },
+            { label: "Core ID *", name: "core", type: "text", placeholder: "CB…", span: "col-span-2", validation: coreIdValid },
           ].map((field, index) => (
-            <div key={index} className="md:col-span-1">
+            <div key={index} className={`${field.span} grid grid-cols-1 gap-2`}>
               <label
                 htmlFor={field.name}
-                className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
+                className="text-sm font-medium text-gray-800"
               >
                 {field.label}
               </label>
@@ -82,14 +97,30 @@ const JoinUs = () => {
                 type={field.type as React.HTMLInputTypeAttribute}
                 value={(form as any)[field.name]}
                 onChange={handleChange}
-                className="w-full rounded border border-gray-200 bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+                className={`w-full rounded border px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring ${
+                  field.validation === false
+                    ? 'border-rose-300 bg-rose-50'
+                    : 'border-gray-200 bg-gray-50'
+                }`}
                 placeholder={field.placeholder}
-                required={["organization", "type", "industry", "contact"].includes(field.name)}
+                required={field.required === false ? false : true}
               />
+              {field.validation === false && field.name === 'core' && (
+                <p className="text-sm text-rose-600">Please enter a valid Core ID (CorePass Application)</p>
+              )}
+              {field.validation === false && field.name === 'contact' && (
+                <p className="text-sm text-rose-600">Please enter a valid email address</p>
+              )}
+              {field.validation === false && field.name === 'website' && (
+                <p className="text-sm text-rose-600">Please enter a valid URL (https://…)</p>
+              )}
+              {field.validation === false && field.name === 'code' && (
+                <p className="text-sm text-rose-600">Please enter a valid URL (https://…)</p>
+              )}
             </div>
           ))}
 
-          <div className="md:col-span-2 mt-2">
+          <div className="col-span-2 mt-2">
             <button
               type="submit"
               disabled={!requiredValid}
