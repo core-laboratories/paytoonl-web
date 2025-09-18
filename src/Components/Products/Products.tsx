@@ -24,20 +24,20 @@ export default function Products() {
           </div>
 
           <div className="flex flex-col rounded-lg border border-gray-300 bg-indigo-50 p-4 md:p-6">
-            <h3 className="mb-2 text-lg font-semibold md:text-xl">Settlement Platform</h3>
-            <p className="mb-4 text-gray-500">Send money globally in any currency using MoneyX ecosystem.</p>
-            <a href="https://moneyx.forex" target="_blank" rel="noopener" className="mt-auto font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Visit Website</a>
+            <h3 className="mb-2 text-lg font-semibold md:text-xl">ORIC</h3>
+            <p className="mb-4 text-gray-500">A Digital Wallet Identifier for Financial Service Providers (FSP).</p>
+            <a href="/solutions/oric" className="mt-auto font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">More Information</a>
           </div>
 
           <div className="flex flex-col rounded-lg border border-gray-300 bg-indigo-50 p-4 md:p-6">
             <h3 className="mb-2 text-lg font-semibold md:text-xl">PayPass</h3>
-            <p className="mb-4 text-gray-500">Enable customers to store payment passes directly on their phones.</p>
+            <p className="mb-4 text-gray-500">Digital wallet and payment management system for Apple and Google Wallet.</p>
             <a href="https://payto.money?pass=1" target="_blank" rel="noopener" className="mt-auto font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Visit Website</a>
           </div>
 
           <div className="flex flex-col rounded-lg border border-gray-300 bg-indigo-50 p-4 md:p-6">
             <h3 className="mb-2 text-lg font-semibold md:text-xl">FinTag</h3>
-            <p className="mb-4 text-gray-500">Easily embed payment instructions on websites.</p>
+            <p className="mb-4 text-gray-500">Financial meta/well-known system for secure implementation of multiple payment networks.</p>
             <a href="https://payto.money" target="_blank" rel="noopener" className="mt-auto font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700">Visit Website</a>
           </div>
 

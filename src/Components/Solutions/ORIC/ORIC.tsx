@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, CheckCircle, FileInput } from "lucide-react";
+import { ArrowLeft, FileInput } from "lucide-react";
 
 const ORIC = () => {
   const navigate = useNavigate();
@@ -25,28 +25,23 @@ const ORIC = () => {
               ORIC
             </h1>
             <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              ORIC (Organization Identifier Code) - A Digital Wallet Identifier for VASP Providers
+              ORIC (Organization Identifier Code) - A Digital Wallet Identifier for Financial Service Providers
             </p>
-            <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-              Any <b>VASP provider can apply</b> to issue their own <b>ORIC identifier,</b> provided they meet the following conditions:
-              <br />
-              <span className="inline-flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-indigo-500" aria-hidden="true" />
-                <b>Know Your Business (KYB) verification</b>
-              </span>
-              <br />
-              <span className="inline-flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-indigo-500" aria-hidden="true" />
-                <b>Registered as a VASP provider</b>
-              </span>
+            <p className="leading-relaxed text-gray-500 lg:w-4/5 xl:text-lg mb-2">
+              Any <b>Financial Service Provider can apply</b> to issue their own <b>ORIC identifier,</b> provided they meet the following conditions:
             </p>
+            <ul className="mb-8 md:mb-12 list-disc pl-5 space-y-1 text-gray-500 xl:text-lg">
+              <li>Verifying Core ID via CorePass</li>
+              <li>Know Your Business (KYB) verification</li>
+              <li>Registered as a Financial Service Provider</li>
+            </ul>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="mailto:apply@payto.onl?subject=ORIC%20Application"
                 className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
               >
-                Apply as a VASP provider
+                Apply as a Financial Service Provider
               </a>
             </div>
           </div>
@@ -75,16 +70,17 @@ const ORIC = () => {
               <b>Organization Code (A-Z) – 4 Letters</b>
               <ul className="list-disc pl-5 space-y-1">
                 <li>
-                  Identifies the VASP provider and is usually a shortened
+                  Identifies the Financial Service Provider and is usually a shortened
                   version of its name.
                 </li>
+                <li>Issued by PayTo Alliance.</li>
                 <li>Example: PING for Ping Exchange.</li>
               </ul>
             </li>
             <li>
               <b>Country Code (A-Z) – 2 Letters</b>
               <ul className="list-disc pl-5 space-y-1">
-                <li>Represents the country where the VASP is registered.</li>
+                <li>Represents the country where the Financial Service Provider is registered.</li>
                 <li>Follows ISO 3166-1 alpha-2 country codes.</li>
                 <li>Example: US for the United States, CH for Switzerland.</li>
               </ul>
@@ -99,43 +95,42 @@ const ORIC = () => {
                 <li>
                   Format: XY where:
                   <ul className="list-disc pl-5 space-y-1">
-                    <li>X (Letter or Number) – General location code.</li>
+                    <li>X (Letter or Number) – General location code. Default is B.</li>
                     <li>
                       Y (Number) – Specifies the type of usage:
                       <ul className="list-disc pl-5 space-y-1">
                         <li>0 = Test environment address.</li>
                         <li>
-                          1 = Passive network participant. (Not in custody of
-                          wallet)
+                          1 = Passive network participant. (Not in custody of wallet)
                         </li>
                         <li>
-                          2 = Reverse billing (recipient pays for the
-                          transaction - deducted transaction fees).
+                          2 = Custodial. (In custody of wallet)
                         </li>
                       </ul>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  Example: A1 (Live address, passive participant), B0 (Test
-                  network address).
+                  Example: B2 (Live address, custodial - Referenced as Core ID), B0 (Test network address).
                 </li>
               </ul>
             </li>
             <li>
-              <b>Asset Code (0-9, A-Z) – 3 Characters</b>
+              <b>Asset Code (0-9, A-Z) – 3 Characters (Optional)</b>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Represents the supported digital asset or currency.</li>
+                <li>If omitted, the ORIC code is considered to be referenced to Core ID.</li>
                 <li>
                   Can be:
                   <ul className="list-disc pl-5 space-y-1">
                     <li>Specific crypto assets (BTC, ETH, XCB).</li>
                     <li>Fiat currencies (CBDC, Stable, MiCA) (EUR, CHF).</li>
+                    <li>Commodities (Gold, Silver, Oil) (XAU, XAG, XOI).</li>
                     <li>Multi-currency support (XXX).</li>
                   </ul>
                 </li>
                 <li>
-                  Example: BTC (Bitcoin asset), XXX (multi-currency VASP).
+                  Example: BTC (Bitcoin asset), XXX (multi-currency custody).
                 </li>
               </ul>
             </li>
@@ -146,7 +141,7 @@ const ORIC = () => {
             href="mailto:apply@payto.onl?subject=ORIC%20Application"
             className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
           >
-            Apply as a VASP provider
+            Apply as a Financial Service Provider
           </a>
         </div>
         <div className="bg-white py-6 sm:py-8 lg:py-12">
@@ -174,11 +169,11 @@ const ORIC = () => {
 
                 <div className="mb-6 text-gray-500 sm:text-lg md:mb-8">
                   <p>
-                    Let’s say a <b>VASP provider named "Ping Exchange"</b>, based in <b>Switzerland (CH)</b>, is issuing a digital wallet identifier for <b>Core (XCB)</b>. Their ORIC code might look like:
+                    Let’s say a <b>Financial Service Provider named "Ping Exchange"</b>, based in <b>Switzerland (CH)</b>, is issuing a digital wallet identifier for <b>Core (XCB)</b> (Optional). Their ORIC code might look like:
                   </p>
                   <br />
                   <div className="flex justify-center items-center gap-2">
-                    <b>PINGCHB2XCB</b>
+                    <code><strong>PINGCHB2</strong>XCB</code>
                     <a
                       href="https://oric-v1.payto.onl/PINGCHB2XCB"
                       target="_blank"
@@ -196,9 +191,9 @@ const ORIC = () => {
                     <li>PING → Organization (Ping Exchange)</li>
                     <li>CH → Country (Switzerland)</li>
                     <li>
-                      B2 → Live digital address, fees deducted from the receiver
+                      B2 → Default location code, custodial - Referenced as Core ID
                     </li>
-                    <li>XCB → Core wallet</li>
+                    <li>XCB → Core wallet (Optional)</li>
                   </ul>
                 </div>
               </div>
@@ -207,7 +202,7 @@ const ORIC = () => {
         </div>
         <div className="flex flex-col pb-12 lg-pb-0 items-center justify-center text-center">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-            A Digital Wallet Identifier for VASP Providers
+            A Digital Wallet Identifier for Financial Service Providers
           </h2>
 
           <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
@@ -219,7 +214,7 @@ const ORIC = () => {
               href="mailto:contact@payto.onl?subject=ORIC%20Application"
               className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
             >
-              Apply as a VASP provider
+              Apply as a Financial Service Provider
             </a>
           </div>
         </div>
