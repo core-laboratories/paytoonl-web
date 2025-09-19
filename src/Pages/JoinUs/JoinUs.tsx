@@ -108,6 +108,19 @@ const JoinUs = () => {
               {field.validation === false && field.name === 'core' && (
                 <p className="text-sm text-rose-600">Please enter a valid Core ID (CorePass Application)</p>
               )}
+              {field.name === 'core' && (
+                <p className="text-xs text-gray-500 mt-1">
+                  Get your Core ID from{' '}
+                  <a
+                    href="https://corepass.net"
+                    target="_blank"
+                    rel="noopener"
+                    className="text-indigo-600 hover:text-indigo-700 underline"
+                  >
+                    CorePass
+                  </a>
+                </p>
+              )}
               {field.validation === false && field.name === 'contact' && (
                 <p className="text-sm text-rose-600">Please enter a valid email address</p>
               )}
