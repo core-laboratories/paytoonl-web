@@ -14,6 +14,9 @@ const Organizations = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    variableWidth: false,
+    centerMode: false,
+    centerPadding: "0px",
     responsive: [
       {
         breakpoint: 1024,
@@ -21,6 +24,7 @@ const Organizations = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
+          centerPadding: "0px",
         },
       },
       {
@@ -29,6 +33,7 @@ const Organizations = () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 2,
+          centerPadding: "0px",
         },
       },
       {
@@ -36,6 +41,7 @@ const Organizations = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerPadding: "0px",
         },
       },
     ],
@@ -48,22 +54,24 @@ const Organizations = () => {
           Alliance Members
         </h2>
 
-        <SliderComponent {...settings}>
-          {allianceMembers.map((member, index) => (
-            <div key={index} className="flex justify-center text-indigo-500">
-              <a href={member.link} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={member.logo}
-                  alt={member.name}
-                  className="h-16 w-auto mx-auto"
-                />
-              </a>
-            </div>
-          ))}
-        </SliderComponent>
+        <div className="px-2 sm:px-4">
+          <SliderComponent {...settings}>
+            {allianceMembers.map((member, index) => (
+              <div key={index} className="flex justify-center text-indigo-500 px-2 sm:px-4">
+                <a href={member.link} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={member.logo}
+                    alt={member.name}
+                    className="h-12 sm:h-14 lg:h-16 w-auto mx-auto"
+                  />
+                </a>
+              </div>
+            ))}
+          </SliderComponent>
+        </div>
 
         <div className="flex justify-center mt-8">
-          <a href="/members" className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">
+          <a href="/members" className="w-full sm:w-auto block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">
             View All Members
           </a>
         </div>

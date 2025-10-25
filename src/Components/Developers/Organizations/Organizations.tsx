@@ -30,36 +30,36 @@ const Organizations = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 xl:grid-cols-3 xl:gap-16">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {organizations.map((org) => (
             <div key={org.name} className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-              <div className="p-8">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-20 h-20 bg-gray-100 rounded-lg border-2 border-gray-200 overflow-hidden">
+              <div className="p-4 sm:p-6 lg:p-8">
+                <div className="flex flex-col sm:flex-row sm:items-center">
+                  <div className="flex-shrink-0 mb-4 sm:mb-0">
+                    <div className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gray-100 rounded-lg border-2 border-gray-200 overflow-hidden mx-auto sm:mx-0">
                       <img src={org.logo} alt={org.name} className="w-full h-full object-cover" />
                     </div>
                   </div>
-                  <div className="ml-4">
-                    <h2 className="text-xl font-bold text-gray-800">{org.name}</h2>
-                    <p className="text-gray-500">{org.description}</p>
+                  <div className="sm:ml-4 text-center sm:text-left">
+                    <h2 className="text-lg sm:text-xl font-bold text-gray-800">{org.name}</h2>
+                    <p className="text-sm sm:text-base text-gray-500 mt-1">{org.description}</p>
                   </div>
                 </div>
 
-                <div className="my-6 border-t border-gray-200"></div>
+                <div className="my-4 sm:my-6 border-t border-gray-200"></div>
 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center">
-                    <div className="flex items-center justify-center w-10 h-10 bg-indigo-50 rounded-full">
-                      <Globe className="w-5 h-5 text-indigo-500" />
+                    <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-indigo-50 rounded-full flex-shrink-0">
+                      <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />
                     </div>
-                    <div className="ml-3">
-                      <p className="text-sm font-medium text-gray-500">Website</p>
+                    <div className="ml-3 min-w-0 flex-1">
+                      <p className="text-xs sm:text-sm font-medium text-gray-500">Website</p>
                       <a
                         href={org.website}
                         target="_blank"
                         rel="noopener"
-                        className="text-gray-700 hover:text-indigo-600 transition-colors"
+                        className="text-sm sm:text-base text-gray-700 hover:text-indigo-600 transition-colors break-all"
                       >
                         {displayHost(org.website)}
                       </a>
@@ -67,16 +67,16 @@ const Organizations = () => {
                   </div>
 
                   <div className="flex items-center">
-                    <div className="flex items-center justify-center w-10 h-10 bg-indigo-50 rounded-full">
-                      <Code className="w-5 h-5 text-indigo-500" />
+                    <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-indigo-50 rounded-full flex-shrink-0">
+                      <Code className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />
                     </div>
-                    <div className="ml-3">
-                      <p className="text-sm font-medium text-gray-500">{org.code.provider}</p>
+                    <div className="ml-3 min-w-0 flex-1">
+                      <p className="text-xs sm:text-sm font-medium text-gray-500">{org.code.provider}</p>
                       <a
                         href={org.code.org}
                         target="_blank"
                         rel="noopener"
-                        className="text-gray-700 hover:text-indigo-600 transition-colors"
+                        className="text-sm sm:text-base text-gray-700 hover:text-indigo-600 transition-colors break-all"
                       >
                         {org.code.name}
                       </a>
@@ -84,14 +84,14 @@ const Organizations = () => {
                   </div>
 
                   <div className="flex items-center">
-                    <div className="flex items-center justify-center w-10 h-10 bg-indigo-50 rounded-full">
-                      <Mail className="w-5 h-5 text-indigo-500" />
+                    <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-indigo-50 rounded-full flex-shrink-0">
+                      <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-500" />
                     </div>
-                    <div className="ml-3">
-                      <p className="text-sm font-medium text-gray-500">Email</p>
+                    <div className="ml-3 min-w-0 flex-1">
+                      <p className="text-xs sm:text-sm font-medium text-gray-500">Email</p>
                       <a
                         href={`mailto:${org.contact.email}`}
-                        className="text-gray-700 hover:text-indigo-600 transition-colors"
+                        className="text-sm sm:text-base text-gray-700 hover:text-indigo-600 transition-colors break-all"
                       >
                         {org.contact.email}
                       </a>

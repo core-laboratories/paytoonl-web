@@ -4,7 +4,7 @@
       "text": "International Crypto Account Number",
       "link": {
         "href": "https://payto.money?tab=ican",
-        "text": "Try it now →"
+        "text": "Try it now"
       }
     },
     {
@@ -12,7 +12,7 @@
       "text": "International Bank Account Number",
       "link": {
         "href": "https://payto.money?tab=iban",
-        "text": "Try it now →"
+        "text": "Try it now"
       }
     },
     {
@@ -20,7 +20,7 @@
       "text": "Automated Clearing House",
       "link": {
         "href": "https://payto.money?tab=ach",
-       "text": "Try it now →"
+       "text": "Try it now"
       }
     },
     {
@@ -28,7 +28,7 @@
       "text": "Unified Payment Interface",
       "link": {
         "href": "https://payto.money?tab=upi",
-        "text": "Try it now →"
+        "text": "Try it now"
       }
     },
     {
@@ -36,7 +36,7 @@
       "text": "Brazil - Instant Payment Platform",
       "link": {
         "href": "https://payto.money?tab=pix",
-        "text": "Try it now →"
+        "text": "Try it now"
       }
     },
     {
@@ -44,7 +44,7 @@
       "text": "Bank Identifier Code",
       "link": {
         "href": "https://payto.money?tab=bic",
-          "text": "Try it now →"
+          "text": "Try it now"
       }
     },
     {
@@ -52,7 +52,7 @@
       "text": "Organization Identifier Code",
       "link": {
         "href": "https://payto.money?tab=bic",
-          "text": "Try it now →"
+          "text": "Try it now"
       }
     },
     {
@@ -60,7 +60,7 @@
       "text": "Intra-Bank Transfer",
       "link": {
         "href": "https://payto.money?tab=intra",
-          "text": "Try it now →"
+          "text": "Try it now"
       }
     },
     {
@@ -68,7 +68,7 @@
       "text": "Cash-based transactions",
       "link": {
         "href": "https://payto.money?tab=void",
-          "text": "Try it now →"
+          "text": "Try it now"
       }
     },
     {
@@ -76,7 +76,7 @@
       "text": "Geolocation coordinates - decimal degrees",
       "link": {
         "href": "https://payto.money?tab=void",
-          "text": "Try it now →"
+          "text": "Try it now"
       }
     },
     {
@@ -84,7 +84,7 @@
       "text": "Open Location Code location coordinates",
       "link": {
         "href": "https://payto.money?tab=void",
-          "text": "Try it now →"
+          "text": "Try it now"
       }
     },
     {
@@ -92,7 +92,7 @@
       "text": "",
       "link": {
         "href": "mailto:contact@payto.onl?subject=PayTo%20Standard%20Request",
-          "text": "Contact us by email →"
+          "text": "Contact us by email"
       }
     }
   ]

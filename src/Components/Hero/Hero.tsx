@@ -26,9 +26,9 @@ const Hero = () => {
         <h1 className="mb-8 text-center text-4xl text-white sm:text-5xl md:mb-12 md:text-6xl">PayTo:{currentText}</h1>
 
         <div className="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
-          <a href="/solutions" className="inline-block rounded-lg bg-[#77bb65]/80 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-green-300 transition duration-100 hover:bg-[#77bb65] focus-visible:ring active:bg-green-700 md:text-base">Start using</a>
+          <a href="/solutions" className="inline-block rounded-lg bg-[#77bb65]/80 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-green-300 transition duration-100 hover:bg-[#77bb65] focus-visible:ring active:bg-green-700 md:text-base">Solutions</a>
 
-          <a href="/alliance" className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-green-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Join Alliance</a>
+          <a href="/alliance" className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-green-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Alliance</a>
         </div>
       </div>
     </section>

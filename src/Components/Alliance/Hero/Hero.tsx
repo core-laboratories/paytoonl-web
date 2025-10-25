@@ -3,7 +3,7 @@ import React from "react";
 const Hero = () => {
   return (
     <section className="container mx-auto px-4 mb-8 flex flex-col justify-between gap-6 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row lg:px-0">
-      <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-6/12">
+      <div className="flex flex-col sm:text-center lg:text-left xl:w-6/12">
         <p className="mb-4 font-semibold text-black md:mb-6 md:text-md xl:text-md">
           Be Part of the Next Generation of Payment Standards
         </p>
