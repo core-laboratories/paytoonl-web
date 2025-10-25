@@ -54,7 +54,7 @@ const JoinUs = () => {
 
     const subject = encodeURIComponent("Alliance Application");
     const body = encodeURIComponent(lines.join("\n"));
-    const mailto = `mailto:apply@payto.onl?subject=${subject}&body=${body}`;
+    const mailto = `mailto:application@payto.onl?subject=${subject}&body=${body}`;
 
     window.location.href = mailto;
   };
@@ -67,13 +67,13 @@ const JoinUs = () => {
             Join Alliance
           </h2>
           <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-            If you are interested in joining the alliance, please fill out the form below.
+            If you are interested in joining the Alliance, please fill out the form below.
           </p>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="mx-auto grid max-w-screen-md gap-6 grid-cols-2"
+          className="mx-auto grid max-w-screen-md gap-4 grid-cols-1 sm:grid-cols-2"
         >
           {[
             { label: "Organization Name *", name: "organization", type: "text", span: "col-span-1" },
@@ -82,9 +82,9 @@ const JoinUs = () => {
             { label: "Website URL", name: "website", type: "text", required: false, span: "col-span-1", validation: websiteValid },
             { label: "Code Repository URL", name: "code", type: "text", required: false, span: "col-span-1", validation: codeValid },
             { label: "Contact Email *", name: "contact", type: "email", span: "col-span-1", validation: emailValid },
-            { label: "Core ID *", name: "core", type: "text", placeholder: "CB…", span: "col-span-2", validation: coreIdValid },
+            { label: "Core ID *", name: "core", type: "text", placeholder: "CB…", span: "col-span-1 sm:col-span-2", validation: coreIdValid },
           ].map((field, index) => (
-            <div key={index} className={`${field.span} grid grid-cols-1 gap-2`}>
+            <div key={index} className={`${field.span} grid grid-cols-1 gap-1`}>
               <label
                 htmlFor={field.name}
                 className="text-sm font-medium text-gray-800"
@@ -97,7 +97,7 @@ const JoinUs = () => {
                 type={field.type as React.HTMLInputTypeAttribute}
                 value={(form as any)[field.name]}
                 onChange={handleChange}
-                className={`w-full rounded border px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring ${
+                className={`w-full rounded border px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring resize-none ${
                   field.validation === false
                     ? 'border-rose-300 bg-rose-50'
                     : 'border-gray-200 bg-gray-50'
@@ -109,7 +109,7 @@ const JoinUs = () => {
                 <p className="text-sm text-rose-600">Please enter a valid Core ID (CorePass Application)</p>
               )}
               {field.name === 'core' && (
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs text-gray-500 mt-1 text-center sm:text-left">
                   Get your Core ID from{' '}
                   <a
                     href="https://corepass.net"
@@ -133,7 +133,7 @@ const JoinUs = () => {
             </div>
           ))}
 
-          <div className="col-span-2 mt-2">
+          <div className="col-span-1 sm:col-span-2 mt-2">
             <button
               type="submit"
               disabled={!requiredValid}

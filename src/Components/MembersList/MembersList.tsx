@@ -12,7 +12,7 @@ const MembersList = () => {
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div className="mb-4 flex flex-col items-center md:mb-8 lg:flex-row lg:justify-between">
           <h2 className="mb-2 text-center text-2xl font-bold text-gray-800 lg:mb-0 lg:text-3xl">
-            Alliance members
+            Alliance Members
           </h2>
           <p className="max-w-md text-center text-gray-400 lg:text-right">
             Visionaries that have joined the PayTo Alliance to make payments easier for everyone.
@@ -30,7 +30,7 @@ const MembersList = () => {
                   className="flex h-16 items-center justify-center rounded-lg bg-gray-100 p-4 text-gray-400 hover:text-gray-500 sm:h-24 md:h-32 no-underline transition-colors gap-3"
                 >
                   {company.logo ? (
-                    company.logoOnly ? (
+                    (company as any).logoOnly ? (
                       <img
                         src={company.logo}
                         alt={company.name}
@@ -57,7 +57,7 @@ const MembersList = () => {
               ) : (
                 <div className="flex h-16 items-center justify-center rounded-lg bg-gray-100 p-4 text-gray-400 sm:h-24 md:h-32 gap-3">
                   {company.logo ? (
-                    company.logoOnly ? (
+                    (company as any).logoOnly ? (
                       <img
                         src={company.logo}
                         alt={company.name}
@@ -89,7 +89,7 @@ const MembersList = () => {
             href="/members"
             className="flex h-16 items-center justify-center rounded-lg bg-gray-100 p-4 text-gray-400 hover:text-gray-500 sm:h-24 md:h-32 no-underline transition-colors"
           >
-            <span className="text-sm sm:text-base">View all members</span>
+            <span className="text-sm sm:text-base text-center">View all members</span>
           </a>
         </div>
       </div>

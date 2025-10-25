@@ -9,7 +9,7 @@ const Title = () => {
         </h1>
 
         <p className="mb-2 leading-relaxed text-gray-500  xl:text-lg">
-          View Solutions and apply them to your project.
+          View solutions and apply them to your project.
         </p>
         <div className="mb-8 leading-relaxed text-gray-500 md:mb-12 xl:text-lg">
           If you want to be a part of the PayTo Alliance, join us today!

@@ -4,79 +4,80 @@ import React from "react";
 const Blocks = () => {
   return (
     <>
-      <h2 className="mb-4 mt-12  text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl lg:mt-0">
-        We Welcome
+      <h2 className="mb-6 mt-12 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl lg:mt-0">
+        Business Partners
       </h2>
-      <div className="w-full container mx-auto overflow-hidden rounded-lg border border-gray-300 bg-gray-50 shadow-sm lg:block">
-        <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-8 p-4 sm:p-8">
-          <div className="grid w-full lg:w-2/3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
-            <div className="group flex items-center gap-4">
+      <div className="mx-4 sm:mx-6 lg:mx-8">
+        <div className="w-full container mx-auto overflow-hidden rounded-lg border border-gray-300 bg-gray-50 shadow-sm lg:block">
+        <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-6 sm:gap-8 p-4 sm:p-6 lg:p-8">
+          <div className="grid w-full lg:w-2/3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div className="group flex items-center gap-3 sm:gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
                 <Landmark className="h-6 w-6" />
               </div>
 
               <div>
-                <div className="mb-1 font-semibold">
+                <div className="mb-1 font-semibold text-sm sm:text-base">
                   Financial Institutions & FinTech
                 </div>
               </div>
             </div>
 
-            <div className="group flex items-center gap-4">
+            <div className="group flex items-center gap-3 sm:gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
                 <Currency className="h-6 w-6" />
               </div>
 
               <div>
-                <div className="mb-1 font-semibold">
+                <div className="mb-1 font-semibold text-sm sm:text-base">
                   Exchanges & Blockchain Processors
                 </div>
               </div>
             </div>
 
-            <div className="group flex items-center gap-4">
+            <div className="group flex items-center gap-3 sm:gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
                 <Coins className="h-6 w-6" />
               </div>
 
               <div>
-                <div className="mb-1 font-semibold">
+                <div className="mb-1 font-semibold text-sm sm:text-base">
                   VASPs
                 </div>
               </div>
             </div>
 
-            <div className="group flex items-center gap-4">
+            <div className="group flex items-center gap-3 sm:gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
                 <WalletCards className="h-6 w-6" />
               </div>
 
               <div>
-                <div className="mb-1 font-semibold">
-                   Payment Processors & DePIN
+                <div className="mb-1 font-semibold text-sm sm:text-base">
+                  Payment Processors & DePIN
                 </div>
               </div>
             </div>
 
-            <div className="group flex items-center gap-4">
+            <div className="group flex items-center gap-3 sm:gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
                 <ShieldUser className="h-6 w-6" />
               </div>
 
               <div>
-                <div className="mb-1 font-semibold">
+                <div className="mb-1 font-semibold text-sm sm:text-base">
                   Regulatory & Compliance Bodies
                 </div>
               </div>
             </div>
 
-            <div className="group flex items-center gap-4">
+            <div className="group flex items-center gap-3 sm:gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
                 <Store className="h-6 w-6" />
               </div>
 
               <div>
-                <div className="mb-1 font-semibold">
+                <div className="mb-1 font-semibold text-sm sm:text-base">
                   E-commerce & Digital Platforms
                 </div>
               </div>
@@ -92,6 +93,7 @@ const Blocks = () => {
               />
             </div>
           </div>
+        </div>
         </div>
       </div>
     </>

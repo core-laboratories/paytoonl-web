@@ -6,10 +6,9 @@ const Footer = () => {
     <footer className="bg-white">
       <div className="pb-16 pt-4 sm:pt-10 lg:pt-12 container mx-auto px-4 sm:px-6 lg:px-0">
         <div>
-          <nav aria-label="breadcrumb">
-            <ol className="inline-flex items-center space-x-4 py-4 text-sm font-medium">
+          <nav aria-label="breadcrumb" className="overflow-x-auto">
+            <ol className="inline-flex items-center space-x-2 py-4 text-sm font-medium whitespace-nowrap min-w-max">
               <li className="inline-flex items-center">
-                <span className="text-gray-600 mr-4">Navigation:</span>
                 <a href="/" className="text-secondary-500 hover:text-secondary-600">Home</a>
               </li>
               {window.location.pathname.split('/').filter(Boolean).map((segment, index, segments) => {
@@ -23,7 +22,7 @@ const Footer = () => {
                 // Check if this is the last segment (current page)
                 const isLastSegment = index === segments.length - 1;
                 return (
-                  <li key={path} className="inline-flex items-center space-x-4" {...(isLastSegment ? {'aria-current': 'page'} : {})}>
+                  <li key={path} className="inline-flex items-center space-x-2" {...(isLastSegment ? {'aria-current': 'page'} : {})}>
                     <ChevronRight className="h-6 w-6 text-gray-400" />
                     <a
                       href={path}
@@ -232,8 +231,8 @@ const Footer = () => {
       </div>
 
       <div className="bg-gray-100">
-        <div className="container mx-auto max-w-screen-2xl">
-          <div className="container mx-auto flex items-center justify-between gap-4 py-8">
+        <div className="container mx-auto max-w-screen-2xl px-4 md:px-0">
+          <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 py-8">
             <span className="text-sm text-gray-400">
               <a href="https://github.com/bchainhub/core-license" target="_blank" rel="noopener"
               >
