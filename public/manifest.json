@@ -2,9 +2,9 @@
 	"name": "PayTo Alliance",
 	"short_name": "PayTo Alliance",
 	"display": "standalone",
-	"theme_color": "#77bb65",
-	"background_color": "#111827",
-	"description": "PayTo Alliance is an Alliance for Financial Services.",
+	"theme_color": "#4f46e5",
+	"background_color": "#ffffff",
+	"description": "The PayTo Alliance is dedicated to advancing payment technology standards and fostering innovation in the financial sector through collaborative development and open standards.",
 	"icons": [
 	  {
 		"src": "/icons/icon-48x48.png",
