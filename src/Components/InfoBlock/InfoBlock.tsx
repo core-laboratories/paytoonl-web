@@ -12,7 +12,7 @@ export default function InfoBlock() {
               </div>
             </div>
 
-            <div className="md:pt-8">
+            <div>
               <a id="mission" />
               <h1 className="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">Mission</h1>
 
