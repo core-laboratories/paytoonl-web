@@ -103,7 +103,14 @@ const Organizations = () => {
           ))}
         </div>
         <p className="mt-8 mb-12 lg:mt-16 mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-          If your company is working with PayTo standards, reach out to get listed here.
+          If your organization is contributing to PayTo standards,{" "}
+          <a
+            href="mailto:contact@payto.onl?subject=Dev%20Application"
+            className="text-indigo-600 hover:text-indigo-700 transition-colors"
+          >
+            reach out
+          </a>{" "}
+          to get listed here.
         </p>
       </div>
     </div>
