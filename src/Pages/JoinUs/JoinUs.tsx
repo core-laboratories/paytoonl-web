@@ -80,8 +80,8 @@ const JoinUs = () => {
             { label: "Organization Type *", name: "type", type: "text", placeholder: "LLC, Inc., etc.", span: "col-span-1" },
             { label: "Industry *", name: "industry", type: "text", span: "col-span-1" },
             { label: "Website URL", name: "website", type: "text", required: false, span: "col-span-1", validation: websiteValid },
-            { label: "Code Repository URL", name: "code", type: "text", required: false, span: "col-span-1", validation: codeValid },
             { label: "Contact Email *", name: "contact", type: "email", span: "col-span-1", validation: emailValid },
+            { label: "Code Repository URL", name: "code", type: "text", required: false, span: "col-span-1", validation: codeValid },
             { label: "Core ID *", name: "core", type: "text", placeholder: "CB…", span: "col-span-1 sm:col-span-2", validation: coreIdValid },
           ].map((field, index) => (
             <div key={index} className={`${field.span} grid grid-cols-1 gap-1`}>
@@ -132,12 +132,6 @@ const JoinUs = () => {
               )}
             </div>
           ))}
-
-          <div className="col-span-1 sm:col-span-2 mt-4 mb-2">
-            <div className="bg-blue-50 border-l-4 border-blue-200 rounded px-4 py-2 text-sm text-gray-700">
-              <span className="font-medium">Membership fee:</span> €10,000 per year
-            </div>
-          </div>
 
           <div className="col-span-1 sm:col-span-2 mt-2">
             <button
