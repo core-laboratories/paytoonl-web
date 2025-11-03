@@ -12,22 +12,22 @@ export default function FAQSimple() {
     {
       question: "What is PayTo protocol?",
       answer:
-        "PayTo is an open-source payment protocol that enables direct, peer-to-peer financial transactions without intermediaries. It provides a standardized way to send and receive payments across different platforms and networks, making financial interactions more efficient, secure, and accessible. The protocol supports various payment methods and can be integrated into existing financial infrastructure.",
+        "PayTo is an open-source payment protocol that enables direct, peer-to-peer financial transactions without intermediaries. The protocol provides a standardized way to send and receive payments across different platforms and networks, making financial interactions more efficient, secure, and accessible. PayTo supports various payment methods and can be integrated into existing financial infrastructure.",
     },
     {
-      question: "Can I integrate it into my payment infrastructure?",
+      question: "Can I integrate into my payment infrastructure?",
       answer:
-        "Yes, PayTo protocol is designed for easy integration into existing payment systems. It provides a composition system and libraries that allow developers to add PayTo functionality to their applications. The protocol is compatible with various programming languages and frameworks, making it suitable for both small businesses and large enterprises looking to modernize their payment processing capabilities.",
+        "Yes, PayTo protocol is designed for easy integration into existing payment systems. The protocol includes a composition system and libraries that enable developers to add PayTo functionality to applications. Compatibility with various programming languages and frameworks makes PayTo suitable for both small businesses and large enterprises looking to modernize payment processing capabilities.",
     },
     {
       question: "Where are the solutions supported?",
       answer:
-        "PayTo solutions are supported across multiple platforms and networks. The protocol works on major blockchain networks, traditional banking systems, and digital payment platforms. Alliance members provide infrastructure and services that ensure PayTo works seamlessly across different regions and regulatory environments, making it a truly global payment solution.",
+        "PayTo solutions are supported across multiple platforms and networks. The protocol operates on major blockchain networks, traditional banking systems, and digital payment platforms. Alliance members provide infrastructure and services that ensure seamless operation across different regions and regulatory environments, enabling global payment solutions.",
     },
     {
       question: "How to start applying the solutions?",
       answer:
-        "To get started with PayTo solutions, begin by exploring our documentation and developer resources. You can join our alliance to access technical support, implementation guides, and community forums. We offer developer teams for testing and provide step-by-step tutorials for integrating PayTo into your applications. Contact our development teams for specialized implementation support.",
+        "To get started with PayTo solutions, begin by exploring available documentation and developer resources. Joining the Alliance provides access to technical support, implementation guides, and community forums. Developer teams are available for testing, along with step-by-step tutorials for integrating PayTo into applications. Contact development teams for specialized implementation support.",
     },
   ];
 
