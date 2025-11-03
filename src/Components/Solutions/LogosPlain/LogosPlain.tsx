@@ -11,7 +11,7 @@ export default function LogosPlain() {
     },
     {
       title: "FinTag",
-      description: "Financial meta system for secure implementation of multiple payment networks",
+      description: "Financial meta and well-known system for secure implementation of multiple payment networks",
       href: "/solutions/fintag",
       icon: Tag
     },

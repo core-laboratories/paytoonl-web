@@ -106,6 +106,38 @@ const ICAN = () => {
           </div>
         </div>
 
+        <section className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
+          <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+            Showcase
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+            <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+              <h3 className="mb-3 text-lg font-semibold text-gray-800">Native format</h3>
+              <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words font-zephirum">
+cb7147879011ea207df5b35a24ca6f0859dcfb145999
+              </pre>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+              <h3 className="mb-3 text-lg font-semibold text-gray-800">Electronic format</h3>
+              <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words font-zephirum">
+CB7147879011EA207DF5B35A24CA6F0859DCFB145999
+              </pre>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+              <h3 className="mb-3 text-lg font-semibold text-gray-800">Print format</h3>
+              <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words font-zephirum">
+CB71 4787 9011 EA20 7DF5 B35A 24CA 6F08 59DC FB14 5999
+              </pre>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+              <h3 className="mb-3 text-lg font-semibold text-gray-800">ID format</h3>
+              <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words font-zephirum">
+CB71…5999
+              </pre>
+            </div>
+          </div>
+        </section>
+
         <div className="bg-white py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-2xl px-2 sm:px-4 md:px-8">
             <div className="mb-10 md:mb-16">
