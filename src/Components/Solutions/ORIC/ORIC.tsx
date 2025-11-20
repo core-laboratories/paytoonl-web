@@ -25,10 +25,10 @@ const ORIC = () => {
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
               <a
-                href="mailto:application@payto.onl?subject=ORIC%20Application"
+                href="/joinus"
                 className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
               >
-                Apply as a Financial Service Provider
+                Join the Alliance
               </a>
             </div>
           </div>
@@ -193,10 +193,10 @@ const ORIC = () => {
 
           <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-center">
             <a
-              href="mailto:application@payto.onl?subject=ORIC%20Application"
+              href="/joinus"
               className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
             >
-              Apply as a Financial Service Provider
+              Join the Alliance
             </a>
           </div>
         </div>
