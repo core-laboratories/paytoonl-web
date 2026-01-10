@@ -43,16 +43,16 @@ const FinTag = () => {
           Showcase
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-          <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+        <div className="bg-gray-100 p-4 rounded-lg shadow-md">
             <h3 className="mb-3 text-lg font-semibold text-gray-800">Meta Tags</h3>
             <p className="mb-2 text-xs text-gray-500 font-mono">index.html</p>
-            <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words">
-              {`<meta property="ican:xcb" content="cb00…" />`}
-              <br />
-              {`<meta property="iban" content="BE68539007547034" />`}
-              <br />
-              {`<meta property="void:plus" content="8FWR5XCG+VM" />`}
-            </pre>
+          <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words">
+            {`<meta property="ican:xcb" content="cb00…" />`}
+            <br />
+            {`<meta property="iban" content="BE68539007547034" />`}
+            <br />
+            {`<meta property="void:plus" content="8FWR5XCG+VM" />`}
+          </pre>
           </div>
           <div className="bg-gray-100 p-4 rounded-lg shadow-md">
             <h3 className="mb-3 text-lg font-semibold text-gray-800">Well-Known</h3>
@@ -88,11 +88,11 @@ const FinTag = () => {
               </div>
 
               <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                Authenticity & Trust
-              </h3>
+                  Authenticity & Trust
+                </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
                 FinTag is attached to the website and can be used to verify the authenticity of the payment details.
-              </p>
+                </p>
             </div>
 
             <div className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-200 hover:border-indigo-200">
@@ -103,11 +103,11 @@ const FinTag = () => {
               </div>
 
               <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                Automation & Integration
-              </h3>
+                  Automation & Integration
+                </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
                 Browser extensions, payment apps, and digital services can automatically detect FinTags on a webpage, enabling seamless transactions without manual input errors.
-              </p>
+                </p>
             </div>
 
             <div className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-200 hover:border-indigo-200">
@@ -118,11 +118,11 @@ const FinTag = () => {
               </div>
 
               <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                Decentralized & Open-Source
-              </h3>
+                  Decentralized & Open-Source
+                </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                The FinTag standard is flexible and open-source, allowing businesses, nonprofits, and individuals to integrate it into any website. Each subpage can include different payment details, making it a robust solution for large organizations with multiple departments or divisions.
-              </p>
+                  The FinTag standard is flexible and open-source, allowing businesses, nonprofits, and individuals to integrate it into any website. Each subpage can include different payment details, making it a robust solution for large organizations with multiple departments or divisions.
+                </p>
             </div>
           </div>
 
@@ -135,11 +135,11 @@ const FinTag = () => {
               </div>
 
               <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                Improved Payment Experience
-              </h3>
+                  Improved Payment Experience
+                </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Clients and customers can instantly verify payment details before initiating a transfer, reducing the chances of incorrect payments or fraudulent transactions.
-              </p>
+                  Clients and customers can instantly verify payment details before initiating a transfer, reducing the chances of incorrect payments or fraudulent transactions.
+                </p>
             </div>
 
             <div className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-200 hover:border-indigo-200">
@@ -150,11 +150,11 @@ const FinTag = () => {
               </div>
 
               <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                Universal Standardization
-              </h3>
+                  Universal Standardization
+                </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                FinTag can serve as a universal financial metadata standard, making online transactions more transparent, efficient, and secure.
-              </p>
+                  FinTag can serve as a universal financial metadata standard, making online transactions more transparent, efficient, and secure.
+                </p>
             </div>
           </div>
 

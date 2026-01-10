@@ -116,45 +116,45 @@ const Navbar = () => {
                 <img src="/static/icons/logo.svg" alt="logo" className="w-8 h-8" />
                 PayTo Alliance
               </a>
-              <button
-                type="button"
-                onClick={toggleMobileMenu}
+            <button
+              type="button"
+              onClick={toggleMobileMenu}
                 className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gray-200 text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700"
-              >
-                <X className="w-6 h-6" />
-              </button>
+            >
+              <X className="w-6 h-6" />
+            </button>
             </div>
             <div className="flex-1 overflow-y-auto">
               <nav className="flex flex-col p-4 gap-4 text-lg bg-white">
-                <a
-                  href="/solutions"
+              <a
+                href="/solutions"
                   className="text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700 py-3 px-2 rounded-lg hover:bg-gray-50"
                   onClick={toggleMobileMenu}
-                >
-                  Solutions
-                </a>
-                <a
-                  href="/developers"
+              >
+                Solutions
+              </a>
+              <a
+                href="/developers"
                   className="text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700 py-3 px-2 rounded-lg hover:bg-gray-50"
                   onClick={toggleMobileMenu}
-                >
+              >
                   Developers
-                </a>
-                <a
-                  href="/alliance"
+              </a>
+              <a
+                href="/alliance"
                   className="text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700 py-3 px-2 rounded-lg hover:bg-gray-50"
                   onClick={toggleMobileMenu}
-                >
-                  Alliance
-                </a>
-                <a
-                  href="/joinus"
+              >
+                Alliance
+              </a>
+              <a
+                href="/joinus"
                   className="rounded-lg bg-gray-200 px-8 py-3 text-center text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 mt-4"
                   onClick={toggleMobileMenu}
-                >
-                  Join Alliance
-                </a>
-              </nav>
+              >
+                Join Alliance
+              </a>
+            </nav>
             </div>
           </div>
         )}

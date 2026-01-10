@@ -129,12 +129,41 @@ CB7147879011EA207DF5B35A24CA6F0859DCFB145999
 CB71 4787 9011 EA20 7DF5 B35A 24CA 6F08 59DC FB14 5999
               </pre>
             </div>
-            <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-              <h3 className="mb-3 text-lg font-semibold text-gray-800">ID format</h3>
-              <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words font-zephirum">
+          </div>
+
+          <div className="mt-8 lg:mt-12">
+            <h3 className="mb-4 text-center text-xl font-semibold text-gray-800 md:mb-6">
+              ID format
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+              <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+                <h4 className="mb-3 text-base font-semibold text-gray-800">Strength 1</h4>
+                <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words font-zephirum">
+…5999
+                </pre>
+              </div>
+              <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+                <h4 className="mb-3 text-base font-semibold text-gray-800">Strength 2</h4>
+                <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words font-zephirum">
 CB71…5999
-              </pre>
+                </pre>
+              </div>
+              <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+                <h4 className="mb-3 text-base font-semibold text-gray-800">Strength 3</h4>
+                <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words font-zephirum">
+CB71…B35A…5999
+                </pre>
+              </div>
+              <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+                <h4 className="mb-3 text-base font-semibold text-gray-800">Strength 4</h4>
+                <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words font-zephirum">
+CB714787…B35A…5999
+                </pre>
+              </div>
             </div>
+            <p className="mt-4 text-center text-sm text-gray-600 max-w-2xl mx-auto">
+              The delimiter can be customized, but the default is three dots <code className="font-zephirum">…</code> (Unicode U+2026).
+            </p>
           </div>
         </section>
 
