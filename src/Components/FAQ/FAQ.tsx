@@ -61,7 +61,7 @@ export default function FAQSimple() {
                       className={`h-6 w-6 transition-transform duration-200 ${
                         activeIndex === index ? "rotate-180" : ""
                       }`}
-                    />
+                      />
                   </span>
                 </div>
 

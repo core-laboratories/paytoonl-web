@@ -55,19 +55,19 @@ const Organizations = () => {
         </h2>
 
         <div className="px-2 sm:px-4">
-          <SliderComponent {...settings}>
-            {allianceMembers.map((member, index) => (
+        <SliderComponent {...settings}>
+          {allianceMembers.map((member, index) => (
               <div key={index} className="flex justify-center text-indigo-500 px-2 sm:px-4">
-                <a href={member.link} target="_blank" rel="noopener noreferrer">
-                  <img
-                    src={member.logo}
-                    alt={member.name}
+              <a href={member.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={member.logo}
+                  alt={member.name}
                     className="h-12 sm:h-14 lg:h-16 w-auto mx-auto"
-                  />
-                </a>
-              </div>
-            ))}
-          </SliderComponent>
+                />
+              </a>
+            </div>
+          ))}
+        </SliderComponent>
         </div>
 
         <div className="flex justify-center mt-8">

@@ -8,7 +8,7 @@ const Blocks = () => {
         Business Partners
       </h2>
       <div className="mx-4 sm:mx-6 lg:mx-8">
-        <div className="w-full container mx-auto overflow-hidden rounded-lg border border-gray-300 bg-gray-50 shadow-sm lg:block">
+      <div className="w-full container mx-auto overflow-hidden rounded-lg border border-gray-300 bg-gray-50 shadow-sm lg:block">
         <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-6 sm:gap-8 p-4 sm:p-6 lg:p-8">
           <div className="grid w-full lg:w-2/3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             <div className="group flex items-center gap-3 sm:gap-4">
@@ -54,7 +54,7 @@ const Blocks = () => {
 
               <div>
                 <div className="mb-1 font-semibold text-sm sm:text-base">
-                  Payment Processors & DePIN
+                   Payment Processors & DePIN
                 </div>
               </div>
             </div>
@@ -92,8 +92,8 @@ const Blocks = () => {
                 className="h-full w-full object-cover object-center"
               />
             </div>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </>

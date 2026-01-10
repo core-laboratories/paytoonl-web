@@ -72,7 +72,7 @@ const PayTo = () => {
                   {item.link.text}
                   <ArrowRight className="h-4 w-4" />
                 </div>
-              </a>
+                </a>
             ))}
           </div>
         </div>
