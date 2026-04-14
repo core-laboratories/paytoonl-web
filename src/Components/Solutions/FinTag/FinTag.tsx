@@ -12,7 +12,7 @@ const FinTag = () => {
               FinTag
             </h1>
             <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              FinTag is an innovative meta tag and well-known JSON concept designed to store and display financial payment details such as ICAN, IBAN, ACH, PIX, UPI, BIC, and other payment identifiers.
+              FinTag is an innovative meta tag and a well-known JSON concept designed to store and display financial payment details such as ICAN, IBAN, ACH, PIX, UPI, BIC, and other payment identifiers.
             </p>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
@@ -58,10 +58,10 @@ const FinTag = () => {
             <h3 className="mb-3 text-lg font-semibold text-gray-800">Well-Known</h3>
             <p className="mb-2 text-xs text-gray-500 font-mono">/.well-known/fintag.json</p>
             <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words">
-{`{
-  "ican:xcb": "cb00…",
-  "void:plus": "8FWR5XCG+VM"
-}`}
+{`[
+  { "ican:xcb": "cb00…" },
+  { "void:plus": "8FWR5XCG+VM" }
+]`}
             </pre>
           </div>
         </div>
@@ -71,7 +71,7 @@ const FinTag = () => {
         <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-8">
           <div className="mb-10 md:mb-16">
             <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-              Key functionalities
+              Key functionality
             </h2>
 
             <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
