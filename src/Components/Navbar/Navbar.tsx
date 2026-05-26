@@ -74,6 +74,12 @@ const Navbar = () => {
               Developers
             </a>
             <a
+              href="/map"
+              className="text-lg text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
+            >
+              Map
+            </a>
+            <a
               href="/alliance"
               className="text-lg text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
             >
@@ -139,6 +145,13 @@ const Navbar = () => {
                   onClick={toggleMobileMenu}
               >
                   Developers
+              </a>
+              <a
+                href="/map"
+                  className="text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700 py-3 px-2 rounded-lg hover:bg-gray-50"
+                  onClick={toggleMobileMenu}
+              >
+                  Map
               </a>
               <a
                 href="/alliance"

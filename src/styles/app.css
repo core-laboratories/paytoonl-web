@@ -41,3 +41,34 @@
 	}
 }
 
+.payto-map-marker {
+	width: 18px;
+	height: 18px;
+	border-radius: 9999px;
+	background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+	border: 3px solid #ecfeff;
+	box-shadow: 0 10px 24px rgba(15, 118, 110, 0.35);
+}
+
+.payto-map-popup .maplibregl-popup-content {
+	border-radius: 16px;
+	padding: 0;
+	box-shadow: 0 16px 36px rgba(15, 23, 42, 0.18);
+}
+
+.payto-map-popup__content {
+	padding: 0.9rem 1rem;
+	min-width: 220px;
+}
+
+.payto-map-popup__title {
+	font-weight: 700;
+	color: #111827;
+	margin-bottom: 0.25rem;
+}
+
+.payto-map-popup__meta {
+	font-size: 0.9rem;
+	line-height: 1.45;
+	color: #475569;
+}
