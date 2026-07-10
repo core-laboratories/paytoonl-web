@@ -9,9 +9,13 @@ const __dirname = path.dirname(__filename);
 
 export default {
   entry: "./src/index.tsx",
+  target: ["web", "es2020"],
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "assets/[name].[contenthash].js",
+    chunkFilename: "assets/[name].[contenthash].js",
+    publicPath: "/",
+    clean: true,
   },
   module: {
     rules: [
@@ -21,7 +25,21 @@ export default {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
+            presets: [
+              [
+                "@babel/preset-env",
+                {
+                  targets: {
+                    chrome: "109",
+                    edge: "109",
+                    firefox: "109",
+                    safari: "16.4",
+                  },
+                },
+              ],
+              ["@babel/preset-react", { runtime: "automatic" }],
+              "@babel/preset-typescript",
+            ],
           },
         },
       },
@@ -54,6 +72,7 @@ export default {
     new CopyWebpackPlugin({
       patterns: [
         { from: "public/manifest.json", to: "manifest.json" },
+        { from: "public/_redirects", to: "_redirects", toType: "file" },
         { from: "public/static/icons", to: "static/icons" },
         { from: "public/static/images", to: "static/images" },
       ],
