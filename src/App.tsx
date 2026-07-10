@@ -17,6 +17,7 @@ import JoinUs from "./Pages/JoinUs/JoinUs.tsx";
 import Alliance from "./Pages/Alliance/Alliance.tsx";
 import Members from "./Pages/Members/Members.tsx";
 import Map from "./Pages/Map/Map.tsx";
+import NotFound from "./Pages/NotFound/NotFound.tsx";
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
             <Route path="/joinus" element={<JoinUs />} />
             <Route path="/members" element={<Members />} />
             <Route path="/map" element={<Map />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
