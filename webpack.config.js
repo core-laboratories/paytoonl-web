@@ -25,6 +25,8 @@ export default {
         use: {
           loader: "babel-loader",
           options: {
+            babelrc: false,
+            configFile: false,
             presets: [
               [
                 "@babel/preset-env",
@@ -37,7 +39,7 @@ export default {
                   },
                 },
               ],
-              ["@babel/preset-react", { runtime: "automatic" }],
+              ["@babel/preset-react", { runtime: "automatic", development: false }],
               "@babel/preset-typescript",
             ],
           },
