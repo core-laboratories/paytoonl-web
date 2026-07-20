@@ -1,13 +1,13 @@
-import { Banknote, BookMarked, Tag, WalletCards, MessageSquareCode, ChevronsLeftRightEllipsis, ArrowRight } from "lucide-react";
+import { AudioLines, Banknote, BookMarked, Tag, WalletCards, MessageSquareCode, ChevronsLeftRightEllipsis, ArrowRight, Landmark } from "lucide-react";
 import React from "react";
 
 export default function LogosPlain() {
   const solutions = [
     {
-      title: "PayTo",
-      description: "Direct peer-to-peer payment protocol enabling instant transfers across networks without intermediaries",
-      href: "/solutions/payto",
-      icon: Banknote
+      title: "Core Banking",
+      description: "Connect to the Coreclear network to process and settle transactions across financial systems",
+      href: "/solutions/corebanking",
+      icon: Landmark
     },
     {
       title: "FinTag",
@@ -16,16 +16,16 @@ export default function LogosPlain() {
       icon: Tag
     },
     {
-      title: "ORIC",
-      description: "FinTech organization registry for secure digital identification",
-      href: "/solutions/oric",
-      icon: BookMarked
-    },
-    {
       title: "ICAN",
       description: "International Crypto Account Number for transfer of digital assets",
       href: "/solutions/ican",
       icon: ChevronsLeftRightEllipsis
+    },
+    {
+      title: "ORIC",
+      description: "FinTech organization registry for secure digital identification",
+      href: "/solutions/oric",
+      icon: BookMarked
     },
     {
       title: "PayPass",
@@ -34,10 +34,22 @@ export default function LogosPlain() {
       icon: WalletCards
     },
     {
+      title: "PayTo",
+      description: "Direct peer-to-peer payment protocol enabling instant transfers across networks without intermediaries",
+      href: "/solutions/payto",
+      icon: Banknote
+    },
+    {
       title: "TxMS",
       description: "Transaction messaging system for offline payments",
       href: "/solutions/txms",
       icon: MessageSquareCode
+    },
+    {
+      title: "VoiceTx",
+      description: "Send secure transactions through a simple phone call, even without an internet connection",
+      href: "/solutions/voicetx",
+      icon: AudioLines
     }
   ];
 
@@ -55,14 +67,14 @@ export default function LogosPlain() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
             {solutions.map((solution, index) => {
               const IconComponent = solution.icon;
               return (
                 <a
                   key={index}
                   href={solution.href}
-                  className="group flex flex-col items-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 hover:border-indigo-200 cursor-pointer"
+                  className={`group flex flex-col items-center p-6 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 hover:border-indigo-200 cursor-pointer lg:col-span-2 ${solutions.length % 3 === 2 && index === solutions.length - 2 ? "lg:col-start-2" : ""}`}
                 >
                   <div className="p-3 bg-indigo-50 rounded-lg group-hover:bg-indigo-100 transition-colors duration-200">
                     <IconComponent className="h-8 w-8 text-indigo-500" />

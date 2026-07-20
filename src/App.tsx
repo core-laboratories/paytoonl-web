@@ -11,6 +11,8 @@ import ICAN from "./Components/Solutions/ICAN/ICAN.tsx";
 import ORIC from "./Components/Solutions/ORIC/ORIC.tsx";
 import PayPass from "./Components/Solutions/PayPass/PayPass.tsx";
 import TxMS from "./Components/Solutions/TxMS/TxMS.tsx";
+import VoiceTx from "./Components/Solutions/VoiceTx/VoiceTx.tsx";
+import CoreBanking from "./Components/Solutions/CoreBanking/CoreBanking.tsx";
 
 import Developers from "./Pages/Developers/Developers.tsx";
 import JoinUs from "./Pages/JoinUs/JoinUs.tsx";
@@ -35,6 +37,8 @@ const App = () => {
             <Route path="/solutions/oric" element={<ORIC />} />
             <Route path="/solutions/paypass" element={<PayPass />} />
             <Route path="/solutions/txms" element={<TxMS />} />
+            <Route path="/solutions/voicetx" element={<VoiceTx />} />
+            <Route path="/solutions/corebanking" element={<CoreBanking />} />
 
             <Route path="/developers" element={<Developers />} />
             <Route path="/alliance" element={<Alliance />} />

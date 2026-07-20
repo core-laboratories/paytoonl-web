@@ -81,7 +81,7 @@ const Footer = () => {
 
                 <div>
                   <a
-                    href="https://payto.money/card"
+                    href="https://cryptocard.creditcard"
                     target="_blank"
                     rel="noopener"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
