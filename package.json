@@ -18,10 +18,10 @@
   },
   "dependencies": {
     "@blockchainhub/ican": "^0.4.3",
-    "@tailwindcss/postcss": "^4.3.2",
-    "autoprefixer": "^10.5.2",
-    "lucide-react": "^1.24.0",
-    "postcss": "^8.5.16",
+    "@tailwindcss/postcss": "^4.3.3",
+    "autoprefixer": "^10.5.4",
+    "lucide-react": "^1.25.0",
+    "postcss": "^8.5.20",
     "postcss-loader": "^8.2.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
@@ -29,7 +29,7 @@
     "react-slick": "^0.31.0",
     "react-typed": "^2.0.12",
     "slick-carousel": "^1.8.1",
-    "tailwindcss": "^4.3.2"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@babel/core": "^8.0.1",
