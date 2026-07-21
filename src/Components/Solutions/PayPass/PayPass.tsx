@@ -35,7 +35,7 @@ const PayPass = () => {
             <img
               src="/static/images/splash-pass.jpg"
               loading="lazy"
-              alt="Photo by yadunandlal"
+              alt="Photo by Rastislav Vašička"
               className="h-full w-full object-cover object-center"
             />
           </div>

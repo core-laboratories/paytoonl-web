@@ -38,10 +38,13 @@ const VoiceTx = () => {
 					</p>
 				</div>
 
-				<div className="flex min-h-64 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-indigo-100 via-white to-violet-100 shadow-lg lg:w-5/12">
-					<div className="rounded-full bg-white p-10 shadow-md">
-						<AudioLines className="h-24 w-24 text-indigo-500" aria-hidden="true" />
-					</div>
+				<div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto lg:w-5/12 max-h-96">
+					<img
+						src="/static/images/splash-voicetx.jpg"
+						loading="lazy"
+						alt="Photo by Rastislav Vašička"
+						className="h-full w-full object-cover object-center"
+					/>
 				</div>
 			</div>
 

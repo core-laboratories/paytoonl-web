@@ -98,7 +98,7 @@ const ICAN = () => {
                 <img
                   src="/static/images/splash-ican-format.jpg"
                   loading="lazy"
-                  alt="Photo by Lucas van Oort"
+                  alt="Photo by Rastislav Vašička"
                   className="h-full w-full object-cover object-center"
                 />
               </div>

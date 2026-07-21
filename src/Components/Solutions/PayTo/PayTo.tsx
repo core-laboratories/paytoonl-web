@@ -38,7 +38,7 @@ const PayTo = () => {
           <img
             src="/static/images/splash-payto.jpg"
             loading="lazy"
-            alt="Photo by Clay Banks"
+            alt="Photo by Rastislav Vašička"
             className="h-full w-full object-cover object-center"
           />
         </div>
