@@ -31,7 +31,7 @@ const FinTag = () => {
             <img
               src="/static/images/splash-fintag.jpg"
               loading="lazy"
-              alt="Photo by Chris Stein"
+              alt="Photo by Rastislav Vašička"
               className="h-full w-full object-cover object-center"
             />
           </div>

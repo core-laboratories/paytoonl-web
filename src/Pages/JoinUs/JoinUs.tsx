@@ -69,6 +69,15 @@ const JoinUs = () => {
           <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
             If you are interested in joining the Alliance, please fill out the form below.
           </p>
+          <p className="mx-auto mt-2 max-w-screen-md text-center text-gray-500 md:text-lg">
+            Form will be sent to email{" "}
+            <a
+              href="mailto:application@payto.onl?subject=Alliance%20Application"
+              className="text-indigo-600 underline hover:text-indigo-700"
+            >
+              application@payto.onl
+            </a>
+          </p>
         </div>
 
         <form
@@ -79,9 +88,9 @@ const JoinUs = () => {
             { label: "Organization Name *", name: "organization", type: "text", span: "col-span-1" },
             { label: "Organization Type *", name: "type", type: "text", placeholder: "LLC, Inc., etc.", span: "col-span-1" },
             { label: "Industry *", name: "industry", type: "text", span: "col-span-1" },
-            { label: "Website URL", name: "website", type: "text", required: false, span: "col-span-1", validation: websiteValid },
+            { label: "Website URL (optional)", name: "website", type: "text", required: false, span: "col-span-1", validation: websiteValid },
             { label: "Contact Email *", name: "contact", type: "email", span: "col-span-1", validation: emailValid },
-            { label: "Code Repository URL", name: "code", type: "text", required: false, span: "col-span-1", validation: codeValid },
+            { label: "Code Repo URL (optional)", name: "code", type: "text", required: false, span: "col-span-1", validation: codeValid },
             { label: "Core ID *", name: "core", type: "text", placeholder: "CB…", span: "col-span-1 sm:col-span-2", validation: coreIdValid },
           ].map((field, index) => (
             <div key={index} className={`${field.span} grid grid-cols-1 gap-1`}>
@@ -132,6 +141,10 @@ const JoinUs = () => {
               )}
             </div>
           ))}
+
+          <p className="col-span-1 text-sm text-gray-500 sm:col-span-2">
+            * Required fields
+          </p>
 
           <div className="col-span-1 sm:col-span-2 mt-2">
             <button

@@ -37,7 +37,7 @@ const ORIC = () => {
             <img
               src="/static/images/splash-oric.jpg"
               loading="lazy"
-              alt="Photo by Tim Evans"
+              alt="Photo by Rastislav Vašička"
               className="h-full w-full object-cover object-center"
             />
           </div>
@@ -131,7 +131,7 @@ const ORIC = () => {
                   <img
                     src="/static/images/splash-oric-reg.jpg"
                     loading="lazy"
-                    alt="Photo by Maksym Kaharlytskyi"
+                    alt="Photo by Rastislav Vašička"
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
