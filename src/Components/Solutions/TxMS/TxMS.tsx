@@ -142,6 +142,29 @@ const TxMS = () => {
           </div>
         </div>
         <div className="bg-white py-6 sm:py-8 lg:py-12">
+          <div className="mx-auto max-w-screen-md px-4 text-center md:px-8">
+            <h2 className="mb-4 text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+              Binary-to-Text Data Encoding
+            </h2>
+
+            <p className="mb-4 text-gray-500 md:text-lg">
+              Binary data can contain byte values that text-only channels cannot safely transmit. Binary-to-text encoding converts those bytes into readable, transport-safe characters so the data can pass through channels such as SMS, messaging systems, and other text-based services.
+            </p>
+            <p className="text-gray-500 md:text-lg">
+              TxMS uses this approach to compress binary transaction data into a readable text format. The encoded text can later be decoded back into its original hexadecimal representation without losing information. TxMS is listed as an example in Wikipedia&apos;s{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Binary-to-text_encoding#Examples"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-indigo-500 underline decoration-indigo-200 underline-offset-2 transition-colors hover:text-indigo-600"
+              >
+                binary-to-text encoding examples
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+        <div className="bg-white py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-xl px-4 md:px-8">
             <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
               <div>
