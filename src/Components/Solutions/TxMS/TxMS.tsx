@@ -215,6 +215,16 @@ const TxMS = () => {
                       +1 (201) 483-5939
                     </a>
                   </div>
+                  <p className="mt-6 text-sm leading-relaxed sm:text-base">
+                    Some mobile network providers block outbound SMS messages to international or service numbers. We&apos;re expanding our local number coverage to improve availability. If neither the primary nor alternative number works in your country,{" "}
+                    <a
+                      href="mailto:contact@payto.onl?subject=TxMS%20Coverage%20Extension%20Request"
+                      className="font-medium text-indigo-500 hover:text-indigo-600 hover:underline"
+                    >
+                      contact us
+                    </a>{" "}
+                    to request support for your location.
+                  </p>
                 </div>
               </div>
             </div>
