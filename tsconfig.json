@@ -15,10 +15,6 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "strictNullChecks": true,
-    "paths": {
-      "*": ["*"]
-    },
-    "baseUrl": "./src",
     "allowImportingTsExtensions": true,
     "noImplicitAny": true
   },
