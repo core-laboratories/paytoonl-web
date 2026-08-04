@@ -1,5 +1,6 @@
 import React from "react";
 import { BotMessageSquare, MessageSquareCode, MessageSquareLock, RadioTower } from "lucide-react";
+import TxMSNumbers from "./TxMSNumbers.tsx";
 
 const TxMS = () => {
   return (
@@ -142,79 +143,67 @@ const TxMS = () => {
           </div>
         </div>
         <div className="bg-white py-6 sm:py-8 lg:py-12">
-          <div className="mx-auto max-w-screen-md px-4 text-center md:px-8">
-            <h2 className="mb-4 text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-              Binary-to-Text Data Encoding
-            </h2>
+          <div className="mx-auto grid max-w-screen-xl gap-10 px-4 md:grid-cols-2 md:gap-12 md:px-8">
+            <div>
+              <h2 className="mb-4 text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+                Binary-to-Text Data Encoding
+              </h2>
 
-            <p className="mb-4 text-gray-500 md:text-lg">
-              Binary data can contain byte values that text-only channels cannot safely transmit. Binary-to-text encoding converts those bytes into readable, transport-safe characters so the data can pass through channels such as SMS, messaging systems, and other text-based services.
-            </p>
-            <p className="text-gray-500 md:text-lg">
-              TxMS uses this approach to compress binary transaction data into a readable text format. The encoded text can later be decoded back into its original hexadecimal representation without losing information. TxMS is listed as an example in Wikipedia&apos;s{" "}
-              <a
-                href="https://en.wikipedia.org/wiki/Binary-to-text_encoding#Examples"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-indigo-500 underline decoration-indigo-200 underline-offset-2 transition-colors hover:text-indigo-600"
-              >
-                binary-to-text encoding examples
-              </a>
-              .
-            </p>
+              <p className="mb-4 text-gray-500 md:text-lg">
+                Binary data can contain byte values that text-only channels cannot safely transmit. Binary-to-text encoding converts those bytes into readable, transport-safe characters so the data can pass through channels such as SMS, messaging systems, and other text-based services.
+              </p>
+              <p className="text-gray-500 md:text-lg">
+                TxMS uses this approach to compress binary transaction data into a readable text format. The encoded text can later be decoded back into its original hexadecimal representation without losing information. TxMS is listed as an example in Wikipedia&apos;s{" "}
+                <a
+                  href="https://en.wikipedia.org/wiki/Binary-to-text_encoding#Examples"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-indigo-500 underline decoration-indigo-200 underline-offset-2 transition-colors hover:text-indigo-600"
+                >
+                  binary-to-text encoding examples
+                </a>
+                .
+              </p>
+            </div>
+
+            <div>
+              <h2 className="mb-4 text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+                Use Cases
+              </h2>
+
+              <ul className="list-disc space-y-2 pl-6 text-gray-500 md:text-lg">
+                <li>
+                  Banks & Financial Institutions – To send secure and structured payment requests
+                </li>
+                <li>
+                  Crypto Wallets & Exchanges – To facilitate digital asset transactions
+                </li>
+                <li>
+                  Businesses & Merchants – To send invoices and payment confirmations in a standardized way
+                </li>
+                <li>
+                  Consumers & Individuals – To receive trusted transaction messages when making payments
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="bg-white py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-xl px-4 md:px-8">
             <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
-              <div>
-                <div className="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-146">
+              <div className="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-full md:min-h-146">
                   <img
                     src="/static/images/splash-txms-usecases.jpg"
                     loading="lazy"
                     alt="Photo by Rastislav Vašička"
                     className="h-full w-full object-cover object-center"
                   />
-                </div>
               </div>
 
-              <div className="md:pt-8">
-                <h1 className="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">
-                  Use Cases
-                </h1>
-
-                <ul className="px-6 list-disc mb-6 text-gray-500 sm:text-lg md:mb-8">
-                  <li>
-                    Banks & Financial Institutions – To send secure and structured payment requests
-                  </li>
-                  <li>
-                    Crypto Wallets & Exchanges – To facilitate digital asset transactions
-                  </li>
-                  <li>
-                    Businesses & Merchants – To send invoices and payment confirmations in a standardized way
-                  </li>
-                  <li>
-                    Consumers & Individuals – To receive trusted transaction messages when making payments
-                  </li>
-                </ul>
-
-                <h2 className="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">
-                  Numbers
-                </h2>
-
-                <div className="px-6 mb-6 text-gray-500 sm:text-lg md:mb-8 text-center sm:text-left">
-                  <div className="mb-3">
-                    <div className="font-semibold text-gray-800">Core Mainnet Number</div>
-                    <a href="tel:+12019715152" className="text-indigo-500">
-                      +1 (201) 971-5152
-                    </a>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-800">Core Testnet Number</div>
-                    <a href="tel:+12014835939" className="text-indigo-500">
-                      +1 (201) 483-5939
-                    </a>
-                  </div>
+              <div>
+                <div className="mb-6 space-y-4 text-gray-500 md:mb-8">
+                  <TxMSNumbers />
+                  <TxMSNumbers network="testnet" />
                   <p className="mt-6 text-sm leading-relaxed sm:text-base">
                     Some mobile network providers block outbound SMS messages to international or service numbers. We&apos;re expanding our local number coverage to improve availability. If neither the primary nor alternative number works in your country,{" "}
                     <a
