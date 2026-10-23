@@ -182,7 +182,7 @@ const ORIC = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col pb-12 lg-pb-0 items-center justify-center text-center">
+        <div className="flex flex-col pb-12 lg:pb-0 items-center justify-center text-center">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
             A Digital Wallet Identifier for Financial Service Providers
           </h2>
