@@ -1,9 +1,10 @@
 import { ChevronRight } from "lucide-react";
 import React from "react";
+import Brand from "../Brand/Brand.tsx";
 
 const Footer = () => {
   return (
-    <footer className="bg-white">
+    <footer className="site-footer bg-white">
       <div className="pb-16 pt-4 sm:pt-10 lg:pt-12 container mx-auto px-4 sm:px-6 lg:px-0">
         <div>
           <nav aria-label="breadcrumb" className="overflow-x-auto">
@@ -15,7 +16,19 @@ const Footer = () => {
                 // Create path for this breadcrumb level
                 const path = `/${segments.slice(0, index + 1).join('/')}`;
                 // Format the segment text (convert kebab-case to Title Case)
-                const formattedText = segment
+                const routeLabels: Record<string, string> = {
+                  corebanking: 'Core Banking',
+                  barcodetx: 'BarcodeTx',
+                  fintag: 'FinTag',
+                  ican: 'ICAN',
+                  oric: 'ORIC',
+                  paypass: 'PayPass',
+                  payto: 'PayTo',
+                  txms: 'TxMS',
+                  voicetx: 'VoiceTx',
+                  joinus: 'Join Alliance',
+                };
+                const formattedText = routeLabels[segment] ?? segment
                   .split('-')
                   .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                   .join(' ');
@@ -43,11 +56,10 @@ const Footer = () => {
               <div className="mb-4 lg:-mt-2">
                 <a
                   href="/"
-                  className="inline-flex items-center gap-2 text-xl font-bold text-black md:text-2xl"
-                  aria-label="logo"
+                  className="site-brand-link"
+                  aria-label="PayTo Alliance home"
                 >
-                  <img src="/static/icons/logo.svg" alt="logo" className="w-8 h-8 mr-2" />
-                  PayTo Alliance
+                  <Brand />
                 </a>
               </div>
               <p className="text-gray-500 sm:pr-8">
@@ -76,6 +88,15 @@ const Footer = () => {
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     PayPass
+                  </a>
+                </div>
+
+                <div>
+                  <a
+                    href="/solutions/barcodetx"
+                    className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                  >
+                    BarcodeTx
                   </a>
                 </div>
 

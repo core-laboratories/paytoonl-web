@@ -12,14 +12,14 @@ Modern React + Tailwind CSS website for the PayTo Alliance.
 
 - React 19, React Router 7
 - Tailwind CSS 4, PostCSS, Autoprefixer
-- Webpack 5, Babel, TypeScript 5
+- Webpack 5, Babel, TypeScript 7
 - Lucide React icons
 
 ## Getting Started
 
 Prerequisites:
 
-- Node.js 20+ and npm
+- Node.js 26.5+ and npm
 
 Install dependencies:
 
@@ -35,7 +35,7 @@ Start a local dev server with HMR:
 npm run dev
 ```
 
-This opens the site at `http://localhost:8080`.
+This opens the site at `http://localhost:9000`.
 
 ### Production Build
 

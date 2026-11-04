@@ -13,6 +13,7 @@ import PayPass from "./Components/Solutions/PayPass/PayPass.tsx";
 import TxMS from "./Components/Solutions/TxMS/TxMS.tsx";
 import VoiceTx from "./Components/Solutions/VoiceTx/VoiceTx.tsx";
 import CoreBanking from "./Components/Solutions/CoreBanking/CoreBanking.tsx";
+import BarcodeTx from "./Components/Solutions/BarcodeTx/BarcodeTx.tsx";
 
 import Developers from "./Pages/Developers/Developers.tsx";
 import JoinUs from "./Pages/JoinUs/JoinUs.tsx";
@@ -26,7 +27,7 @@ const App = () => {
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-16 sm:pt-18 lg:pt-20">
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/solutions" element={<Solutions />} />
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/solutions/txms" element={<TxMS />} />
             <Route path="/solutions/voicetx" element={<VoiceTx />} />
             <Route path="/solutions/corebanking" element={<CoreBanking />} />
+            <Route path="/solutions/barcodetx" element={<BarcodeTx />} />
 
             <Route path="/developers" element={<Developers />} />
             <Route path="/alliance" element={<Alliance />} />

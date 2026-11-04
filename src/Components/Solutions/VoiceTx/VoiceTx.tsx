@@ -1,86 +1,74 @@
 import React from "react";
-import { AudioLines, BadgeCheck, Globe2, PhoneCall, ShieldCheck } from "lucide-react";
+import { ArrowRight, CircleCheck, Globe2, LockKeyhole, Mic2, RotateCcw, Send, ShieldCheck, Smartphone, Volume2, WifiOff } from "lucide-react";
 
-const features = [
-	{
-		icon: PhoneCall,
-		title: "A Phone Call Is the Connection",
-		description: "VoiceTx carries a prepared transaction over an ordinary voice call, so sending does not depend on mobile data or Wi-Fi."
-	},
-	{
-		icon: AudioLines,
-		title: "Data Transmitted as Sound",
-		description: "The transaction is converted into audio tones that travel through the call and are decoded by the receiving service."
-	},
-	{
-		icon: ShieldCheck,
-		title: "Protected Against Transmission Errors",
-		description: "Built-in validation checks make sure the complete transaction arrived correctly before it is accepted for processing."
-	},
-	{
-		icon: Globe2,
-		title: "Designed for Local Access",
-		description: "Dedicated service numbers will be available by country, making VoiceTx practical for people wherever phone service is available."
-	}
+const steps = [
+	{ number: "01", icon: LockKeyhole, title: "Prepare and sign", description: "Review the payment and sign it on the sending device. The audio carries an already signed transaction." },
+	{ number: "02", icon: Volume2, title: "Play the transfer", description: "VoiceTx turns the signed data into audible tones and plays them through the device speaker." },
+	{ number: "03", icon: Mic2, title: "Listen and reconstruct", description: "A nearby receiver captures the sound, rebuilds the complete payload, and checks it for transmission errors." },
+	{ number: "04", icon: Send, title: "Choose how to forward", description: "After a complete capture, the receiver can explicitly forward a supported transaction. Network confirmation comes later." },
 ];
 
-const VoiceTx = () => {
-	return (
-		<section className="container mx-auto flex flex-col gap-12 px-4 lg:px-0">
-			<div className="flex flex-col justify-between gap-10 lg:flex-row">
-				<div className="flex flex-col justify-center sm:text-center lg:w-5/12 lg:py-16 lg:text-left">
-					<h1 className="mb-6 text-4xl font-bold text-black sm:text-5xl md:text-6xl">VoiceTx</h1>
-					<p className="mb-6 leading-relaxed text-gray-500 xl:text-lg">
-						VoiceTx lets you send a transaction through a phone call. Your device prepares and signs the transaction, converts it into sound, and transmits it securely to the VoiceTx service for processing.
-					</p>
-					<p className="leading-relaxed text-gray-500 xl:text-lg">
-						It is a simple way to move transaction data when internet access is unavailable or unreliable. Dedicated service numbers will be provided for supported countries as the service becomes available.
-					</p>
-				</div>
+const benefits = [
+	{ icon: WifiOff, title: "No direct data link", description: "The signing device can stay disconnected while sound carries the signed data to a nearby receiver." },
+	{ icon: ShieldCheck, title: "Complete before forwarding", description: "Packet and payload checks help reject incomplete or damaged captures instead of forwarding partial data." },
+	{ icon: RotateCcw, title: "Replay when needed", description: "If the receiver misses the transfer, the same prepared audio can play again from the beginning." },
+];
 
-				<div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto lg:w-5/12 max-h-96">
-					<img
-						src="/static/images/splash-voicetx.jpg"
-						loading="lazy"
-						alt="Photo by Rastislav Vašička"
-						className="h-full w-full object-cover object-center"
-					/>
-				</div>
+const waveformHeights = [24, 42, 64, 38, 82, 53, 34, 74, 48, 90, 59, 32, 72, 46, 86, 51, 30, 67, 42, 78, 36];
+
+const VoiceTxVisual = () => (
+	<div className="voicetx-visual" role="img" aria-label="Illustration of a disconnected sending device playing transaction data as sound to a listening receiver">
+		<div className="voicetx-visual-top"><span>ACOUSTIC HANDOFF</span><span>VOICE TX / 01</span></div>
+		<div className="voicetx-visual-stage">
+			<div className="voicetx-visual-device"><span className="voicetx-visual-device-icon"><Volume2 size={27} aria-hidden="true" /></span><strong>Send</strong><small>Signed transaction</small></div>
+			<div className="voicetx-visual-sound" aria-hidden="true">{waveformHeights.map((height, index) => <i key={index} style={{ height: `${height}%`, animationDelay: `${index * -90}ms` }} />)}</div>
+			<div className="voicetx-visual-device"><span className="voicetx-visual-device-icon"><Mic2 size={27} aria-hidden="true" /></span><strong>Receive</strong><small>Checked payload</small></div>
+		</div>
+		<div className="voicetx-visual-bottom"><span>NO DIRECT DATA LINK</span><span>LISTEN · CHECK · FORWARD</span></div>
+	</div>
+);
+
+const VoiceTx = () => (
+	<section className="voicetx-page solution-detail container mx-auto flex flex-col gap-12 px-4 lg:px-0">
+		<div className="voicetx-hero flex flex-col justify-between gap-10 lg:flex-row">
+			<div className="voicetx-hero-copy flex flex-col justify-center sm:text-center lg:w-5/12 lg:text-left">
+				<span className="section-eyebrow">ACOUSTIC TRANSACTION TRANSFER</span>
+				<h1 className="mb-6 text-4xl font-bold text-black sm:text-5xl md:text-6xl">VoiceTx</h1>
+				<p className="voicetx-lead">Move a signed transaction between nearby devices using sound.</p>
+				<p className="voicetx-support">One device plays the prepared audio. A second device listens, checks the complete message, and can forward it when a delivery channel is available.</p>
+				<a className="voicetx-button" href="#voice-flow">Explore the flow <ArrowRight size={18} aria-hidden="true" /></a>
 			</div>
+			<VoiceTxVisual />
+		</div>
 
-			<div className="py-6 sm:py-8 lg:py-12">
-				<div className="mb-10 text-center md:mb-16">
-					<h2 className="mb-4 text-2xl font-bold text-gray-800 md:text-3xl">How VoiceTx Helps</h2>
-					<p className="mx-auto max-w-screen-md text-gray-500 md:text-lg">
-						A dependable bridge between your wallet and the transaction network, using the reach of a voice call.
-					</p>
-				</div>
-
-				<div className="grid gap-6 sm:grid-cols-2">
-					{features.map((feature) => {
-						const Icon = feature.icon;
-						return (
-							<div key={feature.title} className="group rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-indigo-200 hover:shadow-md">
-								<div className="mb-4 inline-flex rounded-lg bg-indigo-50 p-3 transition-colors group-hover:bg-indigo-100">
-									<Icon className="h-6 w-6 text-indigo-500" aria-hidden="true" />
-								</div>
-								<h3 className="mb-3 text-lg font-semibold text-gray-800">{feature.title}</h3>
-								<p className="text-sm leading-relaxed text-gray-500">{feature.description}</p>
-							</div>
-						);
-					})}
-				</div>
-			</div>
-
-			<div className="rounded-xl bg-gray-50 px-6 py-10 text-center md:px-10">
-				<BadgeCheck className="mx-auto mb-4 h-9 w-9 text-indigo-500" aria-hidden="true" />
-				<h2 className="mb-4 text-2xl font-bold text-gray-800 md:text-3xl">Simple from Start to Finish</h2>
-				<p className="mx-auto max-w-screen-md leading-relaxed text-gray-500 md:text-lg">
-					Prepare the transaction in a supported application, call the VoiceTx service for your country, and let the application transmit it. The service receives and verifies the full message before passing it on for processing.
-				</p>
+		<section id="voice-flow" className="voicetx-section">
+			<div className="voicetx-section-heading"><span className="section-eyebrow">HOW IT WORKS</span><h2>From signature to sound to network.</h2><p>VoiceTx separates signing, acoustic delivery, and network submission into deliberate steps.</p></div>
+			<div className="voicetx-steps">
+				{steps.map(({ number, icon: Icon, title, description }) => (
+					<article className="voicetx-step" key={number}><span className="voicetx-step-number">{number}</span><span className="voicetx-step-icon"><Icon size={24} aria-hidden="true" /></span><h3>{title}</h3><p>{description}</p></article>
+				))}
 			</div>
 		</section>
-	);
-};
+
+		<section className="voicetx-section">
+			<div className="voicetx-section-heading"><span className="section-eyebrow">BUILT FOR HANDOFFS</span><h2>Useful when devices cannot connect directly.</h2></div>
+			<div className="voicetx-benefits">
+				{benefits.map(({ icon: Icon, title, description }) => (
+					<article className="voicetx-benefit" key={title}><span className="voicetx-benefit-icon"><Icon size={23} aria-hidden="true" /></span><div><h3>{title}</h3><p>{description}</p></div></article>
+				))}
+			</div>
+		</section>
+
+		<section className="voicetx-forwarding">
+			<div><span className="section-eyebrow">AFTER CAPTURE</span><h2>The receiver stays in control.</h2><p>A completed audio transfer gives the receiving device a checked, signed payload. Forwarding is a separate choice.</p></div>
+			<div className="voicetx-forwarding-options">
+				<article><span className="voicetx-benefit-icon"><Globe2 size={22} aria-hidden="true" /></span><div><h3>Forward over the Internet</h3><p>Submit supported transactions through a network connection and receive a transaction ID after submission.</p></div></article>
+				<article><span className="voicetx-benefit-icon"><Smartphone size={22} aria-hidden="true" /></span><div><h3>Forward through TxMS</h3><p>For a single transaction, an available SMS channel can provide another delivery route.</p></div></article>
+			</div>
+		</section>
+
+		<div className="voicetx-clarity"><span className="voicetx-clarity-icon"><CircleCheck size={27} aria-hidden="true" /></span><div><h2>Clear status at every step</h2><p>Audio is audible and does not encrypt the transaction. A successful capture means the data arrived intact; the embedded signature supplies authorization, and the blockchain confirms the transaction only after forwarding and acceptance.</p></div></div>
+	</section>
+);
 
 export default VoiceTx;

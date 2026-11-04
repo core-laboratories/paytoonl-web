@@ -1,105 +1,47 @@
 import React from "react";
 import data from "../../../data/paytoStandarts.json" with { type: "json" };
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check, CircleCheck, Code2, Copy, Globe2, Link2, QrCode, ScanLine, Send, ShieldCheck, Smartphone } from "lucide-react";
 
-const PayTo = () => {
-  return (
-    <section className="container mx-auto flex flex-col px-4 gap-6 sm:gap-10 md:gap-16 lg:px-0">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
-        <div className="flex flex-col justify-center sm:text-center lg:pb-12 lg:text-left xl:w-5/12 xl:pb-24">
-          <h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">
-            PayTo
-          </h1>
+const steps = [
+	{ number: "01", icon: Link2, title: "Create a request", description: "Choose a payment method and destination. Where supported, add details such as an amount." },
+	{ number: "02", icon: Send, title: "Share it anywhere", description: "Send the link, place it behind a QR code, or use it in a compatible website or app." },
+	{ number: "03", icon: ShieldCheck, title: "Let the payer review", description: "A compatible payment app reads the details and presents them for review before the payer authorizes a transfer." },
+];
 
-          <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-            The PayTo protocol is a universal payment initiation standard
-            designed to streamline digital transactions by providing a
-            consistent and interoperable way to represent payment targets. It
-            simplifies how payments are directed between users, businesses, and
-            financial institutions, ensuring a seamless experience across
-            different payment systems. By defining a structured method for
-            specifying payment details, the protocol enhances automation,
-            reduces errors, and increases efficiency in financial transactions.
-          </p>
+const uses = [
+	{ icon: QrCode, title: "On a counter", description: "Put a payment request behind a scannable code for an in-person handoff." },
+	{ icon: Globe2, title: "On a website", description: "Give a checkout or donation page a clear route into a compatible payment app." },
+	{ icon: Smartphone, title: "In a conversation", description: "Share a payment request in a message without asking someone to retype the destination." },
+];
 
-          <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-            <a
-              href="https://payto.money"
-              target="_blank"
-              rel="noopener"
-              className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
-            >
-              Generate PayTo
-            </a>
-          </div>
-        </div>
+const PayToVisual = () => (
+	<div className="payto-visual" role="img" aria-label="Illustration of a PayTo link carrying payment details into a mobile payment review screen">
+		<div className="payto-visual-top"><span>STRUCTURED PAYMENT REQUEST</span><span>PAYTO / 01</span></div>
+		<div className="payto-visual-stage">
+			<div className="payto-visual-link"><span className="payto-visual-link-icon"><Link2 size={26} aria-hidden="true" /></span><small>ONE SHAREABLE LINK</small><strong>payto://xcb/CB…</strong><span className="payto-visual-link-detail"><CircleCheck size={15} aria-hidden="true" /> Destination + details</span></div>
+			<div className="payto-visual-bridge" aria-hidden="true"><span /><ArrowRight size={27} /></div>
+			<div className="payto-visual-phone"><span className="payto-visual-phone-top">PAYMENT PREVIEW</span><span className="payto-visual-phone-icon"><ScanLine size={30} aria-hidden="true" /></span><strong>Review before paying</strong><small>Destination · amount · method</small><span className="payto-visual-phone-button">Continue</span></div>
+		</div>
+		<div className="payto-visual-bottom"><span>CREATE · SHARE · REVIEW</span><span>PAYMENT REQUIRES APPROVAL</span></div>
+	</div>
+);
 
-        <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12 max-h-96">
-          <img
-            src="/static/images/splash-payto.jpg"
-            loading="lazy"
-            alt="Photo by Rastislav Vašička"
-            className="h-full w-full object-cover object-center"
-          />
-        </div>
-      </div>
+const PayTo = () => (
+	<section className="payto-page solution-detail container mx-auto flex flex-col">
+		<div className="payto-hero">
+			<div className="payto-hero-copy"><span className="section-eyebrow">A CLEARER WAY TO ASK FOR PAYMENT</span><h1>PayTo</h1><p className="payto-lead">One link. The right payment details.</p><p className="payto-support">Turn a destination into a structured request that people can open, scan, and review in a compatible payment app. Less copying. A smoother path from request to payment.</p><a className="payto-button" href="https://payto.money" target="_blank" rel="noopener noreferrer">Create a PayTo link <ArrowRight size={18} aria-hidden="true" /></a></div>
+			<PayToVisual />
+		</div>
 
-      {/* table */}
-      <div className="bg-white py-6 sm:py-8 lg:py-12">
-        <div className="mx-auto max-w-screen-2xl px-2 sm:px-4 md:px-8">
-          <div className="mb-10 md:mb-16">
-            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-              Supported Standards
-            </h2>
+		<section className="payto-section" id="payto-flow"><div className="payto-section-heading"><span className="section-eyebrow">FROM REQUEST TO REVIEW</span><h2>Make every handoff easier.</h2><p>PayTo packages the information a payer needs in a link that compatible services can understand.</p></div><div className="payto-steps">{steps.map(({ number, icon: Icon, title, description }) => <article className="payto-step" key={number}><span className="payto-step-number">{number}</span><span className="payto-icon"><Icon size={24} aria-hidden="true" /></span><h3>{title}</h3><p>{description}</p></article>)}</div></section>
 
-            <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-              The PayTo protocol supports the following standards:
-            </p>
-          </div>
+		<section className="payto-story"><div className="payto-story-copy"><span className="section-eyebrow">BUILT FOR THE MOMENT OF PAYMENT</span><h2>Useful wherever a payment begins.</h2><p>A request can travel as a link or a code, then hand its details to a compatible app. The payer gets a chance to check the destination and amount before continuing.</p><div className="payto-story-note"><Check size={20} aria-hidden="true" /><span>Payment details travel with the request; authorization stays with the payer.</span></div></div><div className="payto-use-grid">{uses.map(({ icon: Icon, title, description }) => <article className="payto-use" key={title}><span className="payto-icon"><Icon size={22} aria-hidden="true" /></span><div><h3>{title}</h3><p>{description}</p></div></article>)}</div></section>
 
-          <div className="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-3">
-            {data.map((item, index) => (
-              <a
-                key={index}
-                href={item.link.href}
-                className="group flex flex-col rounded-lg border border-gray-200 p-4 md:p-6 hover:shadow-md hover:border-indigo-200 transition-all duration-200 cursor-pointer"
-              >
-                <h3 className="mb-2 text-lg font-semibold md:text-xl">
-                  {item.title}
-                </h3>
-                <p className="mb-4 text-gray-500">{item.text}</p>
-                <div className="mt-auto inline-flex items-center gap-1 text-indigo-500 transition duration-200 group-hover:text-indigo-600">
-                  {item.link.text}
-                  <ArrowRight className="h-4 w-4" />
-                </div>
-                </a>
-            ))}
-          </div>
-        </div>
-      </div>
+		<section className="payto-formats"><div className="payto-section-heading"><span className="section-eyebrow">ONE WAY TO PRESENT MANY DESTINATIONS</span><h2>Explore payment identifiers.</h2><p>PayTo can describe different payment methods and destinations. Open the generator to explore each option; support depends on the receiving app and provider.</p></div><div className="payto-format-grid">{data.map((item) => <a className="payto-format" key={item.title} href={item.link.href} target={item.link.href.startsWith("http") ? "_blank" : undefined} rel={item.link.href.startsWith("http") ? "noopener noreferrer" : undefined}><span className="payto-format-icon">{item.title === "Want more?" ? <Copy size={21} aria-hidden="true" /> : <Code2 size={21} aria-hidden="true" />}</span><span className="payto-format-copy"><strong>{item.title}</strong>{item.text && <small>{item.text}</small>}</span><ArrowRight className="payto-format-arrow" size={18} aria-hidden="true" /></a>)}</div></section>
 
-      <div className="flex flex-col pb-12 lg-pb-0 items-center justify-center text-center">
-        <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-          PayTo Protocol
-        </h2>
-
-        <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-          PayTo is natively supported in Google Chromium across mobile and tablet devices, enabling direct payments from browsers and apps. As an open standard, it ensures broad compatibility across platforms and financial institutions.
-        </p>
-
-        <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-center">
-          <a
-            href="https://payto.money"
-            target="_blank"
-            rel="noopener"
-            className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
-          >
-            Generate PayTo
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-};
+		<div className="payto-closing"><div><span className="section-eyebrow">READY TO GET STARTED?</span><h2>Give the next payment a clearer beginning.</h2><p>Create a request and share it through the channel that fits your customers.</p></div><a className="payto-button" href="https://payto.money" target="_blank" rel="noopener noreferrer">Generate PayTo <ArrowRight size={18} aria-hidden="true" /></a></div>
+		<div className="payto-clarity"><ShieldCheck size={24} aria-hidden="true" /><p><strong>Clear by design.</strong> A PayTo link describes a payment request. Opening or sharing one does not send money or confirm a transaction; the receiving app must support the method, and the payer must review and authorize the transfer.</p></div>
+	</section>
+);
 
 export default PayTo;

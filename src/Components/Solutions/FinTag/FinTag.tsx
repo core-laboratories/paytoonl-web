@@ -1,18 +1,19 @@
 import React from "react";
 
-import { Code, GalleryVerticalEnd, Globe, HandCoins, ShieldCheck } from "lucide-react";
+import { Code, FileCode2, FileJson2, GalleryVerticalEnd, Globe, HandCoins, ShieldCheck } from "lucide-react";
+import { FinTagVisual } from "../SolutionHeroVisuals.tsx";
 
 const FinTag = () => {
   return (
-    <>
-      <section className="container mx-auto flex flex-col px-4 gap-6 sm:gap-10 md:gap-16 lg:px-0">
+    <div className="fintag-page">
+      <section className="solution-detail container mx-auto flex flex-col px-4 gap-6 sm:gap-10 md:gap-16 lg:px-0">
         <div className="container mx-auto flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
           <div className="flex flex-col justify-center sm:text-center lg:pb-12 lg:text-left xl:w-5/12 xl:pb-24">
             <h1 className="mb-6 text-4xl font-bold text-black sm:text-5xl md:mb-4 md:text-6xl">
               FinTag
             </h1>
             <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              FinTag is an innovative meta tag and a well-known JSON concept designed to store and display financial payment details such as ICAN, IBAN, ACH, PIX, UPI, BIC, and other payment identifiers.
+              FinTag lets a website publish payment identifiers in page metadata or a well-known JSON file. Compatible services can discover those details from the publisher’s own domain, reducing the need to copy an address by hand.
             </p>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
@@ -27,43 +28,51 @@ const FinTag = () => {
             </div>
           </div>
 
-          <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12 max-h-96">
-            <img
-              src="/static/images/splash-fintag.jpg"
-              loading="lazy"
-              alt="Photo by Rastislav Vašička"
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
+          <FinTagVisual />
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
-        <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-          Showcase
-        </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-        <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-            <h3 className="mb-3 text-lg font-semibold text-gray-800">Meta Tags</h3>
-            <p className="mb-2 text-xs text-gray-500 font-mono">index.html</p>
-          <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words">
-            {`<meta property="ican:xcb" content="cb00…" />`}
-            <br />
-            {`<meta property="iban" content="BE68539007547034" />`}
-            <br />
-            {`<meta property="void:plus" content="8FWR5XCG+VM" />`}
-          </pre>
-          </div>
-          <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-            <h3 className="mb-3 text-lg font-semibold text-gray-800">Well-Known</h3>
-            <p className="mb-2 text-xs text-gray-500 font-mono">/.well-known/fintag.json</p>
-            <pre className="text-sm text-gray-700 whitespace-pre-wrap break-words">
-{`[
-  { "ican:xcb": "cb00…" },
+      <section className="fintag-showcase container mx-auto">
+        <div className="fintag-showcase-heading">
+          <span className="section-eyebrow">PUBLISH ON YOUR OWN DOMAIN</span>
+          <h2>Your domain. Two ways to publish.</h2>
+          <p>Add payment identifiers to your page or publish a small JSON file. Compatible services can discover the details where your customers already find you.</p>
+        </div>
+        <div className="fintag-showcase-grid">
+          <article className="fintag-method">
+            <div className="fintag-method-heading">
+              <div className="fintag-method-icon"><FileCode2 size={24} aria-hidden="true" /></div>
+              <div><span className="fintag-method-number">01 / PAGE METADATA</span><h3>Meta tags</h3></div>
+            </div>
+            <p>Place identifiers in the HTML of the page they belong to.</p>
+            <div className="fintag-code-window">
+              <div className="fintag-code-toolbar"><span className="fintag-code-dots" aria-hidden="true"><i /><i /><i /></span><span>index.html</span><span>HTML</span></div>
+              <pre><code>{`<meta
+  property="ican:xcb"
+  content="CB7147879011EA207DF5B35A24CA6F0859DCFB145999"
+/>
+
+<meta property="iban" content="BE68539007547034" />
+<meta property="void:plus" content="8FWR5XCG+VM" />`}</code></pre>
+            </div>
+          </article>
+          <article className="fintag-method">
+            <div className="fintag-method-heading">
+              <div className="fintag-method-icon"><FileJson2 size={24} aria-hidden="true" /></div>
+              <div><span className="fintag-method-number">02 / DOMAIN FILE</span><h3>Well-known JSON</h3></div>
+            </div>
+            <p>Make identifiers available from a predictable location on your domain.</p>
+            <div className="fintag-code-window">
+              <div className="fintag-code-toolbar"><span className="fintag-code-dots" aria-hidden="true"><i /><i /><i /></span><span>/.well-known/fintag.json</span><span>JSON</span></div>
+              <pre><code>{`[
+  {
+    "ican:xcb":
+      "CB7147879011EA207DF5B35A24CA6F0859DCFB145999"
+  },
   { "void:plus": "8FWR5XCG+VM" }
-]`}
-            </pre>
-          </div>
+]`}</code></pre>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -71,7 +80,7 @@ const FinTag = () => {
         <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-8">
           <div className="mb-10 md:mb-16">
             <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-              Key functionality
+              Key Features
             </h2>
 
             <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
@@ -88,10 +97,10 @@ const FinTag = () => {
               </div>
 
               <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Authenticity & Trust
+                  Publisher-linked discovery
                 </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                FinTag is attached to the website and can be used to verify the authenticity of the payment details.
+                Payment details are published on the same website a customer is visiting. Clients can associate a discovered identifier with that publisher and still verify the recipient before paying.
                 </p>
             </div>
 
@@ -106,7 +115,7 @@ const FinTag = () => {
                   Automation & Integration
                 </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Browser extensions, payment apps, and digital services can automatically detect FinTags on a webpage, enabling seamless transactions without manual input errors.
+                Compatible wallets and services can read published metadata and prefill supported payment details, reducing manual entry.
                 </p>
             </div>
 
@@ -118,10 +127,10 @@ const FinTag = () => {
               </div>
 
               <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Decentralized & Open-Source
+                  Works across websites
                 </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                  The FinTag standard is flexible and open-source, allowing businesses, nonprofits, and individuals to integrate it into any website. Each subpage can include different payment details, making it a robust solution for large organizations with multiple departments or divisions.
+                  Organizations can publish payment details on their own domains, including different identifiers for specific pages, projects, or departments.
                 </p>
             </div>
           </div>
@@ -138,7 +147,7 @@ const FinTag = () => {
                   Improved Payment Experience
                 </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                  Clients and customers can instantly verify payment details before initiating a transfer, reducing the chances of incorrect payments or fraudulent transactions.
+                  Customers can see the discovered payment destination in a compatible app and review it before authorizing a transfer.
                 </p>
             </div>
 
@@ -150,10 +159,10 @@ const FinTag = () => {
               </div>
 
               <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Universal Standardization
+                  Multiple payment identifiers
                 </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
-                  FinTag can serve as a universal financial metadata standard, making online transactions more transparent, efficient, and secure.
+                  A single publication format can describe supported identifiers such as ICAN and IBAN, while each receiving application decides which methods it understands.
                 </p>
             </div>
           </div>
@@ -164,7 +173,7 @@ const FinTag = () => {
             </h2>
 
             <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-              By adopting FinTag, institutions and businesses can create a safer financial environment for their clients, ensuring payment authenticity while streamlining digital transactions.
+              Publish a clear payment destination on your own website so compatible apps can discover it and customers can review it before paying. The site’s identity and the payment details should still be verified independently.
             </p>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-center">
@@ -180,7 +189,7 @@ const FinTag = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

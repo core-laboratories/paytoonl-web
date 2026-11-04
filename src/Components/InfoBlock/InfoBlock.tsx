@@ -17,17 +17,17 @@ export default function InfoBlock() {
               <h1 className="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">Mission</h1>
 
               <p className="mb-6 text-gray-500 sm:text-lg md:mb-8">
-                The PayTo Alliance is dedicated to making financial transfers simpler, more accessible, and globally available - even enabling transactions offline. The goal is to bring seamless payment solutions and financial services to the entire community, ensuring everyone can participate in the digital economy without barriers.
+                The PayTo Alliance brings together teams working to make payment details easier to share, understand, and use. Its projects include open formats, digital identity tools, and ways to deliver signed transaction data when a direct internet connection is unavailable.
               </p>
 
               <p className="mb-6 text-gray-500 sm:text-lg md:mb-8">
-              By leveraging innovative technology and decentralized solutions, the Alliance aims to eliminate the complexities of traditional banking and empower individuals and businesses with frictionless transactions. Whether sending funds across borders, integrating new payment methods, or ensuring financial inclusion, the Alliance is committed to creating a financial ecosystem that works for everyone, everywhere.
+              By connecting builders and financial service providers, the Alliance supports practical integrations across wallets, payment methods, and settlement systems. Availability depends on each provider, network, and location.
               </p>
 
-              <h2 className="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">About Alliance</h2>
+              <h2 className="mb-2 text-center text-xl font-semibold text-gray-800 sm:text-2xl md:mb-4 md:text-left">About the Alliance</h2>
 
               <p className="mb-6 text-gray-500 sm:text-lg md:mb-8">
-                The Alliance is a network of companies united by a shared vision of transforming financial services. The Alliance connects businesses that want to collaborate, innovate, and contribute to making payments more efficient, inclusive, and borderless. By working together, members strengthen the ecosystem and expand the reach of modern financial solutions.
+                The Alliance brings together companies with a shared vision for better financial services. It connects businesses that want to make payments more efficient, inclusive, and borderless. By working together, members strengthen the ecosystem and expand the reach of modern financial solutions.
               </p>
             </div>
           </div>
