@@ -89,33 +89,6 @@ const ORIC = () => {
             <span><b>2</b> Custodial wallet</span>
           </div>
         </div>
-        <section className="oric-example">
-          <div className="oric-example-copy">
-            <span className="section-eyebrow">IN PRACTICE</span>
-            <h2>See an ORIC code in context.</h2>
-            <p>Imagine Ping Exchange identifying a custodial Core wallet in Switzerland. Its provider, location, address type, and asset fit into one code that compatible services can read.</p>
-            <div className="oric-example-facts">
-              <div><span>Provider</span><strong>Ping Exchange</strong></div>
-              <div><span>Registered in</span><strong>Switzerland</strong></div>
-              <div><span>Wallet</span><strong>Custodial · Core</strong></div>
-            </div>
-            <a className="oric-example-docs" href="https://www.postman.com/core-labs/workspace/oric/collection/13185637-5e66eeab-546b-4928-9a7f-b4f9f006c191" target="_blank" rel="noopener noreferrer">
-              <BookOpenText size={18} aria-hidden="true" /> API documentation <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
-          </div>
-          <div className="oric-example-display">
-            <div className="oric-example-display-top"><span>ILLUSTRATIVE IDENTIFIER</span><span>ORIC / 01</span></div>
-            <div className="oric-example-display-body">
-              <span className="oric-example-kicker">PING EXCHANGE · SWITZERLAND</span>
-              <code aria-label="PINGCHB2XCB"><span>PING</span><span>CH</span><span>B2</span><span>XCB</span></code>
-              <p>One identifier for a participating provider’s custodial Core wallet.</p>
-              <a href="https://oric.payto.onl/PINGCHB2XCB" target="_blank" rel="noopener noreferrer">
-                Explore this example <ArrowUpRight size={18} aria-hidden="true" />
-              </a>
-            </div>
-            <div className="oric-example-display-bottom"><span>PROVIDER</span><span>COUNTRY</span><span>ADDRESS</span><span>ASSET</span></div>
-          </div>
-        </section>
         <div className="flex flex-col pb-12 lg:pb-0 items-center justify-center text-center">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
             A clearer identifier for provider wallets
