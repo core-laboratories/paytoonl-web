@@ -1,201 +1,59 @@
-import { Shapes, SmartphoneNfc, ShieldCheck, Wallet } from "lucide-react";
 import React from "react";
+import { ArrowRight, Check, ContactRound, Globe2, Palette, ScanLine, ShieldCheck, Smartphone, WalletCards } from "lucide-react";
 
-const PayPass = () => {
+const steps = [
+	{ number: "01", icon: ContactRound, title: "Present your destination", description: "Put your payment identity in a recognizable pass with your name, branding, and a scannable code." },
+	{ number: "02", icon: ScanLine, title: "Let people scan or save it", description: "Share the pass on screen or add it to a supported mobile wallet, so the details are easy to find again." },
+	{ number: "03", icon: ShieldCheck, title: "Pay in a compatible app", description: "The payer reviews the destination and authorizes the transfer in a payment app. The pass itself does not move funds." },
+];
 
-  return (
-    <>
-      <section className="container mx-auto flex flex-col px-4 gap-6 sm:gap-10 md:gap-16 lg:px-0">
-        <div className="container mx-auto flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
-          <div className="flex flex-col justify-center sm:text-center lg:pb-12 lg:text-left xl:w-5/12 xl:pb-24">
-            <h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">
-              PayPass
-            </h1>
+const benefits = [
+	{ icon: WalletCards, title: "Familiar by design", description: "A pass puts payment details in a format people already know, with a clear name and visual identity." },
+	{ icon: Palette, title: "Make it yours", description: "Choose a card color, hero image, and supported barcode format to suit your brand and use case." },
+	{ icon: Globe2, title: "Ready to share", description: "Display your payment destination in person or save a supported pass to Apple Wallet or Google Wallet." },
+];
 
-            <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              A PKPASS file is a digital pass format primarily used by Apple Wallet and Google Wallet to store tickets, boarding passes, coupons, and payment cards. In the context of the PayTo protocol, PKPASS files serve as a secure and flexible method to request payments while protecting sensitive financial information.
-            </p>
-            <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-              Instead of manually sharing bank details, businesses and individuals can generate a .pkpass file that contains the PayTo payment request. This file can then be shared securely with the recipient, who can import it into Apple Wallet or Google Wallet to process the transaction without exposing personal banking details.
-            </p>
+const PayPassVisual = () => (
+	<div className="paypass-visual" role="img" aria-label="Illustration of a branded payment pass with a CORE ID and scannable payment code">
+		<div className="paypass-visual-orbit paypass-visual-orbit-one" />
+		<div className="paypass-visual-orbit paypass-visual-orbit-two" />
+		<div className="paypass-preview">
+			<div className="paypass-preview-top"><span className="paypass-preview-symbol">P</span><span>PAYMENT PASS</span><Smartphone size={18} aria-hidden="true" /></div>
+			<div className="paypass-preview-identity"><small>YOUR PAYMENT IDENTITY</small><strong>Ready when they are.</strong><span>CORE ID · XCB</span></div>
+			<div className="paypass-preview-code"><ScanLine size={68} strokeWidth={1.2} aria-hidden="true" /><span>Scan to open payment details</span></div>
+			<div className="paypass-preview-bottom"><span>PAYPASS</span><span>YOUR BRAND. YOUR DESTINATION.</span></div>
+		</div>
+		<span className="paypass-visual-caption">Illustrative pass preview</span>
+	</div>
+);
 
-            <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-              <a
-                href="https://payto.money?pass=1"
-                target="_blank"
-                rel="noopener"
-                className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
-              >
-                Generate PayPass
-              </a>
-            </div>
-          </div>
+const PayPass = () => (
+	<section className="paypass-page solution-detail container mx-auto flex flex-col">
+		<div className="paypass-hero">
+			<div className="paypass-hero-copy">
+				<span className="section-eyebrow">PAYMENT DETAILS, BEAUTIFULLY PRESENTED</span>
+				<h1>PayPass</h1>
+				<p className="paypass-lead">Give your payment identity a place in their wallet.</p>
+				<p className="paypass-support">PayPass turns a payment destination into a branded, scannable pass. People can find your details, recognize who they are paying, and continue in a compatible payment app.</p>
+				<a className="paypass-button" href="https://payto.money?pass=1" target="_blank" rel="noopener noreferrer">Create a PayPass <ArrowRight size={18} aria-hidden="true" /></a>
+			</div>
+			<PayPassVisual />
+		</div>
 
-          <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12 max-h-96">
-            <img
-              src="/static/images/splash-pass.jpg"
-              loading="lazy"
-              alt="Photo by Rastislav Vašička"
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
-        </div>
+		<section className="paypass-section" id="how-paypass-works">
+			<div className="paypass-section-heading"><span className="section-eyebrow">A BETTER FIRST IMPRESSION</span><h2>From a payment detail to a confident handoff.</h2><p>Make the destination easy to recognize and easy to use, while keeping payment authorization where it belongs.</p></div>
+			<div className="paypass-steps">{steps.map(({ number, icon: Icon, title, description }) => <article className="paypass-step" key={number}><span className="paypass-step-number">{number}</span><span className="paypass-icon"><Icon size={24} aria-hidden="true" /></span><h3>{title}</h3><p>{description}</p></article>)}</div>
+		</section>
 
-        <div className="bg-white py-6 sm:py-8 lg:py-12">
-          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <div className="mb-10 md:mb-16">
-              <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-                PayPass Features
-              </h2>
+		<section className="paypass-story">
+			<div className="paypass-story-copy"><span className="section-eyebrow">MADE TO BE RECOGNIZED</span><h2>More than an address on a screen.</h2><p>A payment destination works better when the person receiving it can tell who it belongs to. PayPass brings the name, visual identity, and scannable details together in one place.</p><div className="paypass-story-note"><Check size={20} aria-hidden="true" /><span>Keep your payment identity close at hand, in person or in a supported mobile wallet.</span></div></div>
+			<div className="paypass-benefits">{benefits.map(({ icon: Icon, title, description }) => <article className="paypass-benefit" key={title}><span className="paypass-icon"><Icon size={22} aria-hidden="true" /></span><div><h3>{title}</h3><p>{description}</p></div></article>)}</div>
+		</section>
 
-              <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-                PayPass offers a secure and flexible way to request payments, while protecting sensitive financial information.
-              </p>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-200 hover:border-indigo-200">
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-indigo-50 rounded-lg group-hover:bg-indigo-100 transition-colors duration-200">
-                    <ShieldCheck className="w-6 h-6 text-indigo-500" />
-                  </div>
-                </div>
+		<section className="paypass-wallets"><div><span className="section-eyebrow">WHERE PEOPLE ALREADY LOOK</span><h2>A pass they can keep. A payment they can review.</h2><p>Supported passes can be saved to Apple Wallet or Google Wallet. The card remains a convenient way to show a destination; a payment app handles the actual transfer.</p><a className="paypass-text-link" href="https://payto.money?pass=1" target="_blank" rel="noopener noreferrer">Generate your pass <ArrowRight size={18} aria-hidden="true" /></a></div><div className="paypass-wallet-stack"><div className="paypass-wallet-layer paypass-wallet-layer-back" /><div className="paypass-wallet-layer paypass-wallet-layer-front"><WalletCards size={34} aria-hidden="true" /><strong>Your details,<br />at hand.</strong><span>SCAN · SAVE · SHARE</span></div></div></section>
 
-                <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Enhanced Security & Privacy
-                </h3>
-                <ul className="text-gray-500 text-sm leading-relaxed space-y-2">
-                  <li>
-                    Instead of exposing sensitive payment details like IBAN, UPI, or BIC, the PKPASS file encapsulates payment instructions securely
-                  </li>
-                  <li>
-                    Reduces the risk of fraud, phishing, and unauthorized access
-                  </li>
-                </ul>
-              </div>
-
-              <div className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-200 hover:border-indigo-200">
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-indigo-50 rounded-lg group-hover:bg-indigo-100 transition-colors duration-200">
-                    <Wallet className="w-6 h-6 text-indigo-500" />
-                  </div>
-                </div>
-
-                <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Seamless Wallet Integration
-                </h3>
-                <ul className="text-gray-500 text-sm leading-relaxed space-y-2">
-                  <li>
-                    PKPASS files are natively supported by Apple Wallet and Google Wallet, making it easy to import and initiate payments directly from a mobile device
-                  </li>
-                  <li>
-                    Transactions become contactless and digital, eliminating the need for paper invoices or manual bank transfers
-                  </li>
-                </ul>
-              </div>
-
-              <div className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-200 hover:border-indigo-200">
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-indigo-50 rounded-lg group-hover:bg-indigo-100 transition-colors duration-200">
-                    <Shapes className="w-6 h-6 text-indigo-500" />
-                  </div>
-                </div>
-
-                <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Flexibility and Interoperability
-                </h3>
-                <ul className="text-gray-500 text-sm leading-relaxed space-y-2">
-                  <li>
-                    PKPASS files support multiple payment methods such as ICAN, IBAN, ACH, PIX, UPI, BIC, and more
-                  </li>
-                  <li>
-                    They can be customized with QR codes, barcodes, or NFC triggers for easier processing
-                  </li>
-                </ul>
-              </div>
-
-              <div className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-200 hover:border-indigo-200">
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-indigo-50 rounded-lg group-hover:bg-indigo-100 transition-colors duration-200">
-                    <SmartphoneNfc className="w-6 h-6 text-indigo-500" />
-                  </div>
-                </div>
-
-                <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Effortless Payment Requests
-                </h3>
-                <ul className="text-gray-500 text-sm leading-relaxed space-y-2">
-                  <li>
-                    Businesses can generate and send a PKPASS payment request to customers who simply import it into their wallets and approve the payment
-                  </li>
-                  <li>
-                    Ideal for invoices, online orders, or peer-to-peer transfers
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-white py-6 sm:py-8 lg:py-12">
-          <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-            <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
-              <div>
-                <div className="h-64 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-auto">
-                  <img
-                    src="/static/images/wallet.jpg"
-                    loading="lazy"
-                    alt="Photo by Martin Sanchez"
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <h1 className="mb-4 text-center text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6 md:text-left">
-                  Apple Wallet & Google Wallet
-                </h1>
-
-                <div>
-                  <p className="text-gray-500">
-                    Both Apple Wallet and Google Wallet provide a secure and user-friendly environment for handling PKPASS-based payment requests. Once imported, the pass can contain:
-                  </p>
-                  <ul className="list-disc text-gray-500 pl-5">
-                    <li>Payment instructions (PayTo details)</li>
-                    <li>Expiration dates</li>
-                    <li>Dynamic QR codes or barcodes for quick scanning</li>
-                    <li>Company branding and customization</li>
-                  </ul>
-                  <p className="text-gray-500 mt-4">
-                    Apple Wallet and Google Wallet provide built-in encryption and biometric authentication (Face ID, Touch ID, PIN) to safeguard transactions. Users can review the details before approving the payment, ensuring secure and error-free transactions.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-white py-6 sm:py-8 lg:py-12">
-          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-              Digital Payments with PayPass
-            </h2>
-
-            <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-              By integrating PKPASS with the PayTo protocol, businesses and individuals can send, receive, and manage payment requests effortlessly. This method ensures maximum security, easy adoption, and compatibility.
-            </p>
-          </div>
-          <div className="flex flex-col mt-8 lg:mt-12 gap-2.5 sm:flex-row sm:justify-center lg:justify-center">
-            <a
-              href="https://payto.money?pass=1"
-              target="_blank"
-              rel="noopener"
-              className="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
-            >
-              Generate PayPass
-            </a>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
+		<div className="paypass-clarity"><ShieldCheck size={24} aria-hidden="true" /><p><strong>Clear at every step.</strong> A pass displays payment information; it does not authorize, send, or confirm a payment. Recipients should review the destination and amount before approving a transfer in their payment app.</p></div>
+	</section>
+);
 
 export default PayPass;

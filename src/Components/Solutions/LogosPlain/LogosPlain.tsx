@@ -1,53 +1,59 @@
-import { AudioLines, Banknote, BookMarked, Tag, WalletCards, MessageSquareCode, ChevronsLeftRightEllipsis, ArrowRight, Landmark } from "lucide-react";
+import { AudioLines, Banknote, BookMarked, Tag, WalletCards, MessageSquareCode, ChevronsLeftRightEllipsis, ArrowRight, Landmark, QrCode } from "lucide-react";
 import React from "react";
 
 export default function LogosPlain() {
   const solutions = [
     {
+      title: "BarcodeTx",
+      description: "Transfer signed transactions across an air gap with animated QR codes, then scan and forward them from a connected device.",
+      href: "/solutions/barcodetx",
+      icon: QrCode
+    },
+    {
       title: "Core Banking",
-      description: "Connect to the Coreclear network to process and settle transactions across financial systems",
+      description: "Connect participating providers to coordinated transaction and settlement flows.",
       href: "/solutions/corebanking",
       icon: Landmark
     },
     {
       title: "FinTag",
-      description: "Financial meta and well-known system for secure implementation of multiple payment networks",
+      description: "Publish payment identifiers on your domain for compatible services to discover.",
       href: "/solutions/fintag",
       icon: Tag
     },
     {
       title: "ICAN",
-      description: "International Crypto Account Number for transfer of digital assets",
+      description: "A structured digital asset address with a checksum for catching entry errors.",
       href: "/solutions/ican",
       icon: ChevronsLeftRightEllipsis
     },
     {
       title: "ORIC",
-      description: "FinTech organization registry for secure digital identification",
+      description: "A structured wallet identifier for participating financial service providers.",
       href: "/solutions/oric",
       icon: BookMarked
     },
     {
       title: "PayPass",
-      description: "Digital wallet and payment management system for Apple and Google Wallet",
+      description: "Present payment details in a pass for Apple Wallet and Google Wallet.",
       href: "/solutions/paypass",
       icon: WalletCards
     },
     {
       title: "PayTo",
-      description: "Direct peer-to-peer payment protocol enabling instant transfers across networks without intermediaries",
+      description: "Share payment destinations in a format compatible apps can recognize.",
       href: "/solutions/payto",
       icon: Banknote
     },
     {
       title: "TxMS",
-      description: "Transaction messaging system for offline payments",
+      description: "Deliver signed transaction data over SMS without mobile data.",
       href: "/solutions/txms",
       icon: MessageSquareCode
     },
     {
       title: "VoiceTx",
-      description: "Send secure transactions through a simple phone call, even without an internet connection",
+      description: "Carry signed transaction data as audio between devices.",
       href: "/solutions/voicetx",
       icon: AudioLines
     }
@@ -59,11 +65,11 @@ export default function LogosPlain() {
         <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
           <div className="mb-10 md:mb-16">
             <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-              Competitive Advantage
+              Explore Solutions
             </h2>
 
             <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-              Explore the comprehensive suite of payment solutions designed to modernize financial infrastructure.
+              Explore payment tools designed for modern financial infrastructure.
             </p>
           </div>
 

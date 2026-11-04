@@ -6,7 +6,7 @@ const Solutions = () => {
   return (
     <div>
       <SolutionsHero />
-      <section className="bg-white dark:bg-gray-900">
+      <section id="solutions-list" className="bg-white dark:bg-gray-900">
         <LogosPlain />
       </section>
     </div>

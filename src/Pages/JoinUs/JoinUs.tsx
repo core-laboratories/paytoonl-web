@@ -1,164 +1,109 @@
 import React, { useState } from "react";
 import { isValid } from "@blockchainhub/ican";
+import { ArrowRight, Building2, Check, Code2, Globe2, Handshake, Lightbulb, Mail, Network, ShieldCheck, UsersRound } from "lucide-react";
+
+type Application = {
+	organization: string;
+	type: string;
+	website: string;
+	industry: string;
+	code: string;
+	contact: string;
+	core: string;
+	interests: string;
+};
+
+type Field = {
+	label: string;
+	name: keyof Application;
+	type: React.HTMLInputTypeAttribute;
+	placeholder?: string;
+	optional?: boolean;
+	wide?: boolean;
+};
+
+const fields: Field[] = [
+	{ label: "Organization name", name: "organization", type: "text", placeholder: "Your organization" },
+	{ label: "Organization type", name: "type", type: "text", placeholder: "Company, nonprofit, institution…" },
+	{ label: "Industry", name: "industry", type: "text", placeholder: "Finance, technology, research…" },
+	{ label: "Website URL", name: "website", type: "url", placeholder: "https://example.com", optional: true },
+	{ label: "Contact email", name: "contact", type: "email", placeholder: "you@example.com" },
+	{ label: "Code repository URL", name: "code", type: "url", placeholder: "https://github.com/…", optional: true },
+	{ label: "Core ID", name: "core", type: "text", placeholder: "CB…", wide: true },
+];
+
+const reasons = [
+	{ icon: Lightbulb, title: "Help shape useful standards", description: "Bring practical feedback from your work with payments, wallets, identity, or infrastructure into the conversation." },
+	{ icon: Handshake, title: "Build with peers", description: "Connect with organizations working across traditional finance, digital assets, and payment technology." },
+	{ icon: Code2, title: "Turn ideas into implementations", description: "Explore how shared formats and open interfaces can make services easier to connect and adopt." },
+];
+
+const JoinVisual = () => (
+	<div className="join-visual" role="img" aria-label="Illustration of different organizations connecting around the PayTo Alliance">
+		<div className="join-visual-top"><span>A NETWORK OF BUILDERS</span><span>ALLIANCE / 01</span></div>
+		<div className="join-visual-stage">
+			<div className="join-visual-ring join-visual-ring-one" />
+			<div className="join-visual-ring join-visual-ring-two" />
+			<div className="join-visual-center"><span className="join-visual-mark">P</span><strong>PayTo</strong><small>ALLIANCE</small></div>
+			<div className="join-visual-node join-visual-node-one"><Building2 size={23} aria-hidden="true" /><span>FINANCE</span></div>
+			<div className="join-visual-node join-visual-node-two"><Code2 size={23} aria-hidden="true" /><span>BUILDERS</span></div>
+			<div className="join-visual-node join-visual-node-three"><Globe2 size={23} aria-hidden="true" /><span>NETWORKS</span></div>
+			<div className="join-visual-node join-visual-node-four"><ShieldCheck size={23} aria-hidden="true" /><span>TRUST</span></div>
+		</div>
+		<div className="join-visual-bottom"><span>SHARED STANDARDS</span><span>REAL-WORLD APPLICATIONS</span></div>
+	</div>
+);
 
 const JoinUs = () => {
-  const [form, setForm] = useState({
-    organization: "",
-    type: "",
-    website: "",
-    industry: "",
-    code: "",
-    contact: "",
-    core: "",
-  });
+	const [form, setForm] = useState<Application>({ organization: "", type: "", website: "", industry: "", code: "", contact: "", core: "", interests: "" });
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	const urlRegex = /^https?:\/\/.+/;
+	const coreIdValid = form.core.trim().length > 0 ? isValid(form.core.trim(), true) : true;
+	const emailValid = form.contact.trim().length > 0 ? emailRegex.test(form.contact.trim()) : true;
+	const websiteValid = form.website.trim().length > 0 ? urlRegex.test(form.website.trim()) : true;
+	const codeValid = form.code.trim().length > 0 ? urlRegex.test(form.code.trim()) : true;
+	const requiredValid = Boolean(form.organization.trim() && form.type.trim() && form.industry.trim() && form.contact.trim() && form.core.trim()) && emailValid && coreIdValid && websiteValid && codeValid;
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { name, value } = event.target;
+		setForm((previous) => ({ ...previous, [name]: value }));
+	};
 
-  const coreIdValid = form.core.trim().length > 0 ? isValid(form.core.trim(), true) : true;
-  const emailValid = form.contact.trim().length > 0 ? emailRegex.test(form.contact.trim()) : true;
+	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		if (!requiredValid) return;
+		const lines = [
+			`Organization Name: ${form.organization.trim()}`,
+			`Organization Type: ${form.type.trim()}`,
+			`Website URL: ${form.website.trim()}`,
+			`Industry: ${form.industry.trim()}`,
+			`Code Repository URL: ${form.code.trim()}`,
+			`Contact Email: ${form.contact.trim()}`,
+			`Core ID: ${form.core.trim()}`,
+			`Areas of Interest: ${form.interests.trim()}`,
+		];
+		window.location.href = `mailto:application@payto.onl?subject=${encodeURIComponent("Alliance Application")}&body=${encodeURIComponent(lines.join("\n"))}`;
+	};
 
-  const urlRegex = /^https?:\/\/.+/;
-  const websiteValid = form.website.trim().length > 0 ? urlRegex.test(form.website.trim()) : true;
-  const codeValid = form.code.trim().length > 0 ? urlRegex.test(form.code.trim()) : true;
+	return (
+		<div className="join-page">
+			<div className="join-inner">
+				<section className="join-hero">
+					<div className="join-hero-copy"><span className="section-eyebrow">BUILD THE NEXT PAYMENT STANDARD TOGETHER</span><h1>Join the PayTo Alliance</h1><p className="join-hero-lead">Bring your perspective to a network building more connected payment experiences.</p><p>Financial institutions, technology teams, service providers, and researchers can contribute ideas and implementation experience to open payment standards.</p><a href="#application" className="join-action">Apply to join <ArrowRight size={18} aria-hidden="true" /></a></div>
+					<JoinVisual />
+				</section>
 
-  const requiredValid =
-    form.organization.trim().length > 0 &&
-    form.type.trim().length > 0 &&
-    form.industry.trim().length > 0 &&
-    emailValid &&
-    form.core.trim().length > 0 &&
-    coreIdValid &&
-    websiteValid &&
-    codeValid;
+				<section className="join-reasons"><div className="join-section-heading"><span className="section-eyebrow">WHY PARTICIPATE</span><h2>Shape what people can build next.</h2><p>Better standards come from organizations that know the real constraints of payment products and services.</p></div><div className="join-reasons-grid">{reasons.map(({ icon: Icon, title, description }) => <article className="join-reason" key={title}><span className="join-reason-icon"><Icon size={25} aria-hidden="true" /></span><h3>{title}</h3><p>{description}</p></article>)}</div></section>
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
+				<section className="join-possibilities"><div><span className="section-eyebrow">A PLACE FOR YOUR EXPERTISE</span><h2>From discussion to practical connection.</h2><p>Alliance work spans payment requests, account identifiers, provider identity, metadata, and delivery methods. Your organization can help make these pieces clearer and more useful for real products.</p><a href="/solutions" className="join-text-link">Explore the solutions <ArrowRight size={18} aria-hidden="true" /></a></div><div className="join-possibilities-visual" aria-hidden="true"><div className="join-possibilities-track"><span><Network size={21} /> Standards</span><i /><span><UsersRound size={21} /> Collaboration</span><i /><span><Check size={21} /> Adoption</span></div></div></section>
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!requiredValid) return;
-
-    const lines = [
-      `Organization Name: ${form.organization}`,
-      `Organization Type: ${form.type}`,
-      `Website URL: ${form.website}`,
-      `Industry: ${form.industry}`,
-      `Code Repository URL: ${form.code}`,
-      `Contact Email: ${form.contact}`,
-      `Core ID: ${form.core}`,
-    ];
-
-    const subject = encodeURIComponent("Alliance Application");
-    const body = encodeURIComponent(lines.join("\n"));
-    const mailto = `mailto:application@payto.onl?subject=${subject}&body=${body}`;
-
-    window.location.href = mailto;
-  };
-
-  return (
-    <div className="bg-white py-6 sm:py-8 lg:py-12">
-      <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-        <div className="mb-10 md:mb-16">
-          <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-            Join Alliance
-          </h2>
-          <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-            If you are interested in joining the Alliance, please fill out the form below.
-          </p>
-          <p className="mx-auto mt-2 max-w-screen-md text-center text-gray-500 md:text-lg">
-            Form will be sent to email{" "}
-            <a
-              href="mailto:application@payto.onl?subject=Alliance%20Application"
-              className="text-indigo-600 underline hover:text-indigo-700"
-            >
-              application@payto.onl
-            </a>
-          </p>
-        </div>
-
-        <form
-          onSubmit={handleSubmit}
-          className="mx-auto grid max-w-screen-md gap-4 grid-cols-1 sm:grid-cols-2"
-        >
-          {[
-            { label: "Organization Name *", name: "organization", type: "text", span: "col-span-1" },
-            { label: "Organization Type *", name: "type", type: "text", placeholder: "LLC, Inc., etc.", span: "col-span-1" },
-            { label: "Industry *", name: "industry", type: "text", span: "col-span-1" },
-            { label: "Website URL (optional)", name: "website", type: "text", required: false, span: "col-span-1", validation: websiteValid },
-            { label: "Contact Email *", name: "contact", type: "email", span: "col-span-1", validation: emailValid },
-            { label: "Code Repo URL (optional)", name: "code", type: "text", required: false, span: "col-span-1", validation: codeValid },
-            { label: "Core ID *", name: "core", type: "text", placeholder: "CB…", span: "col-span-1 sm:col-span-2", validation: coreIdValid },
-          ].map((field, index) => (
-            <div key={index} className={`${field.span} grid grid-cols-1 gap-1`}>
-              <label
-                htmlFor={field.name}
-                className="text-sm font-medium text-gray-800"
-              >
-                {field.label}
-              </label>
-              <input
-                id={field.name}
-                name={field.name}
-                type={field.type as React.HTMLInputTypeAttribute}
-                value={(form as any)[field.name]}
-                onChange={handleChange}
-                className={`w-full rounded border px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring resize-none ${
-                  field.validation === false
-                    ? 'border-rose-300 bg-rose-50'
-                    : 'border-gray-200 bg-gray-50'
-                }`}
-                placeholder={field.placeholder}
-                required={field.required === false ? false : true}
-              />
-              {field.validation === false && field.name === 'core' && (
-                <p className="text-sm text-rose-600">Please enter a valid Core ID (CorePass Application)</p>
-              )}
-              {field.name === 'core' && (
-                <p className="text-xs text-gray-500 mt-1 text-center sm:text-left">
-                  Get your Core ID from{' '}
-                  <a
-                    href="https://corepass.net"
-                    target="_blank"
-                    rel="noopener"
-                    className="text-indigo-600 hover:text-indigo-700 underline"
-                  >
-                    CorePass
-                  </a>
-                </p>
-              )}
-              {field.validation === false && field.name === 'contact' && (
-                <p className="text-sm text-rose-600">Please enter a valid email address</p>
-              )}
-              {field.validation === false && field.name === 'website' && (
-                <p className="text-sm text-rose-600">Please enter a valid URL (https://…)</p>
-              )}
-              {field.validation === false && field.name === 'code' && (
-                <p className="text-sm text-rose-600">Please enter a valid URL (https://…)</p>
-              )}
-            </div>
-          ))}
-
-          <p className="col-span-1 text-sm text-gray-500 sm:col-span-2">
-            * Required fields
-          </p>
-
-          <div className="col-span-1 sm:col-span-2 mt-2">
-            <button
-              type="submit"
-              disabled={!requiredValid}
-              className="w-full inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              Send Request via Email
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
+				<section className="join-application" id="application"><div className="join-section-heading"><span className="section-eyebrow">START THE CONVERSATION</span><h2>Tell us about your organization.</h2><p>Share a few details about your work and how you would like to contribute. Your application opens in your email app, addressed to <a href="mailto:application@payto.onl?subject=Alliance%20Application">application@payto.onl</a>.</p></div><form onSubmit={handleSubmit} className="join-form"><div className="join-form-grid">{fields.map((field) => {
+					const invalid = field.name === "core" ? !coreIdValid : field.name === "contact" ? !emailValid : field.name === "website" ? !websiteValid : field.name === "code" ? !codeValid : false;
+					return <div className={`join-field${field.wide ? " join-field-wide" : ""}`} key={field.name}><label htmlFor={field.name}>{field.label}{!field.optional && <span aria-hidden="true"> *</span>}{field.optional && <small> Optional</small>}</label><input id={field.name} name={field.name} type={field.type} value={form[field.name]} onChange={handleChange} placeholder={field.placeholder} required={!field.optional} aria-invalid={invalid} aria-describedby={field.name === "core" ? "join-core-help" : undefined} className={invalid ? "is-invalid" : undefined} />{invalid && <p className="join-field-error">{field.name === "core" ? "Enter a valid Core ID." : field.name === "contact" ? "Enter a valid email address." : "Enter a full URL beginning with https:// or http://."}</p>}{field.name === "core" && <p className="join-field-help" id="join-core-help">You can get a Core ID from <a href="https://corepass.net" target="_blank" rel="noopener noreferrer">CorePass</a>.</p>}</div>;
+				})}</div><div className="join-field join-field-interests"><label htmlFor="interests">What would you like to work on?<small> Optional</small></label><textarea id="interests" name="interests" rows={4} value={form.interests} onChange={(event) => setForm((previous) => ({ ...previous, interests: event.target.value }))} placeholder="Tell us about the standards, integrations, or ideas you are interested in." /></div><div className="join-form-bottom"><p><Mail size={17} aria-hidden="true" /> The form prepares an email for you to review and send.</p><button type="submit" disabled={!requiredValid}>Prepare application email <ArrowRight size={18} aria-hidden="true" /></button></div></form></section>
+			</div>
+		</div>
+	);
 };
 
 export default JoinUs;

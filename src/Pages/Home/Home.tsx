@@ -8,14 +8,14 @@ import React from "react";
 
 const Home = () => {
   return (
-    <main>
+    <div className="home-page">
       <Hero />
       <Products />
       <MembersList />
       <InfoBlock />
       <FAQ />
       <PassBlock />
-    </main>
+    </div>
   );
 };
 

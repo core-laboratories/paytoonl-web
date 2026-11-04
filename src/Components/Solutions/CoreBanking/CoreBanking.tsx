@@ -1,21 +1,22 @@
 import React from "react";
 import { ArrowLeftRight, Building2, CircleCheck, Network, WalletCards } from "lucide-react";
+import { CoreBankingVisual } from "../SolutionHeroVisuals.tsx";
 
 const features = [
 	{
 		icon: Network,
 		title: "One Settlement Connection",
-		description: "Connect your application to Coreclear and reach participating financial providers through a shared settlement layer."
+		description: "Connect an application to Coreclear to exchange transaction instructions with participating providers."
 	},
 	{
 		icon: ArrowLeftRight,
 		title: "Digital and Fiat Rails",
-		description: "Move value between digital currencies and traditional financial systems through connected providers."
+		description: "Support payment flows between digital assets and traditional accounts where participating providers offer the required rails."
 	},
 	{
 		icon: Building2,
 		title: "Provider-to-Provider Settlement",
-		description: "Support transfers between financial providers using established Nostro and Vostro account relationships."
+		description: "Coordinate settlement between participating providers using the account relationships and rails available to them."
 	},
 	{
 		icon: WalletCards,
@@ -26,7 +27,7 @@ const features = [
 
 const CoreBanking = () => {
 	return (
-		<section className="container mx-auto flex flex-col gap-12 px-4 lg:px-0">
+		<section className="solution-detail container mx-auto flex flex-col gap-12 px-4 lg:px-0">
 			<div className="flex flex-col justify-between gap-10 lg:flex-row">
 				<div className="flex flex-col justify-center sm:text-center lg:w-5/12 lg:py-16 lg:text-left">
 					<h1 className="mb-6 text-4xl font-bold text-black sm:text-5xl md:text-6xl">Core Banking</h1>
@@ -34,18 +35,11 @@ const CoreBanking = () => {
 						Core Banking connects financial applications and providers to the Coreclear network, creating a shared path for processing and settling transactions.
 					</p>
 					<p className="leading-relaxed text-gray-500 xl:text-lg">
-						It helps banks, fintech companies, and wallets bridge traditional accounts with digital payment services while keeping settlement clear, coordinated, and easier to integrate.
+						It helps banks, fintech companies, and wallets connect traditional accounts with digital payment services through a coordinated settlement process.
 					</p>
 				</div>
 
-				<div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto lg:w-5/12 max-h-96">
-					<img
-						src="/static/images/splash-corebanking.jpg"
-						loading="lazy"
-						alt="Photo by Rastislav Vašička"
-						className="h-full w-full object-cover object-center"
-					/>
-				</div>
+				<CoreBankingVisual />
 			</div>
 
 			<div className="py-6 sm:py-8 lg:py-12">
@@ -76,7 +70,7 @@ const CoreBanking = () => {
 				<CircleCheck className="mx-auto mb-4 h-9 w-9 text-indigo-500" aria-hidden="true" />
 				<h2 className="mb-4 text-2xl font-bold text-gray-800 md:text-3xl">How It Works</h2>
 				<p className="mx-auto max-w-screen-md leading-relaxed text-gray-500 md:text-lg">
-					A participating financial provider registers for an ORIC identifier and connects its application to Coreclear. Transactions can then be routed between connected providers, with settlement handled through the appropriate accounts and payment rails.
+					A participating financial provider registers for an ORIC identifier and connects its application to Coreclear. Connected providers can exchange transaction instructions; settlement follows the account relationships and payment rails they support.
 				</p>
 			</div>
 		</section>

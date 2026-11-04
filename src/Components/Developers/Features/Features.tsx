@@ -3,7 +3,7 @@ import { Globe, Landmark, SquareAsterisk, UsersRound } from "lucide-react";
 
 const Features = () => {
   return (
-    <div className="bg-white pb-6 sm:pb-8 lg:pb-12">
+    <div className="developer-features bg-white pb-6 sm:pb-8 lg:pb-12">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div className="mb-10 md:mb-16">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
@@ -26,7 +26,7 @@ const Features = () => {
                 Open & Decentralized Standards
               </h3>
               <p className="text-gray-500">
-                Build without restrictions, leveraging interoperable financial protocols that work across different platforms and networks.
+                Build with interoperable financial protocols that work across platforms and networks.
               </p>
             </div>
           </div>
@@ -41,7 +41,7 @@ const Features = () => {
                 Global Payment Innovation
               </h3>
               <p className="text-gray-500">
-                Create seamless cross-border payment solutions that eliminate intermediaries and reduce costs for users worldwide.
+                Create cross-border payment solutions that can reduce friction and costs for users worldwide.
               </p>
             </div>
           </div>
@@ -56,7 +56,7 @@ const Features = () => {
                 Cross-Industry Adoption
               </h3>
               <p className="text-gray-500">
-                Integrate your solutions with banks, fintech companies, DeFi protocols, and Web3 applications through standardized APIs.
+                Connect your solutions to banks, fintech companies, DeFi protocols, and Web3 applications through standardized APIs.
               </p>
             </div>
           </div>

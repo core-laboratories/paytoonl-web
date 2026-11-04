@@ -1,18 +1,19 @@
 import React from "react";
 
 import { BookOpenText, Bot, Globe, ShieldCheck, Wallet } from "lucide-react";
+import { ICANVisual } from "../SolutionHeroVisuals.tsx";
 
 const ICAN = () => {
   return (
     <div>
-      <section className="container mx-auto flex flex-col px-4 gap-6 sm:gap-10 md:gap-16 lg:px-0">
+      <section className="solution-detail container mx-auto flex flex-col px-4 gap-6 sm:gap-10 md:gap-16 lg:px-0">
         <div className="container mx-auto flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
           <div className="flex flex-col justify-center sm:text-center lg:pb-12 lg:text-left xl:w-5/12 xl:pb-24">
             <h1 className="mb-6 text-4xl font-bold text-black sm:text-5xl md:mb-4 md:text-6xl">
               ICAN
             </h1>
             <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              The International Crypto Account Number (ICAN) is a standardized identifier for cryptocurrency transactions, designed to function similarly to the International Bank Account Number (IBAN) in traditional banking. It provides a unique, verifiable, and structured format for digital asset addresses, making transactions safer, faster, and more efficient across different platforms. By introducing a global standard for crypto addresses, ICAN helps reduce errors, improve security, and enhance compatibility between wallets, exchanges, and financial services.
+              The International Crypto Account Number (ICAN) gives digital asset addresses a structured, checkable format. Its network prefix and checksum help compatible wallets recognize the address and catch common typing mistakes before a transfer is sent.
             </p>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
@@ -27,84 +28,35 @@ const ICAN = () => {
             </div>
           </div>
 
-          <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12 max-h-96">
-            <img
-              src="/static/images/splash-ican.jpg"
-              loading="lazy"
-              alt="Photo by Rastislav Vašička"
-              className="h-full w-full object-cover object-center"
-            />
+          <ICANVisual />
+        </div>
+
+        <section className="ican-format">
+          <div className="ican-format-heading">
+            <span className="section-eyebrow">A CHECKABLE ADDRESS</span>
+            <h2>One address. Three useful parts.</h2>
+            <p>ICAN combines a network prefix, check digits, and wallet data in a format compatible services can validate before a transfer.</p>
           </div>
-        </div>
-
-        <div className="px-4 lg:px-0 mt-16 lg:mt-24">
-          <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-            How ICAN Works
-          </h2>
-
-          <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-            ICAN follows a structured format to ensure accuracy and consistency
-            in crypto transactions.
-          </p>
-        </div>
-
-        <div className="mx-auto mt-8 lg:mt-0 w-full max-w-screen-lg overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
-          <div className="mx-auto flex max-w-screen-lg items-center gap-4 sm:gap-6 lg:gap-8 p-4 sm:p-6 lg:p-8">
-            <div className="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-              <div className="group flex gap-3 sm:gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg md:h-12 md:w-12">
-                  <BookOpenText className="w-6 h-6" />
-                </div>
-
-                <div>
-                  <div className="mb-1 font-semibold">
-                    Human-Readable Part (HRP)
-                  </div>
-                  <p className="text-sm text-gray-500">
-                    Identifies the blockchain network or application (e.g., <code className="font-zephirum">cb</code> for Core Blockchain, <code className="font-zephirum">bc</code> for Bitcoin, etc.)
-                  </p>
-                </div>
-              </div>
-
-              <div className="group flex gap-3 sm:gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg md:h-12 md:w-12">
-                  <Bot className="w-6 h-6" />
-                </div>
-
-                <div>
-                  <div className="mb-1 font-semibold">Checksum</div>
-                  <p className="text-sm text-gray-500">
-                    Validates the integrity of the address, preventing errors in manual entry
-                  </p>
-                </div>
-              </div>
-
-              <div className="group flex gap-3 sm:gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg md:h-12 md:w-12">
-                  <Wallet className="w-6 h-6" />
-                </div>
-
-                <div>
-                  <div className="mb-1 font-semibold">Data Part</div>
-                  <p className="text-sm text-gray-500">
-                    Encodes the actual wallet address, ensuring seamless processing
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="hidden sm:block w-1/3 overflow-hidden rounded-lg border border-gray-200">
-              <div className="h-48 bg-gray-100">
-                <img
-                  src="/static/images/splash-ican-format.jpg"
-                  loading="lazy"
-                  alt="Photo by Rastislav Vašička"
-                  className="h-full w-full object-cover object-center"
-                />
-              </div>
-            </div>
+          <div className="ican-format-example">
+            <div className="ican-format-example-top"><span>EXAMPLE ICAN</span><span>CORE BLOCKCHAIN</span></div>
+            <code>CB7147879011EA207DF5B35A24CA6F0859DCFB145999</code>
+            <p>The check digits help catch accidental entry errors. Always verify the full destination before sending assets.</p>
           </div>
-        </div>
+          <div className="ican-format-parts">
+            <article>
+              <div className="ican-format-icon"><BookOpenText size={22} aria-hidden="true" /></div>
+              <div><span className="ican-format-segment">CB <small>01 / NETWORK</small></span><h3>Recognize the network</h3><p>The human-readable prefix tells a compatible service which network the address belongs to.</p></div>
+            </article>
+            <article>
+              <div className="ican-format-icon"><ShieldCheck size={22} aria-hidden="true" /></div>
+              <div><span className="ican-format-segment">71 <small>02 / CHECK DIGITS</small></span><h3>Catch common mistakes</h3><p>A checksum can reveal many typing or transcription errors before submission.</p></div>
+            </article>
+            <article>
+              <div className="ican-format-icon"><Wallet size={22} aria-hidden="true" /></div>
+              <div><span className="ican-format-segment">4787…5999 <small>03 / WALLET DATA</small></span><h3>Carry the destination</h3><p>The remaining characters encode the wallet address for consistent handling.</p></div>
+            </article>
+          </div>
+        </section>
 
         <section className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
           <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
@@ -187,7 +139,7 @@ CB714787…B35A…5999
                   Standardized Asset Transactions
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  ICAN simplifies asset payments by using a uniform format, making transactions across different platforms and services seamless.
+                  A structured address is easier for compatible services to display, validate, and exchange.
                 </p>
               </div>
 
@@ -199,10 +151,10 @@ CB714787…B35A…5999
                 </div>
 
                 <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Error Prevention & Security
+                  Catch address mistakes
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  The built-in checksum automatically detects errors in address input, preventing transaction failures and loss of funds.
+                  The checksum can catch many accidental entry errors. Users should still verify the full destination before sending assets.
                 </p>
               </div>
 
@@ -214,10 +166,10 @@ CB714787…B35A…5999
                 </div>
 
                 <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Universal Compatibility
+                  Built for integrations
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Designed for wallets, exchanges, and financial institutions, ICAN enhances interoperability, ensuring your transactions are recognized and processed everywhere.
+                  Wallets, exchanges, and financial services can support the same address format where they integrate the relevant network.
                 </p>
               </div>
             </div>
@@ -231,7 +183,7 @@ CB714787…B35A…5999
             </h2>
 
             <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-              As the world moves toward global digital finance, ICAN provides a secure and efficient way to manage asset transactions, just like IBAN revolutionized international banking.
+              ICAN gives compatible services a predictable address format and a checksum they can validate before a transfer. It does not replace recipient verification or network confirmation.
             </p>
           </div>
           <div className="flex flex-col mt-8 lg:mt-12 gap-2.5 sm:flex-row sm:justify-center lg:justify-center">

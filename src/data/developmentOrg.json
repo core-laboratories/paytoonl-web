@@ -1,7 +1,7 @@
 [
     {
         "name": "Blockchain Hub, CA",
-        "description": "Blockchain Infrastructure and PayTo protocol",
+        "description": "Blockchain infrastructure and PayTo protocol development",
         "logo": "https://avatars.githubusercontent.com/u/42909054?s=200&v=4",
         "website": "https://blockchainhub.digital",
         "code": {
@@ -14,8 +14,17 @@
         }
     },
     {
+        "name": "Bitsoftex",
+        "description": "AI engineering, security testing, and custom software development",
+        "logo": "/static/icons/bitsoftex-logo.svg",
+        "website": "https://bitsoftex.eu",
+        "contact": {
+            "email": "contact@bitsoftex.eu"
+        }
+    },
+    {
         "name": "CORE Labs",
-        "description": "PayTo protocol and DePIN services",
+        "description": "PayTo protocol development and DePIN services",
         "logo": "https://avatars.githubusercontent.com/u/179846077?s=200&v=4",
         "website": "https://corelabs.ooo",
         "code": {

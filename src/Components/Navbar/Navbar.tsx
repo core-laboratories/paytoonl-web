@@ -1,36 +1,48 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Monitor, Moon, Sun } from "lucide-react";
+import Brand from "../Brand/Brand.tsx";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [theme, setTheme] = useState<"light" | "dark" | "auto">(() => {
+    try {
+      const saved = localStorage.getItem("payto-theme");
+      return saved === "light" || saved === "dark" ? saved : "auto";
+    } catch { return "auto"; }
+  });
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY < lastScrollY || currentScrollY < 10) {
-        // Scrolling up or at the top
-        setIsNavbarVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and past 100px
-        setIsNavbarVisible(false);
-      }
-      
-      setLastScrollY(currentScrollY);
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const apply = () => {
+      const dark = theme === "dark" || (theme === "auto" && media.matches);
+      document.documentElement.classList.toggle("dark", dark);
+      document.documentElement.style.colorScheme = dark ? "dark" : "light";
     };
+    apply();
+    media.addEventListener("change", apply);
+    try { localStorage.setItem("payto-theme", theme); } catch { /* Storage may be unavailable. */ }
+    return () => media.removeEventListener("change", apply);
+  }, [theme]);
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
+  const themeSwitch = (
+    <div className="theme-switch" role="group" aria-label="Color theme">
+      {([
+        { value: "light", label: "Light", Icon: Sun },
+        { value: "dark", label: "Dark", Icon: Moon },
+        { value: "auto", label: "Auto", Icon: Monitor },
+      ] as const).map(({ value, label, Icon }) => (
+        <button key={value} type="button" title={`${label} theme`} aria-label={`${label} theme`}
+          aria-pressed={theme === value} className={theme === value ? "is-active" : ""}
+          onClick={() => setTheme(value)}>
+          <Icon size={15} aria-hidden="true" /><span>{label}</span>
+        </button>
+      ))}
+    </div>
+  );
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -45,22 +57,19 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <div className={`fixed top-0 left-0 right-0 z-50 bg-white transition-transform duration-300 ${
-      isNavbarVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
+    <div className="site-header sticky top-0 z-50 border-b border-gray-200 bg-white shadow-sm">
       <div className="container mx-auto bg-white px-4 sm:px-6 lg:px-0">
         <div className="max-w-screen-2xl">
           <header className="flex items-center justify-between py-3 md:py-4">
           <a
             href="/"
-            className="inline-flex items-center gap-2 text-lg md:text-xl text-black font-semibold"
-            aria-label="logo"
+            className="site-brand-link"
+            aria-label="PayTo Alliance home"
           >
-            <img src="/static/icons/logo.svg" alt="logo" className="w-8 h-8 md:w-10 md:h-10" />
-            PayTo Alliance
+            <Brand />
           </a>
 
-          <nav className="hidden gap-12 lg:flex">
+          <nav className="hidden gap-8 lg:flex">
             <a
               href="/solutions"
               className="text-lg text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700"
@@ -87,16 +96,21 @@ const Navbar = () => {
             </a>
           </nav>
 
+          <div className="hidden lg:flex items-center gap-4">
+          {themeSwitch}
           <a
             href="/joinus"
-            className="hidden rounded-lg bg-gray-200 px-8 py-3 text-center text-sm text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:inline-block"
+            className="rounded-full bg-indigo-600 px-6 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-indigo-700"
           >
             Join Alliance
           </a>
+          </div>
 
           <button
             type="button"
             onClick={toggleMobileMenu}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
             className="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden"
           >
             {isMobileMenuOpen ? (
@@ -112,19 +126,19 @@ const Navbar = () => {
         </header>
 
         {isMobileMenuOpen && (
-          <div className="fixed inset-0 z-50 bg-white lg:hidden h-screen">
+          <div className="fixed inset-0 z-50 flex h-dvh flex-col overflow-hidden bg-white lg:hidden">
             <div className="flex items-center justify-between py-3 px-4 border-b border-gray-200 bg-white">
               <a
                 href="/"
-                className="inline-flex items-center gap-2 text-lg text-black font-semibold"
-                aria-label="logo"
+                className="site-brand-link"
+                aria-label="PayTo Alliance home"
               >
-                <img src="/static/icons/logo.svg" alt="logo" className="w-8 h-8" />
-                PayTo Alliance
+                <Brand />
               </a>
             <button
               type="button"
               onClick={toggleMobileMenu}
+              aria-label="Close menu"
                 className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gray-200 text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700"
             >
               <X className="w-6 h-6" />
@@ -167,6 +181,7 @@ const Navbar = () => {
               >
                 Join Alliance
               </a>
+              <div className="pt-4">{themeSwitch}</div>
             </nav>
             </div>
           </div>

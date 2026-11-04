@@ -1,103 +1,20 @@
-import { Coins, Currency, Landmark, ShieldUser, Store, WalletCards } from "lucide-react";
 import React from "react";
+import { Building2, Coins, Landmark, ShieldCheck, Store, WalletCards } from "lucide-react";
 
-const Blocks = () => {
-  return (
-    <>
-      <h2 className="mb-6 mt-12 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl lg:mt-0">
-        Business Partners
-      </h2>
-      <div className="mx-4 sm:mx-6 lg:mx-8">
-      <div className="w-full container mx-auto overflow-hidden rounded-lg border border-gray-300 bg-gray-50 shadow-sm lg:block">
-        <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-6 sm:gap-8 p-4 sm:p-6 lg:p-8">
-          <div className="grid w-full lg:w-2/3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            <div className="group flex items-center gap-3 sm:gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
-                <Landmark className="h-6 w-6" />
-              </div>
+const audiences = [
+	{ icon: Landmark, title: "Financial institutions", description: "Connect established services with new payment formats." },
+	{ icon: Building2, title: "Fintech teams", description: "Build practical products around shared interfaces." },
+	{ icon: Coins, title: "Digital asset services", description: "Make wallet and provider identifiers easier to use." },
+	{ icon: WalletCards, title: "Wallet builders", description: "Create clearer routes from a request to a reviewed payment." },
+	{ icon: ShieldCheck, title: "Trust and compliance teams", description: "Bring identity, verification, and operational needs into the discussion." },
+	{ icon: Store, title: "Digital platforms", description: "Improve how customers find and act on payment details." },
+];
 
-              <div>
-                <div className="mb-1 font-semibold text-sm sm:text-base">
-                  Financial Institutions & FinTech
-                </div>
-              </div>
-            </div>
-
-            <div className="group flex items-center gap-3 sm:gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
-                <Currency className="h-6 w-6" />
-              </div>
-
-              <div>
-                <div className="mb-1 font-semibold text-sm sm:text-base">
-                  Exchanges & Blockchain Processors
-                </div>
-              </div>
-            </div>
-
-            <div className="group flex items-center gap-3 sm:gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
-                <Coins className="h-6 w-6" />
-              </div>
-
-              <div>
-                <div className="mb-1 font-semibold text-sm sm:text-base">
-                  VASPs
-                </div>
-              </div>
-            </div>
-
-            <div className="group flex items-center gap-3 sm:gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
-                <WalletCards className="h-6 w-6" />
-              </div>
-
-              <div>
-                <div className="mb-1 font-semibold text-sm sm:text-base">
-                   Payment Processors & DePIN
-                </div>
-              </div>
-            </div>
-
-            <div className="group flex items-center gap-3 sm:gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
-                <ShieldUser className="h-6 w-6" />
-              </div>
-
-              <div>
-                <div className="mb-1 font-semibold text-sm sm:text-base">
-                  Regulatory & Compliance Bodies
-                </div>
-              </div>
-            </div>
-
-            <div className="group flex items-center gap-3 sm:gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg transition duration-100 md:h-14 md:w-14">
-                <Store className="h-6 w-6" />
-              </div>
-
-              <div>
-                <div className="mb-1 font-semibold text-sm sm:text-base">
-                  E-commerce & Digital Platforms
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="w-full lg:w-1/3 overflow-hidden rounded-lg border border-gray-300">
-            <div className="h-96 bg-gray-100">
-              <img
-                src="/static/images/tosky.jpg"
-                loading="lazy"
-                alt="Photo by Rastislav Vašička"
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
+const Blocks = () => (
+	<section className="alliance-audiences container mx-auto">
+		<div className="alliance-section-heading"><span className="section-eyebrow">DIFFERENT PERSPECTIVES, ONE NETWORK</span><h2>There is room for your expertise.</h2><p>Standards grow stronger when the people who build, operate, and use payment services can work together.</p></div>
+		<div className="alliance-audience-grid">{audiences.map(({ icon: Icon, title, description }) => <article className="alliance-audience" key={title}><span className="alliance-audience-icon"><Icon size={23} aria-hidden="true" /></span><div><h3>{title}</h3><p>{description}</p></div></article>)}</div>
+	</section>
+);
 
 export default Blocks;

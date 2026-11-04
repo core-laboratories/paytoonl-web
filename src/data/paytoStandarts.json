@@ -25,7 +25,7 @@
     },
     {
       "title": "UPI",
-      "text": "Unified Payment Interface",
+      "text": "Unified Payments Interface",
       "link": {
         "href": "https://payto.money?tab=upi",
         "text": "Try it now"
@@ -33,7 +33,7 @@
     },
     {
       "title": "PIX",
-      "text": "Brazil - Instant Payment Platform",
+      "text": "Brazilian instant payment platform",
       "link": {
         "href": "https://payto.money?tab=pix",
         "text": "Try it now"
@@ -51,8 +51,8 @@
       "title": "ORIC",
       "text": "Organization Identifier Code",
       "link": {
-        "href": "https://payto.money?tab=bic",
-          "text": "Try it now"
+        "href": "/solutions/oric",
+          "text": "Learn more"
       }
     },
     {
@@ -73,7 +73,7 @@
     },
     {
       "title": "GEO",
-      "text": "Geolocation coordinates - decimal degrees",
+      "text": "Geographic coordinates in decimal degrees",
       "link": {
         "href": "https://payto.money?tab=void",
           "text": "Try it now"
@@ -81,7 +81,7 @@
     },
     {
       "title": "Plus Code",
-      "text": "Open Location Code location coordinates",
+      "text": "Location coordinates using Open Location Code",
       "link": {
         "href": "https://payto.money?tab=void",
           "text": "Try it now"

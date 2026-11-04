@@ -3,7 +3,7 @@ import { Home, SearchX } from "lucide-react";
 
 const NotFound = () => {
 	return (
-		<section className="bg-white">
+		<section className="not-found-page bg-white">
 			<div className="container mx-auto px-4 py-20 sm:px-6 lg:px-0 lg:py-28">
 				<div className="mx-auto max-w-screen-md text-center">
 					<div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-500 shadow-sm ring-1 ring-indigo-100">

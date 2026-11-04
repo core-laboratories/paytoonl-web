@@ -339,7 +339,7 @@ const MapPage = () => {
 	};
 
 	return (
-		<section className="bg-[radial-gradient(circle_at_top_left,_rgba(20,184,166,0.18),_transparent_30%),linear-gradient(180deg,_#f8fffe_0%,_#ffffff_100%)]">
+		<section className="map-page bg-[radial-gradient(circle_at_top_left,_rgba(20,184,166,0.18),_transparent_30%),linear-gradient(180deg,_#f8fffe_0%,_#ffffff_100%)]">
 			<div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
 				<div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
 					<div className="space-y-5">
@@ -348,16 +348,16 @@ const MapPage = () => {
 							PayTo merchant map
 						</div>
 						<h1 className="max-w-3xl font-zephirum text-4xl tracking-tight text-slate-900 sm:text-5xl">
-							Find merchants that already accept PayTo.
+							Find merchants that accept PayTo.
 						</h1>
 						<p className="max-w-3xl text-lg leading-8 text-slate-600">
 							Explore verified locations, jump to each merchant on the map, and
-							help us grow coverage by sending new merchant suggestions straight to
+							help expand coverage by sending merchant suggestions to
 							the PayTo team.
 						</p>
 					</div>
 
-					<div className="grid gap-4 rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_22px_70px_rgba(15,23,42,0.08)] backdrop-blur">
+					<div className="grid gap-4 glass-panel rounded-[2rem] border border-slate-200 bg-white/80 p-5 shadow-[0_22px_70px_rgba(15,23,42,0.08)] backdrop-blur">
 						<div>
 							<p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
 								Live dataset
@@ -378,14 +378,14 @@ const MapPage = () => {
 							<div className="rounded-2xl bg-slate-50 p-4">
 								<p className="text-sm font-semibold text-slate-700">Navigation</p>
 								<p className="mt-1 text-sm leading-6 text-slate-500">
-									Use the merchant list to focus the map or open directions.
+									Use the merchant list to focus the map or get directions.
 								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
+				<div className="overflow-hidden glass-panel rounded-[2rem] border border-slate-200 bg-white shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
 					<div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-5 py-4 sm:px-6">
 						<div>
 							<h2 className="text-xl font-semibold text-slate-900">Merchant map</h2>
@@ -426,7 +426,7 @@ const MapPage = () => {
 						{loading && (
 							<div className="absolute inset-0 flex items-center justify-center bg-white/70 backdrop-blur-sm">
 								<div className="rounded-full bg-white px-5 py-3 text-sm font-medium text-slate-700 shadow-lg">
-									Loading locations...
+									Loading locations…
 								</div>
 							</div>
 						)}
@@ -445,8 +445,7 @@ const MapPage = () => {
 									Know a merchant that should be added?
 								</p>
 								<p className="text-sm leading-6 text-slate-500">
-									Send the merchant details and supporting source link to the PayTo
-									team. We prefill the email with the information needed for review.
+									Send the merchant details and a supporting source link to the PayTo team. The email includes a template with the information needed for review.
 								</p>
 							</div>
 
@@ -462,7 +461,7 @@ const MapPage = () => {
 				</div>
 
 				<div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-					<div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_22px_60px_rgba(15,23,42,0.06)]">
+					<div className="glass-panel rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_22px_60px_rgba(15,23,42,0.06)]">
 						<h2 className="text-2xl font-semibold text-slate-900">Selected merchant</h2>
 						{selectedLocation ? (
 							<div className="mt-5 space-y-4">
@@ -535,12 +534,12 @@ const MapPage = () => {
 						)}
 					</div>
 
-					<div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_22px_60px_rgba(15,23,42,0.06)]">
+					<div className="glass-panel rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_22px_60px_rgba(15,23,42,0.06)]">
 						<div className="flex items-center justify-between gap-3">
 							<div>
 								<h2 className="text-2xl font-semibold text-slate-900">Locations</h2>
 								<p className="text-sm text-slate-500">
-									Click a merchant to center the map and open its marker.
+									Select a merchant to center the map and open its marker.
 								</p>
 							</div>
 							<p className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">

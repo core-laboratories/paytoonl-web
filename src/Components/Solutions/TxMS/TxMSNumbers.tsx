@@ -120,14 +120,6 @@ const TxMSNumbers = ({ network = "mainnet" }: TxMSNumbersProps) => {
 		? `TxMS Devín - ${contactSuffix}`
 		: `TxMS - ${contactSuffix}`;
 	const isTestnet = network === "testnet";
-	const accentText = isTestnet ? "text-orange-600" : "text-indigo-500";
-	const numberText = isTestnet ? "text-orange-600 hover:text-orange-700" : "text-indigo-600 hover:text-indigo-700";
-	const primaryButton = isTestnet
-		? "bg-orange-500 hover:bg-orange-600 focus-visible:ring-orange-300"
-		: "bg-indigo-500 hover:bg-indigo-600 focus-visible:ring-indigo-300";
-	const secondaryButton = isTestnet
-		? "border-orange-200 text-orange-600 hover:border-orange-300 hover:bg-orange-50 focus-visible:ring-orange-200"
-		: "border-indigo-200 text-indigo-600 hover:border-indigo-300 hover:bg-indigo-50 focus-visible:ring-indigo-200";
 
 	const downloadContact = () => {
 		const contact = new Blob([createVCard(selectedOption, network)], { type: "text/vcard;charset=utf-8" });
@@ -143,38 +135,28 @@ const TxMSNumbers = ({ network = "mainnet" }: TxMSNumbersProps) => {
 
 	return (
 		<>
-			<div className={`overflow-hidden rounded-2xl border bg-gradient-to-br to-white shadow-sm ${
-				isTestnet ? "border-orange-100 from-orange-50" : "border-indigo-100 from-indigo-50"
-			}`}>
-				<div className="p-5 sm:p-6">
-					<div className="mb-4 flex items-center gap-3">
-						<div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white shadow-sm ${accentText}`}>
+			<div className={`txms-number-card ${isTestnet ? "txms-number-card--testnet" : "txms-number-card--mainnet"}`}>
+				<div className="txms-number-body">
+					<div className="txms-number-header">
+						<div className="txms-number-icon">
 							{selectedOption.countryCode === "global" ? (
 								<Globe2 className="h-5 w-5" aria-hidden="true" />
 							) : (
 								<span className="text-xl" aria-hidden="true">{getFlag(selectedOption.countryCode)}</span>
 							)}
 						</div>
-						<div>
-							<p className={`text-xs font-semibold uppercase tracking-wider ${accentText}`}>
-								{isTestnet ? "Testnet “Devín”" : "Core Mainnet"}
-							</p>
-							<p className="font-semibold text-gray-800">{selectedOption.countryName} TxMS number</p>
-						</div>
+						<div><p className="txms-number-network">{isTestnet ? "Testnet “Devín”" : "Core Mainnet"}</p><h3>{selectedOption.countryName} TxMS number</h3></div>
+						<span className="txms-number-status">{isTestnet ? "Test network" : "Live network"}</span>
 					</div>
 
-					<label htmlFor={`txms-number-${network}`} className="mb-2 block text-sm font-medium text-gray-700">
+					<label htmlFor={`txms-number-${network}`} className="txms-number-label">
 						Choose a number
 					</label>
 					<select
 						id={`txms-number-${network}`}
 						value={selectedId}
 						onChange={(event) => setSelectedId(event.target.value)}
-						className={`w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-800 outline-none transition focus:ring-2 ${
-							isTestnet
-								? "focus:border-orange-400 focus:ring-orange-100"
-								: "focus:border-indigo-400 focus:ring-indigo-100"
-						}`}
+						className="txms-number-select"
 					>
 						{options.map((option) => (
 							<option key={option.id} value={option.id}>
@@ -184,18 +166,13 @@ const TxMSNumbers = ({ network = "mainnet" }: TxMSNumbersProps) => {
 						))}
 					</select>
 
-					<a
-						href={`tel:${selectedOption.number}`}
-						className={`mt-4 block text-2xl font-bold tracking-tight transition ${numberText}`}
-					>
-						{formatNumber(selectedOption.number)}
-					</a>
+					<div className="txms-number-current"><span>SELECTED TXMS NUMBER</span><a href={`tel:${selectedOption.number}`}>{formatNumber(selectedOption.number)}</a></div>
 
-					<div className="mt-5 grid gap-3 sm:grid-cols-2">
+					<div className="txms-number-actions">
 						<button
 							type="button"
 							onClick={downloadContact}
-							className={`inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-white transition focus-visible:outline-none focus-visible:ring-2 ${primaryButton}`}
+							className="txms-number-primary"
 						>
 							<ContactRound className="h-5 w-5" aria-hidden="true" />
 							Add to contacts
@@ -206,7 +183,7 @@ const TxMSNumbers = ({ network = "mainnet" }: TxMSNumbersProps) => {
 								setQrCode("");
 								setIsQrOpen(true);
 							}}
-							className={`inline-flex items-center justify-center gap-2 rounded-lg border bg-white px-4 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 ${secondaryButton}`}
+							className="txms-number-secondary"
 						>
 							<QrCode className="h-5 w-5" aria-hidden="true" />
 							Show contact QR
@@ -227,7 +204,7 @@ const TxMSNumbers = ({ network = "mainnet" }: TxMSNumbersProps) => {
 						role="dialog"
 						aria-modal="true"
 						aria-labelledby={`txms-qr-title-${network}`}
-						className="relative w-full max-w-sm rounded-2xl bg-white p-6 text-center shadow-2xl"
+					className="txms-qr-dialog relative w-full max-w-sm rounded-2xl bg-white p-6 text-center shadow-2xl"
 					>
 						<button
 							type="button"

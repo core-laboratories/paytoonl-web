@@ -10,24 +10,24 @@ export default function FAQSimple() {
 
   const faqs = [
     {
-      question: "What is PayTo protocol?",
+      question: "What is the PayTo protocol?",
       answer:
-        "PayTo is an open-source payment protocol that enables direct, peer-to-peer financial transactions without intermediaries. The protocol provides a standardized way to send and receive payments across different platforms and networks, making financial interactions more efficient, secure, and accessible. PayTo supports various payment methods and can be integrated into existing financial infrastructure.",
+        "PayTo provides a consistent way to express a payment destination and request. Compatible applications can recognize the details and hand the request to a supported payment flow. The payment provider and network still handle authorization and settlement.",
     },
     {
-      question: "Can I integrate into my payment infrastructure?",
+      question: "Can I integrate PayTo into my payment infrastructure?",
       answer:
-        "Yes, PayTo protocol is designed for easy integration into existing payment systems. The protocol includes a composition system and libraries that enable developers to add PayTo functionality to applications. Compatibility with various programming languages and frameworks makes PayTo suitable for both small businesses and large enterprises looking to modernize payment processing capabilities.",
+        "Yes. Developers can use PayTo formats and available libraries to create payment links and connect them to supported wallet or provider flows. The integration details depend on the payment method and the services you use.",
     },
     {
-      question: "Where are the solutions supported?",
+      question: "Where can I use PayTo solutions?",
       answer:
-        "PayTo solutions are supported across multiple platforms and networks. The protocol operates on major blockchain networks, traditional banking systems, and digital payment platforms. Alliance members provide infrastructure and services that ensure seamless operation across different regions and regulatory environments, enabling global payment solutions.",
+        "Support depends on the wallet, provider, network, and location. The solutions cover payment identifiers, wallet passes, provider routing, and alternative ways to deliver signed transaction data. Check each solution page for its requirements and supported flow.",
     },
     {
-      question: "How to start applying the solutions?",
+      question: "How do I start using the solutions?",
       answer:
-        "To get started with PayTo solutions, begin by exploring available documentation and developer resources. Joining the Alliance provides access to technical support, implementation guides, and community forums. Developer teams are available for testing, along with step-by-step tutorials for integrating PayTo into applications. Contact development teams for specialized implementation support.",
+        "Start by exploring the available solutions and developer resources. You can contact a development organization for help with testing or integration. Joining the Alliance also lets you collaborate with teams working on PayTo standards.",
     },
   ];
 
@@ -41,16 +41,19 @@ export default function FAQSimple() {
             </h2>
 
             <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-              Find answers to common questions about PayTo ecosystem.
+              Find answers to common questions about the PayTo ecosystem.
             </p>
           </div>
 
           <div className="mx-auto flex max-w-screen-xl flex-col border-t border-gray-200">
             {faqs.map((faq, index) => (
               <div key={index} className="border-b border-gray-200">
-                <div
-                  className="flex cursor-pointer justify-between gap-2 py-4 text-black hover:text-indigo-500 active:text-indigo-600"
+                <button
+                  type="button"
+                  className="flex w-full justify-between gap-2 py-4 text-left text-black hover:text-indigo-500 active:text-indigo-600"
                   onClick={() => toggleAnswer(index)}
+                  aria-expanded={activeIndex === index}
+                  aria-controls={`faq-answer-${index}`}
                 >
                   <span className="font-semibold transition duration-100 md:text-xl">
                     {faq.question}
@@ -63,9 +66,10 @@ export default function FAQSimple() {
                       }`}
                       />
                   </span>
-                </div>
+                </button>
 
                 <p
+                  id={`faq-answer-${index}`}
                   className={`grid overflow-hidden transition-all duration-300 ease-in-out ${
                     activeIndex === index
                       ? "grid-rows-[1fr] opacity-100 mb-4"

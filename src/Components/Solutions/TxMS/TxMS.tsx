@@ -1,11 +1,26 @@
 import React from "react";
-import { BotMessageSquare, MessageSquareCode, MessageSquareLock, RadioTower } from "lucide-react";
+import { ArrowRight, Binary, BotMessageSquare, CircleCheck, Landmark, MessageSquareCode, MessageSquareLock, RadioTower, Send, Server, ShieldCheck, Smartphone, UserRound, WalletCards } from "lucide-react";
 import TxMSNumbers from "./TxMSNumbers.tsx";
+import { TxMSVisual } from "../SolutionHeroVisuals.tsx";
+
+const workflowSteps = [
+	{ number: "01", icon: ShieldCheck, title: "Prepare and sign", text: "Your wallet prepares the transaction and signs it before any message is sent." },
+	{ number: "02", icon: Binary, title: "Encode for text", text: "TxMS converts the signed data into characters that can travel through SMS." },
+	{ number: "03", icon: Send, title: "Send by SMS", text: "The encoded message travels to an available TxMS number." },
+	{ number: "04", icon: CircleCheck, title: "Check and forward", text: "A compatible receiver checks the message and can forward it. Network confirmation follows later." },
+];
+
+const useCases = [
+	{ icon: Landmark, title: "Financial providers", text: "Receive signed transactions through a supported SMS channel." },
+	{ icon: WalletCards, title: "Wallets", text: "Offer another delivery route when mobile data is unavailable." },
+	{ icon: Server, title: "Service operators", text: "Run compatible receivers that check and forward messages." },
+	{ icon: UserRound, title: "Individuals", text: "Submit transaction data where SMS service is available." },
+];
 
 const TxMS = () => {
   return (
     <>
-      <section className="container mx-auto flex flex-col px-4 gap-6 sm:gap-10 md:gap-16 lg:px-0">
+      <section className="solution-detail container mx-auto flex flex-col px-4 gap-6 sm:gap-10 md:gap-16 lg:px-0">
         <div className="container mx-auto flex flex-col lg:flex-row justify-between gap-6 sm:gap-10 md:gap-16">
           <div className="flex flex-col justify-center sm:text-center lg:pb-12 lg:text-left xl:w-5/12 xl:pb-24">
             <h1 className="mb-8 text-4xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">
@@ -13,10 +28,10 @@ const TxMS = () => {
             </h1>
 
             <p className="mb-6 leading-relaxed text-gray-500 md:mb-8 lg:w-4/5 xl:text-lg">
-              Transaction Message Service (TxMS) is a secure and standardized messaging protocol designed to make financial transactions and blockchain communications more efficient and reliable. It ensures that transaction-related messages can be sent, received, and understood across different platforms without errors.
+              TxMS carries encoded transaction data over SMS where mobile service is available. It gives compatible wallets and receivers a structured way to move a signed transaction when mobile data or Wi-Fi is unavailable.
             </p>
             <p className="mb-8 leading-relaxed text-gray-500 md:mb-12 lg:w-4/5 xl:text-lg">
-              Whether it's a payment request, digital invoice, or blockchain transaction message, TxMS ensures that the information is formatted correctly and securely delivered.
+              The receiving service decodes and checks the message before forwarding a supported transaction. Sending a text message is a delivery step, not a payment confirmation.
             </p>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
@@ -29,14 +44,7 @@ const TxMS = () => {
             </div>
           </div>
 
-          <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12 max-h-96">
-            <img
-              src="/static/images/splash-txms.jpg"
-              loading="lazy"
-              alt="Photo by Rastislav Vašička"
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
+          <TxMSVisual />
         </div>
         <div className="bg-white py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -46,7 +54,7 @@ const TxMS = () => {
               </h2>
 
               <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-                TxMS offers offline digital payments and transactions.
+                TxMS helps transmit payment information when internet access is unavailable.
               </p>
             </div>
 
@@ -62,7 +70,7 @@ const TxMS = () => {
                   Reliable Transaction Messaging
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  TxMS ensures that important transaction details are correctly transmitted, preventing errors and miscommunication. This is especially useful for banks, digital wallets, and blockchain applications.
+                  Encoded transaction data can travel over SMS to a compatible receiver, extending access beyond mobile data coverage.
                 </p>
               </div>
 
@@ -74,10 +82,10 @@ const TxMS = () => {
                 </div>
 
                 <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Secure and Standardized Format
+                  Structured, checkable format
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  TxMS follows a universal standard for financial messaging, ensuring that messages are always readable and compatible across different platforms.
+                  A consistent message format helps compatible receivers decode transaction data and detect damaged or incomplete messages.
                 </p>
               </div>
 
@@ -89,10 +97,10 @@ const TxMS = () => {
                 </div>
 
                 <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Perfect for Digital Payments
+                  Built for Digital Payments
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  With TxMS, payment instructions, confirmations, and invoices can be sent in a way that's easy to process and verify — even over traditional communication channels like SMS or MMS.
+                  TxMS packages signed transaction data for text delivery, so a supported receiving service can process it.
                 </p>
               </div>
 
@@ -104,90 +112,45 @@ const TxMS = () => {
                 </div>
 
                 <h3 className="mb-3 text-lg font-semibold text-gray-800">
-                  Reduces Errors & Fraud
+                  A clear delivery path
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  By using TxMS, businesses and users can be confident that the payment details they receive are accurate, reducing the risk of fraud or sending money to the wrong account.
+                  The sending device prepares the transaction; the receiving service checks the delivered data before forwarding. Users should still review the destination and amount before signing.
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div className="bg-white py-6 sm:py-8 lg:py-12">
-          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <div className="mb-10 md:mb-16">
-              <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-                Workflow
-              </h2>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-1 md:gap-8 xl:grid-cols-1">
-              <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50 max-w-screen-md mx-auto">
-                <div className="p-4 md:p-6">
-                  <ol className="list-decimal text-lg text-gray-500 pl-5">
-                    <li>
-                      Your wallet composes a message with the transaction details
-                    </li>
-                    <li>
-                      Message is encoded with TxMS library for better efficiency
-                    </li>
-                    <li>
-                      Message is sent to TxMS number
-                    </li>
-                    <li>
-                      Transaction is streamed and confirmed
-                    </li>
-                  </ol>
-                </div>
-              </div>
+        <section className="txms-workflow">
+          <div className="txms-panel-heading"><span className="section-eyebrow">THE DELIVERY PATH</span><h2>From wallet to network</h2><p>Each step has a clear role. Sending an SMS delivers the signed data; it does not confirm the payment.</p></div>
+          <div className="txms-workflow-grid">
+            {workflowSteps.map(({ number, icon: Icon, title, text }) => (
+              <article className="txms-workflow-step" key={number}>
+                <span className="txms-workflow-number">{number}</span><span className="txms-workflow-icon"><Icon size={24} aria-hidden="true" /></span>
+                <h3>{title}</h3><p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section className="txms-explainer">
+          <div className="txms-encoding">
+            <span className="section-eyebrow">WHY ENCODING MATTERS</span>
+            <h2>Transaction data, ready for text.</h2>
+            <p>SMS can carry text, but a signed transaction contains binary data. TxMS encodes that data into transport-safe characters so a compatible receiver can reconstruct it.</p>
+            <div className="txms-encoding-flow"><span><Binary size={18} aria-hidden="true" /> Signed data</span><ArrowRight size={18} aria-hidden="true" /><span><MessageSquareCode size={18} aria-hidden="true" /> Text-safe message</span><ArrowRight size={18} aria-hidden="true" /><span><Smartphone size={18} aria-hidden="true" /> SMS delivery</span></div>
+            <p className="txms-encoding-note">Encoding carries the data. The wallet signature authorizes the transaction, and the network confirms it after forwarding.</p>
+            <a href="https://en.wikipedia.org/wiki/Binary-to-text_encoding#Examples" target="_blank" rel="noopener noreferrer">About binary-to-text encoding <ArrowRight size={16} aria-hidden="true" /></a>
+          </div>
+          <div className="txms-use-cases">
+            <span className="section-eyebrow">WHERE TXMS FITS</span>
+            <h2>Useful when data service is out of reach.</h2>
+            <div className="txms-use-case-grid">
+              {useCases.map(({ icon: Icon, title, text }) => (
+                <article key={title}><span><Icon size={20} aria-hidden="true" /></span><div><h3>{title}</h3><p>{text}</p></div></article>
+              ))}
             </div>
           </div>
-        </div>
-        <div className="bg-white py-6 sm:py-8 lg:py-12">
-          <div className="mx-auto grid max-w-screen-xl gap-10 px-4 md:grid-cols-2 md:gap-12 md:px-8">
-            <div>
-              <h2 className="mb-4 text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-                Binary-to-Text Data Encoding
-              </h2>
-
-              <p className="mb-4 text-gray-500 md:text-lg">
-                Binary data can contain byte values that text-only channels cannot safely transmit. Binary-to-text encoding converts those bytes into readable, transport-safe characters so the data can pass through channels such as SMS, messaging systems, and other text-based services.
-              </p>
-              <p className="text-gray-500 md:text-lg">
-                TxMS uses this approach to compress binary transaction data into a readable text format. The encoded text can later be decoded back into its original hexadecimal representation without losing information. TxMS is listed as an example in Wikipedia&apos;s{" "}
-                <a
-                  href="https://en.wikipedia.org/wiki/Binary-to-text_encoding#Examples"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-indigo-500 underline decoration-indigo-200 underline-offset-2 transition-colors hover:text-indigo-600"
-                >
-                  binary-to-text encoding examples
-                </a>
-                .
-              </p>
-            </div>
-
-            <div>
-              <h2 className="mb-4 text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-                Use Cases
-              </h2>
-
-              <ul className="list-disc space-y-2 pl-6 text-gray-500 md:text-lg">
-                <li>
-                  Banks & Financial Institutions – To send secure and structured payment requests
-                </li>
-                <li>
-                  Crypto Wallets & Exchanges – To facilitate digital asset transactions
-                </li>
-                <li>
-                  Businesses & Merchants – To send invoices and payment confirmations in a standardized way
-                </li>
-                <li>
-                  Consumers & Individuals – To receive trusted transaction messages when making payments
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        </section>
         <div className="bg-white py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-xl px-4 md:px-8">
             <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
@@ -226,7 +189,7 @@ const TxMS = () => {
             </h2>
 
             <p className="mx-auto max-w-screen-md mb-8 text-center text-gray-500 md:text-lg">
-              TxMS is a secure and standardized messaging protocol designed to make digital and blockchain transactions available offline and without internet connection.
+              TxMS lets compatible devices deliver signed transaction data over SMS without mobile data. A receiving service still needs a way to forward supported transactions to the network.
             </p>
           </div>
           <div className="mt-16 flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-center">

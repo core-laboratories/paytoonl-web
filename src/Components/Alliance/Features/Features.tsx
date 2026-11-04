@@ -1,83 +1,18 @@
 import React from "react";
-import { Banknote, Blend, Boxes, Handshake } from "lucide-react";
+import { Code2, Handshake, Lightbulb, Network } from "lucide-react";
 
-const Features = () => {
-  return (
-    <div className="container mx-auto bg-white py-8 sm:py-16 lg:py-24 px-4 lg:px-0">
-      <div className="mx-auto max-w-screen-2xl ">
-        <div className="mb-10 md:mb-16">
-          <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-            Opportunities
-          </h2>
-          <a id="opportunities" />
-          <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-            A collaborative ecosystem revolutionizing global payments.
-          </p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-2">
-          <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
-            <div className="flex items-center p-2 text-indigo-500 md:p-4">
-              <Banknote className="h-6 w-6 md:h-8 md:w-8" />
-            </div>
+const opportunities = [
+	{ number: "01", icon: Lightbulb, title: "Shape useful standards", description: "Bring the needs of real products and customers into discussions about payment requests, identifiers, and interoperability." },
+	{ number: "02", icon: Handshake, title: "Work across disciplines", description: "Exchange ideas with institutions, builders, and service providers solving connected payment problems." },
+	{ number: "03", icon: Code2, title: "Explore practical integration", description: "Test how shared formats and interfaces can fit into wallets, websites, infrastructure, and provider services." },
+	{ number: "04", icon: Network, title: "Support wider adoption", description: "Help make emerging solutions easier for other teams to understand, implement, and use." },
+];
 
-            <div className="p-4 md:p-6">
-              <h3 className="mb-2 text-lg font-semibold md:text-xl">
-                Drive Innovation in Payments
-              </h3>
-              <p className="text-gray-500">
-                Design and implement next-generation payment solutions that enhance the way money moves across blockchain and traditional systems.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
-            <div className="flex items-center p-2 text-indigo-500 md:p-4">
-              <Blend className="h-6 w-6 md:h-8 md:w-8" />
-            </div>
-
-            <div className="p-4 md:p-6">
-              <h3 className="mb-2 text-lg font-semibold md:text-xl">
-                Industry Collaboration & Influence
-              </h3>
-              <p className="text-gray-500">
-                Work alongside leading banks, fintech firms, and crypto platforms to establish trusted, standardized financial protocols for seamless transactions worldwide.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
-            <div className="flex items-center p-2 text-indigo-500 md:p-4">
-              <Boxes className="h-6 w-6 md:h-8 md:w-8" />
-            </div>
-
-            <div className="p-4 md:p-6">
-              <h3 className="mb-2 text-lg font-semibold md:text-xl">
-                Exclusive Access to New Standards
-              </h3>
-              <p className="text-gray-500">
-                Be among the first to test, integrate, and benefit from emerging payment technologies such as PayTo, ICAN (International Crypto Account Number), ORIC (Organization Identifier Code), and FinTag (Financial Metadata Tags).
-              </p>
-            </div>
-          </div>
-
-          <div className="flex divide-x divide-gray-200 rounded-lg border border-gray-200 bg-gray-50">
-            <div className="flex items-center p-2 text-indigo-500 md:p-4">
-              <Handshake className="h-6 w-6 md:h-8 md:w-8" />
-            </div>
-
-            <div className="p-4 md:p-6">
-              <h3 className="mb-2 text-lg font-semibold md:text-xl">
-                Build Trust & Compliance
-              </h3>
-              <p className="text-gray-500">
-                Build trust through global regulatory compliance while improving security, fraud prevention, and financial transparency.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+const Features = () => (
+	<section className="alliance-opportunities container mx-auto" id="opportunities">
+		<div className="alliance-section-heading"><span className="section-eyebrow">WHAT WE CAN DO TOGETHER</span><h2>Turn shared ideas into useful connections.</h2><p>The Alliance gives contributors a place to compare real needs, refine standards, and explore how they work in practice.</p></div>
+		<div className="alliance-opportunity-grid">{opportunities.map(({ number, icon: Icon, title, description }) => <article className="alliance-opportunity" key={number}><div className="alliance-opportunity-top"><span className="alliance-opportunity-icon"><Icon size={24} aria-hidden="true" /></span><span className="alliance-opportunity-number">{number}</span></div><h3>{title}</h3><p>{description}</p></article>)}</div>
+	</section>
+);
 
 export default Features;
